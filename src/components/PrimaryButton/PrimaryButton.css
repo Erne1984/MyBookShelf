@@ -1,0 +1,10 @@
+.primary-button {
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+.primary-button:hover{
+    
+}
