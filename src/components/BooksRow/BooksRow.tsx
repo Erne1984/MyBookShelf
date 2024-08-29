@@ -3,6 +3,8 @@ import './BooksRow.css';
 import BookCard from '../BookCard/BookCard';
 import GetBooks from '../../hooks/getBooks';;
 
+import { transliterate } from 'transliteration';
+
 export default function BooksRow() {
     const { data, loading, error } = GetBooks();
 
@@ -11,9 +13,15 @@ export default function BooksRow() {
 
 
     return (
-        <section>
+        <section className='books-row'>
             {data && data.map(book => (
-                <div key={book.identifiers.isbn_10[0]}>{book.title}</div>
+                <BookCard
+                    key={book.identifiers.isbn_10[0]}
+                    BookImg={book.cover?.medium}
+                    BookTitle={book.title}
+                    BookAuthor={transliterate(book.authors[0].name)}
+                    BookRanting={4}
+                />
             ))}
         </section>
     )

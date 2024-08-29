@@ -3,7 +3,7 @@ import './BookCard.css';
 import RantingStars from '../RantingStars/RantingStars';
 
 interface BookCardProps {
-    BookImg: string,
+    BookImg: string | undefined,
     BookTitle: string,
     BookAuthor: string,
     BookRanting: number
@@ -12,14 +12,17 @@ interface BookCardProps {
 export default function BookCard(props: BookCardProps) {
 
     return (
-        <div>
+        <div className='book-card'>
             <img src={props.BookImg}></img>
 
-            <h3>{props.BookTitle}</h3>
 
-            <small>{props.BookAuthor}</small>
+            <div className='book-info'>
 
-            <RantingStars/>
+                <h3>{props.BookTitle}</h3>
+                <small>{props.BookAuthor}</small>
+                <RantingStars />
+
+            </div>
 
         </div>
     )
