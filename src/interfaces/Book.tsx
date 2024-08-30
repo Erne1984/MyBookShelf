@@ -33,4 +33,5 @@ export default interface Book {
     cover?: Cover;
     number_of_pages?: number;
     publish_places?: { name: string }[];
+    score: number;
 }

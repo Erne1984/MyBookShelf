@@ -6,7 +6,8 @@ interface BookCardProps {
     BookImg: string | undefined,
     BookTitle: string,
     BookAuthor: string,
-    BookRanting: number
+    BookRanting: number,
+    BookScore: number
 }
 
 export default function BookCard(props: BookCardProps) {
@@ -20,7 +21,7 @@ export default function BookCard(props: BookCardProps) {
 
                 <h3>{props.BookTitle}</h3>
                 <small>{props.BookAuthor}</small>
-                <RantingStars />
+                <RantingStars  score={props.BookScore}/>
 
             </div>
 

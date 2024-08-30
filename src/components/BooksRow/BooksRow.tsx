@@ -20,7 +20,8 @@ export default function BooksRow() {
                     BookImg={book.cover?.medium}
                     BookTitle={book.title}
                     BookAuthor={transliterate(book.authors[0].name)}
-                    BookRanting={4}
+                    BookRanting={book.score}
+                    BookScore={book.score}
                 />
             ))}
         </section>
