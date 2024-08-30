@@ -1,28 +1,35 @@
 import './App.css';
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
 import Header from './components/Header/Header';
-
-import BooksRow from './components/BooksRow/BooksRow';
-
-import Hero from './components/Hero/Hero';
-
-import TitleSection from './components/TitleSection/TitleSection';
-
 import Footer from './components/Footer/Footer';
+import Home from './pages/Home/Home';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 function App() {
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/login",
+      element: <LoginPage />
+    }
+  ]);
 
   return (
     <>
       <Header />
 
-      <Hero />
+      <RouterProvider router={router} />
 
-      <TitleSection titleContent='Explore nosso católogo' />
-
-      <BooksRow />
-
-      <Footer/>
+      <Footer />
 
     </>
   )
