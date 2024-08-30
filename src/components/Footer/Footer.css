@@ -1,0 +1,43 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0 1.5rem 0;
+}
+
+.footer-col-1 {
+    display: flex;
+    gap: 150px;
+}
+
+.footer-col-1 ul li {
+    list-style: none;
+}
+
+.footer-col-1 ul li:first-of-type {
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.footer-col-1 ul .footer-clickbel{
+    cursor: pointer;
+}
+
+.footer-col-1 ul .footer-clickbel:hover{
+    font-weight: bold;
+    color: #191F2D;
+}
+
+.footer-box-icons {
+    display: flex;
+    gap: 11px;
+}
+
+.footer-col-1 ul .footer-icons {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.footer-col-1 ul .footer-icons:hover {
+    color: #191F2D;
+}

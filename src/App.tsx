@@ -8,6 +8,8 @@ import Hero from './components/Hero/Hero';
 
 import TitleSection from './components/TitleSection/TitleSection';
 
+import Footer from './components/Footer/Footer';
+
 function App() {
 
   return (
@@ -19,6 +21,8 @@ function App() {
       <TitleSection titleContent='Explore nosso católogo' />
 
       <BooksRow />
+
+      <Footer/>
 
     </>
   )
