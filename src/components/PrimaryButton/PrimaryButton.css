@@ -3,8 +3,10 @@
     padding: 0.8rem 1.5rem;
     border: 1px solid #000000;
     cursor: pointer;
+    transition: all 300ms;
 }
 
 .primary-button:hover{
-    
+    background-color: #000000;
+    color: white;
 }

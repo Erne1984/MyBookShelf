@@ -1,0 +1,19 @@
+.title-section-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.3rem 0 1.3rem 0;
+}
+
+.title-section-container h2{
+    font-size: 2rem;
+}
+
+.title-section-container small {
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.title-section-container small:hover {
+    font-weight: bold;
+}

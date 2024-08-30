@@ -1,4 +1,5 @@
 .books-row{
     display: flex;
     gap: 20px;
+    padding: 0 0 1.3rem 0;
 }
