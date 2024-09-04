@@ -5,10 +5,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Header from './layouts/Header/Header';
+import Footer from './layouts/Footer/Footer';
 import Home from './pages/Home/Home';
-import LoginPage from './pages/LoginPage/LoginPage';
+import LoginPage from './pages/Login/LoginPage';
 
 function App() {
 

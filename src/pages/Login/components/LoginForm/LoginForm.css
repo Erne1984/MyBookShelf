@@ -1,9 +1,10 @@
 .login-form {
     border: 2px solid #000000;
     box-sizing: border-box;
-    padding: 10px;
-    width: 443px;
-    height: 513px;
+    padding: 10px 25px;
+    width: 100%;
+    max-width: 443px;
+    height: 480px;
     display: flex;
     flex-direction: column;
 }
@@ -29,5 +30,18 @@
     padding: 10px;
     background: #FFFFFF;
     border: 1px solid #000000;
+}
 
+.sign-up-link{
+    color: #4BC1D2;
+    cursor: pointer;
+}
+
+.forgot-password{
+    text-align: center;
+    margin-top: auto;
+}
+
+.sign-up-link:hover{
+    opacity: 0.8;
 }

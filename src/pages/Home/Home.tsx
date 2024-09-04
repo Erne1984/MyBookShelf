@@ -1,7 +1,7 @@
 
-import Hero from "../../components/Hero/Hero"
-import TitleSection from "../../components/TitleSection/TitleSection"
-import BooksRow from "../../components/BooksRow/BooksRow"
+import Hero from "./components/Hero/Hero"
+import TitleSection from "../../common/TitleSection/TitleSection"
+import BooksRow from "../../common/BooksRow/BooksRow"
 
 export default function Home() {
 

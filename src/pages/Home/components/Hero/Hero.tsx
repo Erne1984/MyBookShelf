@@ -1,6 +1,6 @@
 import './Hero.css';
 
-import PrimaryButton from "../PrimaryButton/PrimaryButton";
+import PrimaryButton from "../../../../common/PrimaryButton/PrimaryButton";
 
 export default function Hero() {
 

@@ -1,11 +1,11 @@
 import './LoginForm.css';
 
 import Logo from '/assets/mybookshelf-logo.png?url';
+import ButtonForm from '../../../../common/ButtonForm/ButtonForm';
 
 export default function LoginForm() {
 
     return (
-
 
         <form className="login-form">
 
@@ -30,6 +30,14 @@ export default function LoginForm() {
                     placeholder='Senha'
                 >
                 </input>
+
+                <ButtonForm btnContent='Entrar' formMethod='/' />
+
+            </div>
+
+            <div className='forgot-password'>
+
+                <span>Não possui conta? <span className='sign-up-link'>Cadastra-se!</span></span>
 
             </div>
 
