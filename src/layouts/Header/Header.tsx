@@ -1,10 +1,18 @@
-import './Header.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
+import './Header.css'
+
+import { AuthContext } from '../../context/AuthContextUser';
+import DropdownMenu from './components/DropdownMenu/DropdownMenu';
+
 import Logo from '/assets/mybookshelf-logo.png?url';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
-
 export default function Header() {
+
+    const isAuthenticated = useContext(AuthContext)?.isAuthenticated;
 
     return (
         <header>
@@ -30,7 +38,14 @@ export default function Header() {
                     <li>Sobre Nós</li>
                 </ul>
 
-                <FontAwesomeIcon icon={faUser} />
+                {
+                    isAuthenticated ?
+                        <DropdownMenu />
+                        :
+                        <Link to={"/login"}>
+                            <FontAwesomeIcon icon={faRightToBracket} />
+                        </Link>
+                }
 
             </div>
 
