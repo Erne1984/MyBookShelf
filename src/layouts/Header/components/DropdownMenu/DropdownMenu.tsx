@@ -2,7 +2,9 @@ import styles from './DropdownMenu.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faUsers, faMessage, faQuoteLeft, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+
+import { AuthContext } from '../../../../context/AuthContextUser';
 
 export default function DropdownMenu() {
 
@@ -11,6 +13,8 @@ export default function DropdownMenu() {
     function handleClick() {
         setDropdownMenu(prevState => !prevState);
     }
+
+    const logout = useContext(AuthContext)?.logout;
 
     return (
         <div className={styles.dropdown}>
@@ -32,7 +36,7 @@ export default function DropdownMenu() {
                     <FontAwesomeIcon icon={faQuoteLeft} />
                     <li>Frases</li>
                 </div>
-                <div className={styles['menu-item']}>
+                <div className={styles['menu-item']} onClick={logout}>
                     <FontAwesomeIcon icon={faRightFromBracket} />
                     <li>Deslogar</li>
                 </div>

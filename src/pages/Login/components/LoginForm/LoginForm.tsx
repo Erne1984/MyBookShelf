@@ -5,6 +5,7 @@ import ButtonForm from '../../../../common/ButtonForm/ButtonForm';
 
 import loginUser from '../../../../hooks/loginUser';
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function LoginForm() {
     const emailRef = useRef<HTMLInputElement>(null);
@@ -12,10 +13,10 @@ export default function LoginForm() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        
+
         const email = emailRef.current?.value;
         const password = passwordRef.current?.value;
-        
+
         if (email && password) {
             await loginUser(email, password);
         } else {
@@ -25,9 +26,13 @@ export default function LoginForm() {
 
     return (
         <form className="login-form" onSubmit={handleSubmit}>
+
             <div className='form-logo-box'>
-                <img className='form-logo' src={Logo} alt="Logo do MyBookShelf" />
+                <Link to="/">
+                    <img className='form-logo' src={Logo} alt="Logo do MyBookShelf" />
+                </Link>
             </div>
+
 
             <h3>Login</h3>
 

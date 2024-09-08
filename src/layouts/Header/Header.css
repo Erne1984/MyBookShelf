@@ -1,17 +1,17 @@
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px 0 0 0;
 }
 
-.header-left{
+.header-left {
     display: flex;
     align-items: center;
     gap: 1.7rem;
 }
 
-.header-left .search-box{
+.header-left .search-box {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -19,34 +19,38 @@ header{
     padding: 5px;
 }
 
-.header-left .search-box .search-icon{
+.header-left .search-box .search-icon {
     cursor: pointer;
 }
 
-.header-left .search-box .search-input{
+.header-left .search-box .search-input {
     outline: none;
     border: none;
 }
 
-.header-right{
+.header-right {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-.header-right .menu-links{
+.header-right .menu-links {
     display: flex;
     list-style: none;
     cursor: pointer;
     gap: 15px;
 }
 
-.header-right .menu-links li:hover{
+.header-right .menu-links li:hover {
     font-weight: bold;
     border-bottom: 1px solid #000;
 }
 
-.selected{
+.selected {
     font-weight: bold;
     border-bottom: 1px solid #000;
+}
+
+.login-icon {
+    color: #000;
 }

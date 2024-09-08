@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -43,7 +43,7 @@ export default function Header() {
                         <DropdownMenu />
                         :
                         <Link to={"/login"}>
-                            <FontAwesomeIcon icon={faRightToBracket} />
+                            <FontAwesomeIcon className='login-icon' icon={faRightToBracket} />
                         </Link>
                 }
 
