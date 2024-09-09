@@ -2,6 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 15px;
+}
+
+.book-card:hover{
+    transform: translateY(-10px);
+    border: 2px solid #000;
+    cursor: pointer;
 }
 
 .book-info{
