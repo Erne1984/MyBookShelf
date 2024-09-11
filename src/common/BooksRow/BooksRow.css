@@ -6,6 +6,11 @@
     padding: 2rem 0 4rem 0;
 }
 
+.books-row a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .load-more {
     padding: 10px;
     border: none;
