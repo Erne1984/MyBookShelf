@@ -14,9 +14,9 @@ export default function RantingStars(props: RantingStarsProps) {
         <ReactStars
             count={5}
             value={props.score}
-            size={36}
+            size={30}
             color2={'#ffd700'}
-            edit={props.editable !== false}
+            edit={props.editable}
         />
 
     )

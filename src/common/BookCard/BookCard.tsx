@@ -14,14 +14,17 @@ export default function BookCard(props: BookCardProps) {
 
     return (
         <div className='book-card'>
-            <img src={props.BookImg}></img>
+
+            <div className='book-cover-box'>
+                <img src={props.BookImg}></img>
+            </div>
 
 
             <div className='book-info'>
 
                 <h3>{props.BookTitle}</h3>
                 <small>{props.BookAuthor}</small>
-                <RantingStars  score={props.BookScore}/>
+                <RantingStars editable={false} score={props.BookScore} />
 
             </div>
 

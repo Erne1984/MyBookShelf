@@ -1,0 +1,167 @@
+[
+    {
+        "_id": "66a938b0c8eccd14432b1413",
+        "isbn": "9788573262087",
+        "reviews": [],
+        "ratingsReference": [],
+        "scoresReferance": [],
+        "url": "https://openlibrary.org/works/OL362045W/O_Nome_da_Rosa",
+        "key": "OL362045W",
+        "title": "O Nome da Rosa",
+        "authors": [
+            {
+                "url": "https://openlibrary.org/authors/OL23921A/Umberto_Eco",
+                "name": "Umberto Eco"
+            }
+        ],
+        "identifiers": {
+            "isbn_10": ["8573262089"],
+            "isbn_13": ["9788573262087"]
+        },
+        "publishers": [
+            {
+                "name": "Companhia das Letras"
+            }
+        ],
+        "publish_date": "1986",
+        "cover": {
+            "small": "https://covers.openlibrary.org/b/id/8240676-S.jpg",
+            "medium": "https://covers.openlibrary.org/b/id/8240676-M.jpg",
+            "large": "https://covers.openlibrary.org/b/id/8240676-L.jpg"
+        },
+        "number_of_pages": 464,
+        "score": 4.5
+    },
+    {
+        "_id": "66a94438a0c2694958c62b54",
+        "isbn": "9788573263053",
+        "reviews": [],
+        "ratingsReference": [],
+        "scoresReferance": [],
+        "url": "https://openlibrary.org/works/OL362046W/O_Ponto_de_Muta%C3%A7%C3%A3o",
+        "key": "OL362046W",
+        "title": "O Ponto de Mutação",
+        "authors": [
+            {
+                "url": "https://openlibrary.org/authors/OL23373A/Fritjof_Capra",
+                "name": "Fritjof Capra"
+            }
+        ],
+        "identifiers": {
+            "isbn_10": ["8573263051"],
+            "isbn_13": ["9788573263053"]
+        },
+        "publishers": [
+            {
+                "name": "Companhia das Letras"
+            }
+        ],
+        "publish_date": "1994",
+        "cover": {
+            "small": "https://covers.openlibrary.org/b/id/8287885-S.jpg",
+            "medium": "https://covers.openlibrary.org/b/id/8287885-M.jpg",
+            "large": "https://covers.openlibrary.org/b/id/8287885-L.jpg"
+        },
+        "number_of_pages": 336,
+        "score": 4.3
+    },
+    {
+        "_id": "66df517db66ca56c58c37b02",
+        "isbn": "9780805210408",
+        "reviews": [],
+        "ratingsReference": [],
+        "scoresReferance": [],
+        "url": "https://openlibrary.org/works/OL362047W/O_Apanhador_no_Campo_de_Centeio",
+        "key": "OL362047W",
+        "title": "O Apanhador no Campo de Centeio",
+        "authors": [
+            {
+                "url": "https://openlibrary.org/authors/OL23951A/J._D._Salinger",
+                "name": "J.D. Salinger"
+            }
+        ],
+        "identifiers": {
+            "isbn_10": ["0316769487"],
+            "isbn_13": ["9780316769488"]
+        },
+        "publishers": [
+            {
+                "name": "Little, Brown and Company"
+            }
+        ],
+        "publish_date": "1951",
+        "cover": {
+            "small": "https://covers.openlibrary.org/b/id/8298422-S.jpg",
+            "medium": "https://covers.openlibrary.org/b/id/8298422-M.jpg",
+            "large": "https://covers.openlibrary.org/b/id/8298422-L.jpg"
+        },
+        "number_of_pages": 277,
+        "score": 4.2
+    },
+    {
+        "_id": "newbook1",
+        "isbn": "9780345803481",
+        "reviews": [],
+        "ratingsReference": [],
+        "scoresReferance": [],
+        "url": "https://openlibrary.org/works/OL362048W/The_Goldfinch",
+        "key": "OL362048W",
+        "title": "The Goldfinch",
+        "authors": [
+            {
+                "url": "https://openlibrary.org/authors/OL2985984A/Donna_Tartt",
+                "name": "Donna Tartt"
+            }
+        ],
+        "identifiers": {
+            "isbn_10": ["0316055410"],
+            "isbn_13": ["9780316055415"]
+        },
+        "publishers": [
+            {
+                "name": "Little, Brown and Company"
+            }
+        ],
+        "publish_date": "2013",
+        "cover": {
+            "small": "https://covers.openlibrary.org/b/id/8298423-S.jpg",
+            "medium": "https://covers.openlibrary.org/b/id/8298423-M.jpg",
+            "large": "https://covers.openlibrary.org/b/id/8298423-L.jpg"
+        },
+        "number_of_pages": 771,
+        "score": 4.6
+    },
+    {
+        "_id": "newbook2",
+        "isbn": "9780385472579",
+        "reviews": [],
+        "ratingsReference": [],
+        "scoresReferance": [],
+        "url": "https://openlibrary.org/works/OL362049W/The_Catcher_in_the_Rye",
+        "key": "OL362049W",
+        "title": "The Catcher in the Rye",
+        "authors": [
+            {
+                "url": "https://openlibrary.org/authors/OL23951A/J._D._Salinger",
+                "name": "J.D. Salinger"
+            }
+        ],
+        "identifiers": {
+            "isbn_10": ["0316769487"],
+            "isbn_13": ["9780316769488"]
+        },
+        "publishers": [
+            {
+                "name": "Little, Brown and Company"
+            }
+        ],
+        "publish_date": "1951",
+        "cover": {
+            "small": "https://covers.openlibrary.org/b/id/8298424-S.jpg",
+            "medium": "https://covers.openlibrary.org/b/id/8298424-M.jpg",
+            "large": "https://covers.openlibrary.org/b/id/8298424-L.jpg"
+        },
+        "number_of_pages": 277,
+        "score": 4.2
+    }
+]

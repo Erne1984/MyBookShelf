@@ -1,5 +1,24 @@
-.books-row{
-    display: flex;
+.books-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
     gap: 35px;
-    padding: 0 0 4rem 0;
+    padding: 2rem 0 4rem 0;
+}
+
+.load-more {
+    padding: 10px;
+    border: none;
+    color: #424242; 
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    margin-top: 20px;
+    font-weight: bold;
+    background: none;
+}
+
+.load-more:hover {
+    color: #777777;
 }
