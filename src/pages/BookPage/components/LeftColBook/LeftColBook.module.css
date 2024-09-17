@@ -1,0 +1,11 @@
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding-top: 80px;
+}
+
+.btn-group button {
+    width: 190px;
+}

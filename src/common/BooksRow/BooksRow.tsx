@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './BooksRow.css';
 import BookCard from '../BookCard/BookCard';
 import GetBooks from '../../hooks/getBooks';
@@ -9,18 +9,23 @@ import { Link } from 'react-router-dom';
 export default function BooksRow() {
     const [visibleRows, setVisibleRows] = useState(1);
     let { data, loading, error } = GetBooks();
+    const [booksData, setBookData] = useState(data);
+
+    useEffect(() => {
+        if (!data || error) {
+            setBookData(staticData);  
+        } else {
+            setBookData(data);
+        }
+    }, [data, error]);
 
     if (loading) return <p>Carregando...</p>;
-    // if (error) return <p>Erro: {error}</p>;
-
-    if (error) data = staticData;
-
-    if (!data) return <p>Sem livros</p>;
+    if (!booksData) return <p>Erro em buscar dados do livro</p>;
 
     const columns = 4;
-    const booksToShow = data.slice(0, columns * visibleRows);
+    const booksToShow = booksData.slice(0, columns * visibleRows);
 
-    const hasMoreBooks = booksToShow.length < data.length;
+    const hasMoreBooks = booksToShow.length < booksData.length;
 
     const handleLoadMore = () => {
         setVisibleRows(visibleRows + 1);
@@ -28,8 +33,8 @@ export default function BooksRow() {
 
     return (
         <section className='books-row'>
-            {data && booksToShow.map(book => (
-                <Link to={`/book/:${book.identifiers.isbn_10}`}>
+            {booksData && booksToShow.map(book => (
+                <Link to={`/book/:${book.identifiers.isbn_13}`}>
                     <BookCard
                         key={book.identifiers.isbn_10[0]}
                         BookImg={book.cover?.medium}
