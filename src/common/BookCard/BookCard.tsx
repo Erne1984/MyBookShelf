@@ -1,6 +1,6 @@
 import './BookCard.css';
 
-import RantingStars from '../RantingStars/RantingStars';
+import RantingStars from '../RantingStars/RatingStars';
 
 interface BookCardProps {
     BookImg: string | undefined,

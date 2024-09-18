@@ -18,7 +18,10 @@ export default function Header() {
         <header>
 
             <div className='header-left'>
-                <img src={Logo}></img>
+
+                <Link to={"/"}>
+                    <img src={Logo}></img>
+                </Link>
 
                 <div className='search-box'>
 

@@ -23,6 +23,10 @@ interface Cover {
 }
 
 export default interface Book {
+    descri: string;
+    reviews: [],
+    ratingsReference: [],
+    scoresReferance: [],
     url: string;
     key: string;
     title: string;

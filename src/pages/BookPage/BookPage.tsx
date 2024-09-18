@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Header from "../../layouts/Header/Header";
 import LeftColBook from "./components/LeftColBook/LeftColBook";
+import RightColBook from "./components/RightColBook/RightColBook";
+
 import staticData from "../../data/books.json";
 import getBookData from "../../hooks/getBookData";
 import styles from "./BookPage.module.css";
@@ -11,12 +13,12 @@ export default function BookPage() {
     const [bookData, setBookData] = useState(data);
 
     const { bookISBN } = useParams();
-    
+
 
     useEffect(() => {
         if (!data || error) {
             const filteredBook = staticData.filter((book) => book.identifiers.isbn_13[0] == bookISBN?.slice(1));
-            setBookData(filteredBook);  
+            setBookData(filteredBook);
             console.log(filteredBook)
             console.log(bookISBN?.slice(1))
         } else {
@@ -33,7 +35,17 @@ export default function BookPage() {
             <div className={styles["container-page-book"]}>
 
                 <LeftColBook bookCover={bookData[0].cover?.large}></LeftColBook>
-                
+
+                <RightColBook
+                    bookTitle={bookData[0].title}
+                    bookAuthor={bookData[0].authors[0].name}
+                    bookScore={bookData[0].score}
+                    bookDescri={bookData[0].descri}
+                    bookAnalysis={bookData[0].reviews}
+                    bookRatings={bookData[0].ratingsReference}
+                />
+
+
             </div>
         </>
     );

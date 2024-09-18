@@ -1,4 +1,4 @@
-import './RantingStars.css';
+import './RatingStars.css';
 
 import ReactStars from 'react-stars'
 

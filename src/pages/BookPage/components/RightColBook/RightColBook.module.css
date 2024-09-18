@@ -1,0 +1,35 @@
+.container-right-col {
+    display: block;
+}
+
+
+.container-right-col .box-title-book h2 {
+    color: #919191;
+}
+
+.rating-statistics-row {
+    display: flex;
+    align-items: center;
+    padding: 0 0 2rem 0;
+}
+
+.rating-statistics-row .rating-number {
+    padding: 0 10px;
+}
+
+.box-analysis-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rating-statistics-row .stats-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #919191;
+}
+
+.title {
+    padding-bottom: 10px;
+}
