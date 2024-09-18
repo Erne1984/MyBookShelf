@@ -22,6 +22,11 @@ interface Cover {
     large: string;
 }
 
+export interface Subject {
+    name: string;
+    url: string;
+}
+
 export default interface Book {
     descri: string;
     reviews: [],
@@ -33,6 +38,7 @@ export default interface Book {
     authors: Author[];
     identifiers: Identifiers;
     publishers: Publisher[];
+    subjects: Subject[];
     publish_date?: string;
     cover?: Cover;
     number_of_pages?: number;

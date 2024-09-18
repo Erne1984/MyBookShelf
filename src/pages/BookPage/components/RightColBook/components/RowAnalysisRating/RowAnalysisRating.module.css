@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+}
+
+.rating-number {
+    padding: 0 10px;
+}
+
+.box-analysis-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.stats-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #919191;
+}

@@ -1,12 +1,16 @@
 import styles from "./RightColBook.module.css";
 import { transliterate } from 'transliteration';
 import RantingStars from "../../../../common/RantingStars/RatingStars";
+import RowAnalysisRating from "./components/RowAnalysisRating/RowAnalysisRating";
+import GenreRow from "./components/GenreRow/GenreRow";
+import { Subject } from "../../../../interfaces/Book";
 
 interface RightColBookProps {
     bookTitle: string,
     bookDescri: string,
     bookAuthor: string,
     bookScore: number,
+    bookGenres: Subject[],
     bookAnalysis: [],
     bookRatings: [],
 }
@@ -18,42 +22,22 @@ export default function RightColBook(props: RightColBookProps) {
 
             <div className={styles["box-title-book"]}>
                 <h1> {props.bookTitle} </h1>
-                <h2> {transliterate(props.bookAuthor)} </h2>
+                <h3> {transliterate(props.bookAuthor)} </h3>
             </div>
 
             <div className={styles["rating-statistics-row"]}>
 
                 <RantingStars score={props.bookScore} editable={false} />
 
-                <h3 className={styles["rating-number"]}>{props.bookScore}</h3>
-
-                <div className={styles["box-analysis-rating"]}>
-
-                    <div className={styles["stats-row"]}>
-
-                        <div>{props.bookAnalysis.length}</div>
-
-                        <div>Análises</div>
-
-                    </div>
-
-                    <div className={styles["stats-row"]}>
-
-                        <div>{props.bookRatings.length}</div>
-
-                        <div>Avaliações</div>
-
-                    </div>
-
-                </div>
+                <RowAnalysisRating bookAnalysis={props.bookAnalysis} bookRatings={props.bookRatings} bookScore={props.bookScore}/>
 
             </div>
 
             <h2 className={styles.title}>Descrição</h2>
 
-            <p>
-                {props.bookDescri}
-            </p>
+            <div className={styles["descri"]} dangerouslySetInnerHTML={{ __html: props.bookDescri }} />
+
+            <GenreRow bookGenres={props.bookGenres}/>
 
 
         </section>

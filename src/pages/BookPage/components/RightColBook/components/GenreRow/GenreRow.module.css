@@ -1,0 +1,24 @@
+.container {
+    padding-top: 30px;
+    display: flex;
+}
+
+.genre-highlight {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.genre-box {
+    display: flex;
+    gap: 10px;
+}
+
+.genre {
+    color: #605656;
+    font-weight: 500;
+}
+
+.genre:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

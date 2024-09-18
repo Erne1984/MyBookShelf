@@ -43,6 +43,7 @@ export default function BookPage() {
                     bookDescri={bookData[0].descri}
                     bookAnalysis={bookData[0].reviews}
                     bookRatings={bookData[0].ratingsReference}
+                    bookGenres={bookData[0].subjects}
                 />
 
 
