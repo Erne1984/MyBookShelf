@@ -12,6 +12,10 @@ export default function GenreRow(props: GenreRowProps) {
 
     const genresToShow = props.bookGenres.slice(0, genreLimit);
 
+    const handleLoadMore = () => {
+        setGenreLimit(prev => prev + 4);
+    }
+
     return (
         <div className={style.container}>
 
@@ -30,7 +34,7 @@ export default function GenreRow(props: GenreRowProps) {
                         )
                     })
                 }
-                <div className={style.genre}>...Mais</div>
+                <div className={style.more} onClick={handleLoadMore}>...Mais</div>
 
             </div>
 

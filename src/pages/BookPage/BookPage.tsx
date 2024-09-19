@@ -14,7 +14,6 @@ export default function BookPage() {
 
     const { bookISBN } = useParams();
 
-
     useEffect(() => {
         if (!data || error) {
             const filteredBook = staticData.filter((book) => book.identifiers.isbn_13[0] == bookISBN?.slice(1));
@@ -44,6 +43,11 @@ export default function BookPage() {
                     bookAnalysis={bookData[0].reviews}
                     bookRatings={bookData[0].ratingsReference}
                     bookGenres={bookData[0].subjects}
+                    bookFormat={bookData[0].format}
+                    bookLanguage={bookData[0].language}
+                    bookIsbn={bookData[0].identifiers.isbn_13[0]}
+                    bookPublishDate={bookData[0].publish_date}
+                    bookPublisher={bookData[0].publishers[0].name}
                 />
 
 

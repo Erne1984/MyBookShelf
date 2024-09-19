@@ -1,8 +1,12 @@
 import styles from "./RightColBook.module.css";
+
 import { transliterate } from 'transliteration';
+
 import RantingStars from "../../../../common/RantingStars/RatingStars";
 import RowAnalysisRating from "./components/RowAnalysisRating/RowAnalysisRating";
 import GenreRow from "./components/GenreRow/GenreRow";
+import EditionDetails from "./components/AboutTheEdition/EditionDetails";
+
 import { Subject } from "../../../../interfaces/Book";
 
 interface RightColBookProps {
@@ -13,6 +17,11 @@ interface RightColBookProps {
     bookGenres: Subject[],
     bookAnalysis: [],
     bookRatings: [],
+    bookFormat: string,
+    bookLanguage: string | undefined,
+    bookIsbn: string,
+    bookPublishDate: string,
+    bookPublisher: string,
 }
 
 export default function RightColBook(props: RightColBookProps) {
@@ -29,7 +38,7 @@ export default function RightColBook(props: RightColBookProps) {
 
                 <RantingStars score={props.bookScore} editable={false} />
 
-                <RowAnalysisRating bookAnalysis={props.bookAnalysis} bookRatings={props.bookRatings} bookScore={props.bookScore}/>
+                <RowAnalysisRating bookAnalysis={props.bookAnalysis} bookRatings={props.bookRatings} bookScore={props.bookScore} />
 
             </div>
 
@@ -37,8 +46,15 @@ export default function RightColBook(props: RightColBookProps) {
 
             <div className={styles["descri"]} dangerouslySetInnerHTML={{ __html: props.bookDescri }} />
 
-            <GenreRow bookGenres={props.bookGenres}/>
+            <GenreRow bookGenres={props.bookGenres} />
 
+            <EditionDetails
+                bookFormat={props.bookFormat}
+                bookLanguage={props.bookLanguage}
+                bookIsbn={props.bookIsbn}
+                bookPublishDate={props.bookPublishDate}
+                bookPublisher={props.bookPublisher}
+            />
 
         </section>
     )

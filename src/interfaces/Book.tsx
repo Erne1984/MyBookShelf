@@ -5,7 +5,7 @@ interface Author {
 
 interface Identifiers {
     isbn_10: string[];
-    isbn_13?: string[];
+    isbn_13: string[];
     openlibrary?: string[];
     google?: string[];
     goodreads?: string[];
@@ -39,9 +39,11 @@ export default interface Book {
     identifiers: Identifiers;
     publishers: Publisher[];
     subjects: Subject[];
-    publish_date?: string;
+    publish_date: string;
     cover?: Cover;
     number_of_pages?: number;
     publish_places?: { name: string }[];
+    format: string;
+    language?: string;
     score: number;
 }

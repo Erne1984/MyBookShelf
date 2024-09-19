@@ -1,0 +1,19 @@
+.container h2 {
+    padding-top: 96px;
+    padding-bottom: 40px;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    max-width: 250px;
+
+}
+
+.data-row dt {
+    font-weight: bold;
+}
+
+.data-row dd {
+    color: #605656;
+}
