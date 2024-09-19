@@ -22,6 +22,11 @@ interface Cover {
     large: string;
 }
 
+export interface Edition {
+    cover: string,
+    title: string
+}
+
 export interface Subject {
     name: string;
     url: string;
@@ -46,4 +51,5 @@ export default interface Book {
     format: string;
     language?: string;
     score: number;
+    editionsBook?: Edition[];
 }

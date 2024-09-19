@@ -1,0 +1,30 @@
+.container {
+    padding-top: 80px;
+}
+
+.box-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.box-title p { 
+    cursor: pointer;
+}
+
+.editions-row { 
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+    overflow-x: hidden;
+}
+
+.edition-box { 
+    max-width: 138px;
+    height: auto;
+}
+
+.edition-box img{
+    width: 100%;
+}

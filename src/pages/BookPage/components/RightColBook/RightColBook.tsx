@@ -5,9 +5,11 @@ import { transliterate } from 'transliteration';
 import RantingStars from "../../../../common/RantingStars/RatingStars";
 import RowAnalysisRating from "./components/RowAnalysisRating/RowAnalysisRating";
 import GenreRow from "./components/GenreRow/GenreRow";
-import EditionDetails from "./components/AboutTheEdition/EditionDetails";
+import EditionDetails from "./components/EditionDetails/EditionDetails";
+import EditionsRow from "./components/EditionsRow/EditionsRow";
 
 import { Subject } from "../../../../interfaces/Book";
+import { Edition } from "../../../../interfaces/Book";
 
 interface RightColBookProps {
     bookTitle: string,
@@ -22,6 +24,7 @@ interface RightColBookProps {
     bookIsbn: string,
     bookPublishDate: string,
     bookPublisher: string,
+    editionsBook: Edition[] | undefined,
 }
 
 export default function RightColBook(props: RightColBookProps) {
@@ -55,6 +58,8 @@ export default function RightColBook(props: RightColBookProps) {
                 bookPublishDate={props.bookPublishDate}
                 bookPublisher={props.bookPublisher}
             />
+
+            <EditionsRow editionsBook={props.editionsBook}/>
 
         </section>
     )
