@@ -1,7 +1,7 @@
 import './LoginForm.css';
 
-import Logo from '/assets/mybookshelf-logo.png?url';
 import ButtonForm from '../../../../common/ButtonForm/ButtonForm';
+import FormLogo from '../../../../common/FormLogo/FormLogo';
 
 import loginUser from '../../../../hooks/loginUser';
 import { useRef } from 'react';
@@ -27,12 +27,7 @@ export default function LoginForm() {
     return (
         <form className="login-form" onSubmit={handleSubmit}>
 
-            <div className='form-logo-box'>
-                <Link to="/">
-                    <img className='form-logo' src={Logo} alt="Logo do MyBookShelf" />
-                </Link>
-            </div>
-
+            <FormLogo/>
 
             <h3>Login</h3>
 
@@ -55,7 +50,7 @@ export default function LoginForm() {
             </div>
 
             <div className='forgot-password'>
-                <span>Não possui conta? <span className='sign-up-link'>Cadastra-se!</span></span>
+                <span>Não possui conta? <Link to="/signUp" className='sign-up-link'>Cadastra-se!</Link></span>
             </div>
         </form>
     );

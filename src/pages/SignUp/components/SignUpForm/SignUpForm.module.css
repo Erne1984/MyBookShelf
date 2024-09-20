@@ -1,4 +1,4 @@
-.login-form {
+.sign-up-form {
     border: 2px solid #000000;
     box-sizing: border-box;
     padding: 15px 30px;
@@ -9,35 +9,21 @@
     flex-direction: column;
 }
 
-.login-form h3{
+.sign-up-form h3{
     padding-top: 31px;
-    padding-bottom: 58px;
+    padding-bottom: 35px;
     margin: 0 auto;
 }
 
-.form-inputs-box{
+.form-inputs-box {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-.login-inputs {
+.sign-inputs {
     width: 100%;
     padding: 10px;
     background: #FFFFFF;
     border: 1px solid #000000;
-}
-
-.sign-up-link{
-    color: #4BC1D2;
-    cursor: pointer;
-}
-
-.forgot-password{
-    text-align: center;
-    margin-top: auto;
-}
-
-.sign-up-link:hover{
-    opacity: 0.8;
 }
