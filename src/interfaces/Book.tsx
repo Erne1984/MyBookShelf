@@ -52,4 +52,6 @@ export default interface Book {
     language?: string;
     score: number;
     editionsBook?: Edition[];
+    authorImg: string;
+    authorBio: string;
 }

@@ -10,6 +10,7 @@ import EditionsRow from "./components/EditionsRow/EditionsRow";
 
 import { Subject } from "../../../../interfaces/Book";
 import { Edition } from "../../../../interfaces/Book";
+import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
 
 interface RightColBookProps {
     bookTitle: string,
@@ -25,6 +26,8 @@ interface RightColBookProps {
     bookPublishDate: string,
     bookPublisher: string,
     editionsBook: Edition[] | undefined,
+    authorImg: string,
+    authorBio: string,
 }
 
 export default function RightColBook(props: RightColBookProps) {
@@ -60,6 +63,8 @@ export default function RightColBook(props: RightColBookProps) {
             />
 
             <EditionsRow editionsBook={props.editionsBook}/>
+
+            <AboutAuthor name={props.bookAuthor} img={props.authorImg} authorBio={props.authorBio}/>
 
         </section>
     )

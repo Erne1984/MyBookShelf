@@ -49,6 +49,8 @@ export default function BookPage() {
                     bookPublishDate={bookData[0].publish_date}
                     bookPublisher={bookData[0].publishers[0].name}
                     editionsBook={bookData[0].editionsBook}
+                    authorImg={bookData[0].authorImg}
+                    authorBio={bookData[0].authorBio}
                 />
 
 
