@@ -4,7 +4,6 @@
     padding: 15px 30px;
     width: 100%;
     max-width: 443px;
-    height: 480px;
     display: flex;
     flex-direction: column;
 }
@@ -26,4 +25,19 @@
     padding: 10px;
     background: #FFFFFF;
     border: 1px solid #000000;
+}
+
+.forgot-password{
+    text-align: center;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.sign-up-link{
+    color: #4BC1D2;
+    cursor: pointer;
+}
+
+.sign-up-link:hover{
+    opacity: 0.8;
 }
