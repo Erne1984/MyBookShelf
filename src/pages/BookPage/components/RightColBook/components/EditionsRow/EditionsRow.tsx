@@ -23,7 +23,7 @@ export default function EditionsRow(props: EditionRowProps) {
                 {
                     props.editionsBook.map((edition) => {
                         return (
-                            <div className={style["edition-box"]}>
+                            <div className={style["edition-box"]} key={edition.cover + edition.title}>
                                 <img src={edition.cover}></img>
                             </div>
                         )

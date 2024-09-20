@@ -26,7 +26,7 @@ export default function GenreRow(props: GenreRowProps) {
                 {
                     genresToShow.map((genre) => {
                         return (
-                            <div className={style.genre}>
+                            <div className={style.genre} key={genre.name + genre.url}>
                                 {genre.name}
 
 
