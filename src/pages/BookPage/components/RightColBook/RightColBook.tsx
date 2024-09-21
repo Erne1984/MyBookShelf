@@ -7,10 +7,9 @@ import RowAnalysisRating from "./components/RowAnalysisRating/RowAnalysisRating"
 import GenreRow from "./components/GenreRow/GenreRow";
 import EditionDetails from "./components/EditionDetails/EditionDetails";
 import EditionsRow from "./components/EditionsRow/EditionsRow";
-
 import { Subject } from "../../../../interfaces/Book";
 import { Edition } from "../../../../interfaces/Book";
-import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
+//import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
 
 interface RightColBookProps {
     bookTitle: string,
@@ -20,14 +19,12 @@ interface RightColBookProps {
     bookGenres: Subject[],
     bookAnalysis: [],
     bookRatings: [],
-    bookFormat: string,
+    bookFormat: string | undefined,
     bookLanguage: string | undefined,
     bookIsbn: string,
     bookPublishDate: string,
     bookPublisher: string,
-    editionsBook: Edition[] | undefined,
-    authorImg: string,
-    authorBio: string,
+    editionsBook: Edition[] | undefined
 }
 
 export default function RightColBook(props: RightColBookProps) {
@@ -62,9 +59,11 @@ export default function RightColBook(props: RightColBookProps) {
                 bookPublisher={props.bookPublisher}
             />
 
-            <EditionsRow editionsBook={props.editionsBook}/>
+            <EditionsRow editionsBook={props.editionsBook} />
 
-            <AboutAuthor name={props.bookAuthor} img={props.authorImg} authorBio={props.authorBio}/>
+            {/* 
+                <AboutAuthor name={props.bookAuthor} img={props.authorImg} authorBio={props.authorBio} />
+            */}
 
         </section>
     )

@@ -23,7 +23,7 @@ interface Cover {
 }
 
 export interface Edition {
-    cover: string,
+    coverUrl: string,
     title: string
 }
 
@@ -33,9 +33,9 @@ export interface Subject {
 }
 
 export default interface Book {
-    descri: string;
+    bookDescri: string;
     reviews: [],
-    ratingsReference: [],
+    ratings: [],
     scoresReferance: [],
     url: string;
     key: string;
@@ -48,10 +48,10 @@ export default interface Book {
     cover?: Cover;
     number_of_pages?: number;
     publish_places?: { name: string }[];
-    format: string;
-    language?: string;
+    format: string | undefined;
+    language?: string | undefined;
     score: number;
-    editionsBook?: Edition[];
+    editions?: [];
     authorImg: string;
     authorBio: string;
 }

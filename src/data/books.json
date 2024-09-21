@@ -1,359 +1,212 @@
-[
-    {
-        "_id": "66a938b0c8eccd14432b1413",
-        "isbn": "9788573262087",
-        "reviews": [],
-        "ratingsReference": [],
-        "scoresReferance": [],
-        "url": "https://openlibrary.org/books/OL32061153M/Crime_E_Castigo",
-        "key": "/books/OL32061153M",
-        "title": "Crime E Castigo",
-        "authors": [
-            {
-                "url": "https://openlibrary.org/authors/OL22242A/Фёдор_Михайлович_Достоевский",
-                "name": "Фёдор Михайлович Достоевский"
-            }
+{
+    "_id": "66df517db66ca56c58c37b02",
+    "isbn": "9780805210408",
+    "reviews": [],
+    "ratingsReference": [],
+    "scoresReferance": [],
+    "url": "https://openlibrary.org/books/OL26442856M/Os_demônios",
+    "key": "/books/OL26442856M",
+    "title": "Os demônios",
+    "authors": [
+        {
+            "url": "https://openlibrary.org/authors/OL22242A/Фёдор_Михайлович_Достоевский",
+            "name": "Фёдор Михайлович Достоевский"
+        }
+    ],
+    "number_of_pages": 704,
+    "identifiers": {
+        "google": [
+            "yqbp7Kds6aYC"
         ],
-        "identifiers": {
-            "isbn_10": [
-                "8573262087"
-            ],
-            "isbn_13": [
-                "9788573262087"
-            ],
-            "openlibrary": [
-                "OL32061153M"
-            ]
-        },
-        "publishers": [
-            {
-                "name": "Editora 34"
-            }
+        "goodreads": [
+            "13452160"
         ],
-        "publish_date": "Jun 06, 2009",
-        "cover": {
-            "small": "https://covers.openlibrary.org/b/id/10719925-S.jpg",
-            "medium": "https://covers.openlibrary.org/b/id/10719925-M.jpg",
-            "large": "https://covers.openlibrary.org/b/id/10719925-L.jpg"
-        },
-        "score": 4
+        "isbn_10": [
+            "8573263059"
+        ],
+        "isbn_13": [
+            "9788573263053"
+        ],
+        "oclc": [
+            "422874978"
+        ],
+        "openlibrary": [
+            "OL26442856M"
+        ]
     },
-    {
-        "_id": "66a94438a0c2694958c62b54",
-        "isbn": "9788804307686",
-        "reviews": [],
-        "ratingsReference": [],
-        "scoresReferance": [],
-        "url": "https://openlibrary.org/books/OL38240952M/Il_processo",
-        "key": "/books/OL38240952M",
-        "title": "Il processo",
-        "authors": [
-            {
-                "url": "https://openlibrary.org/authors/OL33146A/Franz_Kafka",
-                "name": "Franz Kafka"
-            }
-        ],
-        "number_of_pages": 219,
-        "pagination": "XIII, 219 p.",
-        "by_statement": "Franz Kafka ; traduzione di Ervino Pocar",
-        "identifiers": {
-            "isbn_10": [
-                "8804307684"
-            ],
-            "isbn_13": [
-                "9788804307686"
-            ],
-            "oclc": [
-                "797201529"
-            ],
-            "openlibrary": [
-                "OL38240952M"
-            ]
+    "publishers": [
+        {
+            "name": "editora 34"
+        }
+    ],
+    "publish_places": [
+        {
+            "name": "São Paulo, Brazil"
+        }
+    ],
+    "publish_date": "2005",
+    "subjects": [
+        {
+            "name": "Fiction",
+            "url": "https://openlibrary.org/subjects/fiction"
         },
-        "classifications": {
-            "dewey_decimal_class": [
-                "833.912"
-            ]
+        {
+            "name": "Russian fiction",
+            "url": "https://openlibrary.org/subjects/russian_fiction"
         },
-        "publishers": [
-            {
-                "name": "Mondadori"
-            }
-        ],
-        "publish_places": [
-            {
-                "name": "Milano"
-            }
-        ],
-        "publish_date": "1988",
-        "notes": "Tit. orig.: Der Prozess. - Sul verso del front. ISBN errato.",
-        "ebooks": [
-            {
-                "preview_url": "https://archive.org/details/ilprocesso0000kafk",
-                "availability": "borrow",
-                "formats": {},
-                "borrow_url": "https://openlibrary.org/books/OL38240952M/Il_processo/borrow",
-                "checkedout": false
-            }
-        ],
-        "cover": {
-            "small": "https://covers.openlibrary.org/b/id/12784534-S.jpg",
-            "medium": "https://covers.openlibrary.org/b/id/12784534-M.jpg",
-            "large": "https://covers.openlibrary.org/b/id/12784534-L.jpg"
+        {
+            "name": "Politics in fiction",
+            "url": "https://openlibrary.org/subjects/politics_in_fiction"
         },
-        "score": 4.3,
-        "descri": "<p>Motivado por um episódio verídico - o assassinato do estudante I. I. Ivanov pelo grupo niilista liderado por S. G. Nietcháiev em 1869 -, Os demônios, escrito no ano seguinte, é a única obra de Dostoiévski concebida com fins assumidamente panfletários. Entretanto, ao recriar ficcionalmente aquele evento, o escritor acabou compondo uma obra-prima à altura de Crime e castigo e Os irmãos Karamázov, que é também um estudo em profundidade do pensamento político, social, filosófico e religioso de seu tempo. </p> <p>Com incrível lucidez e rara compreensão da história, este romance - pela primeira vez traduzido a partir do original russo - chega a ser profético. Nele o leitor poderá vislumbrar, no drama intelectual de Kiríllov, a antecipação do Zaratustra de Nietzsche, e, nas ideias de Chigalióv e Piotr Stiepánovitch, os cruéis fanatismos de Hitler e Stálin. Numa época em que a violência, a ignorância, o terrorismo e a impostura ideológica - verdadeiros demônios que assolaram o século XX - continuam vivos sob novos disfarces, este é um livro de impressionante atualidade.</p>"
+        {
+            "name": "Nihilism",
+            "url": "https://openlibrary.org/subjects/nihilism"
+        },
+        {
+            "name": "Social life and customs",
+            "url": "https://openlibrary.org/subjects/social_life_and_customs"
+        },
+        {
+            "name": "Terrorists",
+            "url": "https://openlibrary.org/subjects/terrorists"
+        },
+        {
+            "name": "Manners and customs",
+            "url": "https://openlibrary.org/subjects/manners_and_customs"
+        },
+        {
+            "name": "Romans",
+            "url": "https://openlibrary.org/subjects/romans"
+        },
+        {
+            "name": "Fiction, political",
+            "url": "https://openlibrary.org/subjects/fiction,_political"
+        },
+        {
+            "name": "Terrorists, fiction",
+            "url": "https://openlibrary.org/subjects/terrorists,_fiction"
+        },
+        {
+            "name": "Russia (federation), fiction",
+            "url": "https://openlibrary.org/subjects/russia_(federation),_fiction"
+        },
+        {
+            "name": "Continental european fiction (fictional works by one author)",
+            "url": "https://openlibrary.org/subjects/continental_european_fiction_(fictional_works_by_one_author)"
+        },
+        {
+            "name": "Slavic philology",
+            "url": "https://openlibrary.org/subjects/slavic_philology"
+        },
+        {
+            "name": "Terrorism",
+            "url": "https://openlibrary.org/subjects/terrorism"
+        },
+        {
+            "name": "Nihilismo",
+            "url": "https://openlibrary.org/subjects/nihilismo"
+        },
+        {
+            "name": "Terrorismo",
+            "url": "https://openlibrary.org/subjects/terrorismo"
+        },
+        {
+            "name": "Novela",
+            "url": "https://openlibrary.org/subjects/novela"
+        },
+        {
+            "name": "Vido social y costumbres",
+            "url": "https://openlibrary.org/subjects/vido_social_y_costumbres"
+        },
+        {
+            "name": "Fiction, general",
+            "url": "https://openlibrary.org/subjects/fiction,_general"
+        },
+        {
+            "name": "Nihilism--fiction",
+            "url": "https://openlibrary.org/subjects/nihilism--fiction"
+        },
+        {
+            "name": "Terrorists--russia--fiction",
+            "url": "https://openlibrary.org/subjects/terrorists--russia--fiction"
+        },
+        {
+            "name": "Pg3325 .b6 2008",
+            "url": "https://openlibrary.org/subjects/pg3325_.b6_2008"
+        },
+        {
+            "name": "891.733",
+            "url": "https://openlibrary.org/subjects/891.733"
+        },
+        {
+            "name": "Political science",
+            "url": "https://openlibrary.org/subjects/political_science"
+        },
+        {
+            "name": "Fiction, psychological",
+            "url": "https://openlibrary.org/subjects/fiction,_psychological"
+        },
+        {
+            "name": "Drama, history and criticism",
+            "url": "https://openlibrary.org/subjects/drama,_history_and_criticism"
+        }
+    ],
+    "subject_places": [
+        {
+            "name": "Russia",
+            "url": "https://openlibrary.org/subjects/place:russia"
+        }
+    ],
+    "subject_times": [
+        {
+            "name": "19th century",
+            "url": "https://openlibrary.org/subjects/time:19th_century"
+        }
+    ],
+    "excerpts": [
+        {
+            "text": "BEFORE DESCRIBING THE EXTRAORDINARY EVENTS WHICH took place so recently in our town, hitherto not remarkable for anything in particular, I find it necessary, since I am not a skilled writer, to go back a little and begin with certain biographical details concerning our talented and greatly esteemed Stepan Trofimovich Verkhovensky.",
+            "comment": "",
+            "first_sentence": true
+        }
+    ],
+    "links": [
+        {
+            "title": "Demons (Dostoevsky novel) - Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Demons_(Dostoevsky_novel)"
+        },
+        {
+            "title": "VIAF ID: 179962552 (Work)",
+            "url": "ttp://viaf.org/viaf/179962552"
+        }
+    ],
+    "cover": {
+        "small": "https://covers.openlibrary.org/b/id/8161797-S.jpg",
+        "medium": "https://covers.openlibrary.org/b/id/8161797-M.jpg",
+        "large": "https://covers.openlibrary.org/b/id/8161797-L.jpg"
     },
-    {
-        "_id": "66df517db66ca56c58c37b02",
-        "isbn": "9780805210408",
-        "reviews": [],
-        "ratingsReference": [],
-        "scoresReferance": [],
-        "url": "https://openlibrary.org/books/OL26442856M/Os_demônios",
-        "key": "/books/OL26442856M",
-        "title": "Os demônios",
-        "authors": [
-            {
-                "url": "https://openlibrary.org/authors/OL22242A/Фёдор_Михайлович_Достоевский",
-                "name": "Фёдор Михайлович Достоевский"
-            }
-        ],
-        "number_of_pages": 704,
-        "identifiers": {
-            "google": [
-                "yqbp7Kds6aYC"
-            ],
-            "goodreads": [
-                "13452160"
-            ],
-            "isbn_10": [
-                "8573263059"
-            ],
-            "isbn_13": [
-                "9788573263053"
-            ],
-            "oclc": [
-                "422874978"
-            ],
-            "openlibrary": [
-                "OL26442856M"
-            ]
+    "score": 4.6,
+    "format": "Paperback",
+    "language": "Portuguese",
+    "editionsBook": [
+        {
+            "cover": "https://covers.openlibrary.org/b/isbn/9780679734512-M.jpg",
+            "title": "Demons"
         },
-        "publishers": [
-            {
-                "name": "editora 34"
-            }
-        ],
-        "publish_places": [
-            {
-                "name": "São Paulo, Brazil"
-            }
-        ],
-        "publish_date": "2005",
-        "subjects": [
-            {
-                "name": "Fiction",
-                "url": "https://openlibrary.org/subjects/fiction"
-            },
-            {
-                "name": "Russian fiction",
-                "url": "https://openlibrary.org/subjects/russian_fiction"
-            },
-            {
-                "name": "Politics in fiction",
-                "url": "https://openlibrary.org/subjects/politics_in_fiction"
-            },
-            {
-                "name": "Nihilism",
-                "url": "https://openlibrary.org/subjects/nihilism"
-            },
-            {
-                "name": "Social life and customs",
-                "url": "https://openlibrary.org/subjects/social_life_and_customs"
-            },
-            {
-                "name": "Terrorists",
-                "url": "https://openlibrary.org/subjects/terrorists"
-            },
-            {
-                "name": "Manners and customs",
-                "url": "https://openlibrary.org/subjects/manners_and_customs"
-            },
-            {
-                "name": "Romans",
-                "url": "https://openlibrary.org/subjects/romans"
-            },
-            {
-                "name": "Fiction, political",
-                "url": "https://openlibrary.org/subjects/fiction,_political"
-            },
-            {
-                "name": "Terrorists, fiction",
-                "url": "https://openlibrary.org/subjects/terrorists,_fiction"
-            },
-            {
-                "name": "Russia (federation), fiction",
-                "url": "https://openlibrary.org/subjects/russia_(federation),_fiction"
-            },
-            {
-                "name": "Continental european fiction (fictional works by one author)",
-                "url": "https://openlibrary.org/subjects/continental_european_fiction_(fictional_works_by_one_author)"
-            },
-            {
-                "name": "Slavic philology",
-                "url": "https://openlibrary.org/subjects/slavic_philology"
-            },
-            {
-                "name": "Terrorism",
-                "url": "https://openlibrary.org/subjects/terrorism"
-            },
-            {
-                "name": "Nihilismo",
-                "url": "https://openlibrary.org/subjects/nihilismo"
-            },
-            {
-                "name": "Terrorismo",
-                "url": "https://openlibrary.org/subjects/terrorismo"
-            },
-            {
-                "name": "Novela",
-                "url": "https://openlibrary.org/subjects/novela"
-            },
-            {
-                "name": "Vido social y costumbres",
-                "url": "https://openlibrary.org/subjects/vido_social_y_costumbres"
-            },
-            {
-                "name": "Fiction, general",
-                "url": "https://openlibrary.org/subjects/fiction,_general"
-            },
-            {
-                "name": "Nihilism--fiction",
-                "url": "https://openlibrary.org/subjects/nihilism--fiction"
-            },
-            {
-                "name": "Terrorists--russia--fiction",
-                "url": "https://openlibrary.org/subjects/terrorists--russia--fiction"
-            },
-            {
-                "name": "Pg3325 .b6 2008",
-                "url": "https://openlibrary.org/subjects/pg3325_.b6_2008"
-            },
-            {
-                "name": "891.733",
-                "url": "https://openlibrary.org/subjects/891.733"
-            },
-            {
-                "name": "Political science",
-                "url": "https://openlibrary.org/subjects/political_science"
-            },
-            {
-                "name": "Fiction, psychological",
-                "url": "https://openlibrary.org/subjects/fiction,_psychological"
-            },
-            {
-                "name": "Drama, history and criticism",
-                "url": "https://openlibrary.org/subjects/drama,_history_and_criticism"
-            }
-        ],
-        "subject_places": [
-            {
-                "name": "Russia",
-                "url": "https://openlibrary.org/subjects/place:russia"
-            }
-        ],
-        "subject_times": [
-            {
-                "name": "19th century",
-                "url": "https://openlibrary.org/subjects/time:19th_century"
-            }
-        ],
-        "excerpts": [
-            {
-                "text": "BEFORE DESCRIBING THE EXTRAORDINARY EVENTS WHICH took place so recently in our town, hitherto not remarkable for anything in particular, I find it necessary, since I am not a skilled writer, to go back a little and begin with certain biographical details concerning our talented and greatly esteemed Stepan Trofimovich Verkhovensky.",
-                "comment": "",
-                "first_sentence": true
-            }
-        ],
-        "links": [
-            {
-                "title": "Demons (Dostoevsky novel) - Wikipedia",
-                "url": "https://en.wikipedia.org/wiki/Demons_(Dostoevsky_novel)"
-            },
-            {
-                "title": "VIAF ID: 179962552 (Work)",
-                "url": "ttp://viaf.org/viaf/179962552"
-            }
-        ],
-        "cover": {
-            "small": "https://covers.openlibrary.org/b/id/8161797-S.jpg",
-            "medium": "https://covers.openlibrary.org/b/id/8161797-M.jpg",
-            "large": "https://covers.openlibrary.org/b/id/8161797-L.jpg"
+        {
+            "cover": "https://covers.openlibrary.org/b/isbn/9780199540495-M.jpg",
+            "title": "Devils"
         },
-        "score": 4.6,
-        "format": "Paperback",
-        "language": "Portuguese",
-        "editionsBook": [
-            {
-                "cover": "https://covers.openlibrary.org/b/isbn/9780679734512-M.jpg",
-                "title": "Demons"
-            },
-            {
-                "cover": "https://covers.openlibrary.org/b/isbn/9780199540495-M.jpg",
-                "title": "Devils"
-            },
-            {
-                "cover": "https://covers.openlibrary.org/b/isbn/9780141441412-M.jpg",
-                "title": "Demons"
-            },
-            {
-                "cover": "https://covers.openlibrary.org/b/isbn/9781593082505-M.jpg",
-                "title": "The Possessed"
-            }
-        ],
-        "descri": "<p>Motivado por um episódio verídico - o assassinato do estudante I. I. Ivanov pelo grupo niilista liderado por S. G. Nietcháiev em 1869 -, Os demônios, escrito no ano seguinte, é a única obra de Dostoiévski concebida com fins assumidamente panfletários. Entretanto, ao recriar ficcionalmente aquele evento, o escritor acabou compondo uma obra-prima à altura de Crime e castigo e Os irmãos Karamázov, que é também um estudo em profundidade do pensamento político, social, filosófico e religioso de seu tempo. </p> <p>Com incrível lucidez e rara compreensão da história, este romance - pela primeira vez traduzido a partir do original russo - chega a ser profético. Nele o leitor poderá vislumbrar, no drama intelectual de Kiríllov, a antecipação do Zaratustra de Nietzsche, e, nas ideias de Chigalióv e Piotr Stiepánovitch, os cruéis fanatismos de Hitler e Stálin. Numa época em que a violência, a ignorância, o terrorismo e a impostura ideológica - verdadeiros demônios que assolaram o século XX - continuam vivos sob novos disfarces, este é um livro de impressionante atualidade.</p>",
-        "authorImg": "https://covers.openlibrary.org/a/olid/OL22242A-M.jpg",
-        "authorBio": "Russian novelist Fyodor Mikhailovitch Dostoyevsky was a journalist and short-story writer, whose psychological penetration into the human soul profoundly influenced the 20th century novel. Dostoevsky's novels have much autobiographical elements, but ultimately they deal with moral and philosophical questions. He presented interacting characters with contrasting views or ideas about freedom of choice, Socialism, atheisms, good and evil, happiness and so forth. Dostoevsky's central obsession was God, whom his characters constantly search through painful errors and humiliations."
-    },
-    {
-        "_id": "newbook2",
-        "isbn": "9780385472579",
-        "reviews": [],
-        "ratingsReference": [],
-        "scoresReferance": [],
-        "url": "https://openlibrary.org/books/OL38229582M/O_Colecionador",
-        "key": "/books/OL38229582M",
-        "title": "O Colecionador",
-        "subtitle": "A espécie rara que faltava na coleção dos leitores brasileiros",
-        "authors": [
-            {
-                "url": "https://openlibrary.org/authors/OL6474824A/John_Fowles",
-                "name": "John Fowles"
-            }
-        ],
-        "identifiers": {
-            "isbn_10": [
-                "8594541082"
-            ],
-            "isbn_13": [
-                "9788594541086"
-            ],
-            "openlibrary": [
-                "OL38229582M"
-            ]
+        {
+            "cover": "https://covers.openlibrary.org/b/isbn/9780141441412-M.jpg",
+            "title": "Demons"
         },
-        "publishers": [
-            {
-                "name": "Darkside"
-            }
-        ],
-        "publish_date": "12 abril 2018",
-        "cover": {
-            "small": "https://covers.openlibrary.org/b/id/12919258-S.jpg",
-            "medium": "https://covers.openlibrary.org/b/id/12919258-M.jpg",
-            "large": "https://covers.openlibrary.org/b/id/12919258-L.jpg"
-        },
-        "score": 4.2
-    }
-]
+        {
+            "cover": "https://covers.openlibrary.org/b/isbn/9781593082505-M.jpg",
+            "title": "The Possessed"
+        }
+    ],
+    "descri": "<p>Motivado por um episódio verídico - o assassinato do estudante I. I. Ivanov pelo grupo niilista liderado por S. G. Nietcháiev em 1869 -, Os demônios, escrito no ano seguinte, é a única obra de Dostoiévski concebida com fins assumidamente panfletários. Entretanto, ao recriar ficcionalmente aquele evento, o escritor acabou compondo uma obra-prima à altura de Crime e castigo e Os irmãos Karamázov, que é também um estudo em profundidade do pensamento político, social, filosófico e religioso de seu tempo. </p> <p>Com incrível lucidez e rara compreensão da história, este romance - pela primeira vez traduzido a partir do original russo - chega a ser profético. Nele o leitor poderá vislumbrar, no drama intelectual de Kiríllov, a antecipação do Zaratustra de Nietzsche, e, nas ideias de Chigalióv e Piotr Stiepánovitch, os cruéis fanatismos de Hitler e Stálin. Numa época em que a violência, a ignorância, o terrorismo e a impostura ideológica - verdadeiros demônios que assolaram o século XX - continuam vivos sob novos disfarces, este é um livro de impressionante atualidade.</p>",
+    "authorImg": "https://covers.openlibrary.org/a/olid/OL22242A-M.jpg",
+    "authorBio": "Russian novelist Fyodor Mikhailovitch Dostoyevsky was a journalist and short-story writer, whose psychological penetration into the human soul profoundly influenced the 20th century novel. Dostoevsky's novels have much autobiographical elements, but ultimately they deal with moral and philosophical questions. He presented interacting characters with contrasting views or ideas about freedom of choice, Socialism, atheisms, good and evil, happiness and so forth. Dostoevsky's central obsession was God, whom his characters constantly search through painful errors and humiliations."
+}

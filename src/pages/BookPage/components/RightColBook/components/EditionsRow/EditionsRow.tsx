@@ -1,13 +1,21 @@
 import style from "./EditionsRow.module.css";
 
 import { Edition } from "../../../../../../interfaces/Book";
+import { useEffect } from "react";
 
 interface EditionRowProps {
     editionsBook: Edition[] | undefined,
 }
 
-
 export default function EditionsRow(props: EditionRowProps) {
+
+    if (!props.editionsBook) return (<></>)
+
+    useEffect(() => {
+        console.log(props.editionsBook)
+    }, [])
+
+    const editionsToShow = props.editionsBook.slice(0, 4);
 
     if (!props.editionsBook) return <div></div>
 
@@ -21,10 +29,10 @@ export default function EditionsRow(props: EditionRowProps) {
 
             <div className={style["editions-row"]}>
                 {
-                    props.editionsBook.map((edition) => {
+                    editionsToShow.map((edition) => {
                         return (
-                            <div className={style["edition-box"]} key={edition.cover + edition.title}>
-                                <img src={edition.cover}></img>
+                            <div className={style["edition-box"]} key={edition.coverUrl + edition.title}>
+                                <img src={edition.coverUrl}></img>
                             </div>
                         )
                     })

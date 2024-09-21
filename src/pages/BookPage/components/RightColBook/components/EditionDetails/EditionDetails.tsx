@@ -1,7 +1,7 @@
 import style from "./EditionDetails.module.css";
 
 interface EditionDetailsProps {
-    bookFormat: string,
+    bookFormat: string | undefined,
     bookIsbn: string,
     bookLanguage: string | undefined,
     bookPublishDate: string,
@@ -17,10 +17,12 @@ export default function EditionDetails(props: EditionDetailsProps) {
 
             <dl className={style["info-row"]}>
 
+                {/* 
                 <div className={style["data-row"]}>
                     <dt className={style[""]}>Formato:</dt>
                     <dd className={style[""]}>{props.bookFormat}</dd>
                 </div>
+                */}
 
                 <div className={style["data-row"]}>
                     <dt className={style[""]}>Publicação:</dt>
@@ -44,11 +46,13 @@ export default function EditionDetails(props: EditionDetailsProps) {
                 </div>
                 */}
 
+                {/* 
                 <div className={style["data-row"]}>
                     <dt className={style[""]}>Língua:</dt>
                     <dd className={style[""]}>{props.bookLanguage}</dd>
                 </div>
 
+                */}
             </dl>
         </div>
     )
