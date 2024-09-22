@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
+
 import Header from "../../layouts/Header/Header";
 import LeftColBook from "./components/LeftColBook/LeftColBook";
 import RightColBook from "./components/RightColBook/RightColBook";
+import EditionsRow from "./components/RightColBook/components/EditionsRow/EditionsRow";
+import GenreRow from "./components/RightColBook/components/GenreRow/GenreRow";
+
 import getBookData from "../../hooks/getBookData";
 import styles from "./BookPage.module.css";
 import { useParams } from "react-router-dom";
@@ -29,21 +33,21 @@ export default function BookPage() {
 
                 <LeftColBook bookCover={bookData.cover?.large}></LeftColBook>
 
-                <RightColBook
-                    bookTitle={bookData.title}
-                    bookAuthor={bookData.authors[0].name}
-                    bookScore={bookData.score}
-                    bookDescri={bookData.bookDescri}
-                    bookAnalysis={bookData.reviews}
-                    bookRatings={bookData.ratings}
-                    bookGenres={bookData.subjects}
-                    bookFormat={bookData.format}
-                    bookPublishDate={bookData.publish_date}
-                    bookIsbn={bookData.identifiers.isbn_13 ? bookData.identifiers.isbn_13[0] : bookData.identifiers.isbn_10[0]}
-                    bookPublisher={bookData.publishers[0].name}
-                    editionsBook={bookData.editions}
-                    bookLanguage={bookData.language}
-                />
+                <div className={styles["right-col-container"]}>
+                    <RightColBook
+                        bookTitle={bookData.title}
+                        bookAuthor={bookData.authors[0].name}
+                        bookScore={bookData.score}
+                        bookDescri={bookData.bookDescri}
+                        bookAnalysis={bookData.reviews}
+                        bookRatings={bookData.ratings}
+                    />
+
+                    <GenreRow bookGenres={bookData.subjects}/>
+
+
+
+                </div>
             </div>
         </>
     );

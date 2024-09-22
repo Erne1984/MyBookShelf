@@ -19,8 +19,11 @@
     gap: 5px;
 }
 
-.title {
+.box-title{
+    display: flex;
+    align-items: center;
     padding-bottom: 10px;
+    gap: 10px;
 }
 
 .descri p{

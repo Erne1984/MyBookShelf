@@ -4,27 +4,18 @@ import { transliterate } from 'transliteration';
 
 import RantingStars from "../../../../common/RantingStars/RatingStars";
 import RowAnalysisRating from "./components/RowAnalysisRating/RowAnalysisRating";
-import GenreRow from "./components/GenreRow/GenreRow";
-import EditionDetails from "./components/EditionDetails/EditionDetails";
-import EditionsRow from "./components/EditionsRow/EditionsRow";
-import { Subject } from "../../../../interfaces/Book";
-import { Edition } from "../../../../interfaces/Book";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+
 //import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
 
 interface RightColBookProps {
     bookTitle: string,
-    bookDescri: string,
     bookAuthor: string,
     bookScore: number,
-    bookGenres: Subject[],
     bookAnalysis: [],
     bookRatings: [],
-    bookFormat: string | undefined,
-    bookLanguage: string | undefined,
-    bookIsbn: string,
-    bookPublishDate: string,
-    bookPublisher: string,
-    editionsBook: Edition[] | undefined
+    bookDescri: string,
 }
 
 export default function RightColBook(props: RightColBookProps) {
@@ -45,21 +36,15 @@ export default function RightColBook(props: RightColBookProps) {
 
             </div>
 
-            <h2 className={styles.title}>Descrição</h2>
+            <div className={styles["box-title"]}>
+
+                <h2 className={styles.title}>Descrição</h2>
+
+                <FontAwesomeIcon icon={faPen} />
+
+            </div>
 
             <div className={styles["descri"]} dangerouslySetInnerHTML={{ __html: props.bookDescri }} />
-
-            <GenreRow bookGenres={props.bookGenres} />
-
-            <EditionDetails
-                bookFormat={props.bookFormat}
-                bookLanguage={props.bookLanguage}
-                bookIsbn={props.bookIsbn}
-                bookPublishDate={props.bookPublishDate}
-                bookPublisher={props.bookPublisher}
-            />
-
-            <EditionsRow editionsBook={props.editionsBook} />
 
             {/* 
                 <AboutAuthor name={props.bookAuthor} img={props.authorImg} authorBio={props.authorBio} />

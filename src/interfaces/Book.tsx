@@ -43,7 +43,7 @@ export default interface Book {
     authors: Author[];
     identifiers: Identifiers;
     publishers: Publisher[];
-    subjects: Subject[];
+    subjects?: Subject[];
     publish_date: string;
     cover?: Cover;
     number_of_pages?: number;
