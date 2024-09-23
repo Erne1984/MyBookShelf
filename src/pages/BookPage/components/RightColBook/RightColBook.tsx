@@ -6,8 +6,7 @@ import RantingStars from "../../../../common/RantingStars/RatingStars";
 import RowAnalysisRating from "./components/RowAnalysisRating/RowAnalysisRating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
-
-//import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
+import { Link } from "react-router-dom";
 
 interface RightColBookProps {
     bookTitle: string,
@@ -16,6 +15,7 @@ interface RightColBookProps {
     bookAnalysis: [],
     bookRatings: [],
     bookDescri: string,
+    authorKey: string | null 
 }
 
 export default function RightColBook(props: RightColBookProps) {
@@ -25,7 +25,9 @@ export default function RightColBook(props: RightColBookProps) {
 
             <div className={styles["box-title-book"]}>
                 <h1> {props.bookTitle} </h1>
-                <h3> {transliterate(props.bookAuthor)} </h3>
+                <Link to={`/author/:${props.authorKey}`}>
+                    <h3> {transliterate(props.bookAuthor)} </h3>
+                </Link>
             </div>
 
             <div className={styles["rating-statistics-row"]}>
@@ -45,10 +47,6 @@ export default function RightColBook(props: RightColBookProps) {
             </div>
 
             <div className={styles["descri"]} dangerouslySetInnerHTML={{ __html: props.bookDescri }} />
-
-            {/* 
-                <AboutAuthor name={props.bookAuthor} img={props.authorImg} authorBio={props.authorBio} />
-            */}
 
         </section>
     )

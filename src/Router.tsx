@@ -4,6 +4,7 @@ import LoginPage from './pages/Login/LoginPage';
 import SignUp from "./pages/SignUp/SignUp";
 import BookPage from "./pages/BookPage/BookPage";
 import UserPage from "./pages/UserPage/UserPage";
+import AuthorPage from "./pages/AuthorPage/AuthorPage";
 
 
 const appRoutes = createBrowserRouter([
@@ -27,6 +28,10 @@ const appRoutes = createBrowserRouter([
         path: "/book/:bookISBN", 
         element: <BookPage /> 
     },
+    {
+        path: "/author/:authorKey",
+        element: <AuthorPage/>
+    }
 ]);
 
 export default appRoutes;

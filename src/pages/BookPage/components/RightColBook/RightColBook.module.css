@@ -2,9 +2,17 @@
     display: block;
 }
 
+.container-right-col .box-title-book a{
+    text-decoration: none;
+}
 
-.container-right-col .box-title-book h3 {
+.container-right-col .box-title-book a h3 {
     color: #919191;
+    text-decoration: none;
+}
+
+.container-right-col .box-title-book a h3:hover {
+    text-decoration: underline;
 }
 
 .rating-statistics-row {

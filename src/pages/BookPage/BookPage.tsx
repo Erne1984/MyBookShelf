@@ -45,6 +45,7 @@ export default function BookPage() {
                         bookDescri={bookData.bookDescri}
                         bookAnalysis={bookData.reviews}
                         bookRatings={bookData.ratings}
+                        authorKey={extractAuthorKey(bookData.authors[0].url)}
                     />
 
                     <GenreRow bookGenres={bookData.subjects}/>

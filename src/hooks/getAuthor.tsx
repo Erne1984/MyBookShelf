@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Author } from "../interfaces/Book";
 
-export default function getAuthor(authorKey: string | null) {
+export default function getAuthor(authorKey: string | undefined) {
     const [data, setData] = useState<Author>();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
