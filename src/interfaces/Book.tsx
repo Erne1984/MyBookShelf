@@ -1,8 +1,3 @@
-interface Author {
-    url: string;
-    name: string;
-}
-
 interface Identifiers {
     isbn_10: string[];
     isbn_13: string[];
@@ -20,6 +15,18 @@ interface Cover {
     small: string;
     medium: string;
     large: string;
+}
+
+export interface Author {
+    key: string;
+    url: string;
+    bio: string;
+    name: string;
+    personal_name: string;
+    birth_date: string;
+    death_date: string;
+    photo: string;
+    followers: [];
 }
 
 export interface Edition {

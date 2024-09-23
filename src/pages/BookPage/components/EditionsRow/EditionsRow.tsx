@@ -1,6 +1,6 @@
 import style from "./EditionsRow.module.css";
 
-import { Edition } from "../../../../../../interfaces/Book";
+import { Edition } from "../../../../interfaces/Book";
 import { useEffect } from "react";
 
 interface EditionRowProps {

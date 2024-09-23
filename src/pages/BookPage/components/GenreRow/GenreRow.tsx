@@ -1,5 +1,5 @@
 import style from './GenreRow.module.css';
-import { Subject } from '../../../../../../interfaces/Book';
+import { Subject } from '../../../../interfaces/Book';
 import { useState } from 'react';
 
 interface GenreRowProps {

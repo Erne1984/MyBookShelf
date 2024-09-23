@@ -1,10 +1,10 @@
-.container-page-book{
+.container-page-book {
     display: flex;
     padding-top: 4rem;
     padding-bottom: 4rem;
     gap: 105px;
 }
 
-.right-col-container{
+.right-col-container {
     width: 100%;
 }

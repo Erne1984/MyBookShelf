@@ -3,12 +3,15 @@ import { useEffect, useState } from "react";
 import Header from "../../layouts/Header/Header";
 import LeftColBook from "./components/LeftColBook/LeftColBook";
 import RightColBook from "./components/RightColBook/RightColBook";
-import EditionsRow from "./components/RightColBook/components/EditionsRow/EditionsRow";
-import GenreRow from "./components/RightColBook/components/GenreRow/GenreRow";
+
+import EditionDetails from "./components/EditionDetails/EditionDetails";
+import GenreRow from "./components/GenreRow/GenreRow";
 
 import getBookData from "../../hooks/getBookData";
 import styles from "./BookPage.module.css";
 import { useParams } from "react-router-dom";
+import extractAuthorKey from "../../utils/extractAuthorKey ";
+import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
 
 export default function BookPage() {
     const { bookISBN } = useParams();
@@ -20,6 +23,7 @@ export default function BookPage() {
 
     useEffect(() => {
         setBookData(data);
+        console.log(bookData);
     }, [data, error]);
 
     if (loading) return <p>Carregando...</p>;
@@ -45,8 +49,16 @@ export default function BookPage() {
 
                     <GenreRow bookGenres={bookData.subjects}/>
 
+                    <EditionDetails 
+                    bookFormat={bookData.format} 
+                    bookIsbn={bookData.identifiers.isbn_13 ? bookData.identifiers.isbn_13[0] : bookData.identifiers.isbn_10[0]}
+                    bookLanguage={bookData.language}
+                    bookPublishDate={bookData.publish_date}
+                    bookPublisher={bookData.publishers[0].name}
+                    />
 
-
+                    {bookData.authors[0].url ? <AboutAuthor authorKey={extractAuthorKey(bookData.authors[0].url)}/> : <></>}
+                    
                 </div>
             </div>
         </>
