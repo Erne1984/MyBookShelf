@@ -31,7 +31,9 @@ export default function BooksRow() {
     return (
         <section className='books-row'>
             {booksData && booksToShow.map(book => (
-                <Link to={book.identifiers.isbn_13 ? `/book/:${book.identifiers.isbn_13}` : `/book/:${book.identifiers.isbn_10}`}>
+                <Link
+                    to={book.identifiers.isbn_13 ? `/book/:${book.identifiers.isbn_13}` : `/book/:${book.identifiers.isbn_10}`}
+                    key={book.identifiers.isbn_10 ? book.identifiers.isbn_10 : book.identifiers.isbn_13}>
                     <BookCard
                         key={book.identifiers.isbn_10[0]}
                         BookImg={book.cover?.medium}

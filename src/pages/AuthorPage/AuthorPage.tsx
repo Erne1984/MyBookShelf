@@ -2,6 +2,8 @@ import Header from "../../layouts/Header/Header";
 import style from "./AuthorPage.module.css";
 
 import LeftColAuthor from "./components/LeftColAuthor/LeftColAuthor";
+import AuthorDetails from "./components/AuthorDetails/AuthorDetails";
+import AuthorWorks from "./components/AuthorWorks/AuthorWorks";
 
 import getAuthor from "../../hooks/getAuthor";
 import reduceAuthorName from "../../utils/reduceAuthorName";
@@ -34,11 +36,17 @@ export default function AuthorPage() {
 
                     <h1>{reduceAuthorName(authorData?.personal_name)}</h1>
 
+                    <AuthorDetails authorBirth={authorData?.birth_date} authorDeathDate={authorData?.death_date} />
+
                     <div className={style["bio-box"]}>
                         <p className={style["bio"]}>
                             {authorData?.bio}
                         </p>
                     </div>
+
+                    <AuthorWorks />
+
+
 
                 </section>
 

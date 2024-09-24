@@ -1,15 +1,14 @@
 import style from './GenreRow.module.css';
-import { Subject } from '../../../../interfaces/Book';
 import { useState } from 'react';
 
 interface GenreRowProps {
-    bookGenres: Subject[] | undefined;
+    bookGenres: string[];
 }
 
 export default function GenreRow(props: GenreRowProps) {
     const [genreLimit, setGenreLimit] = useState(4);
 
-    let genresToShow: Subject[] = [];
+    let genresToShow: string[] = [];
 
     if (props.bookGenres) {
         genresToShow = props.bookGenres.slice(0, genreLimit);
@@ -27,14 +26,16 @@ export default function GenreRow(props: GenreRowProps) {
                 {genresToShow.length > 0 ? (
                     genresToShow.map((genre) => {
                         return (
-                            <div className={style.genre} key={genre.name + genre.url}>
-                                {genre.name}
+                            <div className={style.genre} key={genre}>
+                                {genre}
                             </div>
                         );
                     })
-                ) : (
-                    <div className={style.genre}>drama</div>
-                )}
+                )
+                    :
+                    (
+                        <div className={style.genre}>drama</div>
+                    )}
                 <div className={style.more} onClick={handleLoadMore}>
                     ...Mais
                 </div>

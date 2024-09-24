@@ -9,7 +9,7 @@ import { Author } from "../../../../interfaces/Book";
 import formatName from "../../../../utils/formatName";
 
 interface AboutAuthorProps {
-    authorKey: string | null;
+    authorKey: string;
 }
 
 export default function AboutAuthor(props: AboutAuthorProps) {

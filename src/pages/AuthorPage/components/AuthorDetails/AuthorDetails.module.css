@@ -1,0 +1,17 @@
+.container {
+    padding-top: 15px;
+    padding-bottom: 35px;
+}
+
+.info-row {
+    display: flex;
+    margin: 5px 0;
+}
+
+.info-row dt {
+    margin-right: 5px;
+}
+
+.info-row dd {
+    margin-left: 50px;
+}

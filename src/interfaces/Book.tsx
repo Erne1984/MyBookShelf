@@ -7,10 +7,6 @@ interface Identifiers {
     oclc?: string[];
 }
 
-interface Publisher {
-    name: string;
-}
-
 interface Cover {
     small: string;
     medium: string;
@@ -26,7 +22,7 @@ export interface Author {
     birth_date: string;
     death_date: string;
     photo: string;
-    followers: [];
+    followers: string[];
 }
 
 export interface Edition {
@@ -44,13 +40,11 @@ export default interface Book {
     reviews: [],
     ratings: [],
     scoresReferance: [],
-    url: string;
-    key: string;
     title: string;
     authors: Author[];
     identifiers: Identifiers;
-    publishers: Publisher[];
-    subjects?: Subject[];
+    publishers: string[];
+    subjects: string[];
     publish_date: string;
     cover?: Cover;
     number_of_pages?: number;

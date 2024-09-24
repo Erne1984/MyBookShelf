@@ -10,7 +10,6 @@ import GenreRow from "./components/GenreRow/GenreRow";
 import getBookData from "../../hooks/getBookData";
 import styles from "./BookPage.module.css";
 import { useParams } from "react-router-dom";
-import extractAuthorKey from "../../utils/extractAuthorKey ";
 import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
 
 export default function BookPage() {
@@ -24,6 +23,7 @@ export default function BookPage() {
     useEffect(() => {
         setBookData(data);
         console.log(bookData);
+        console.log()
     }, [data, error]);
 
     if (loading) return <p>Carregando...</p>;
@@ -45,7 +45,7 @@ export default function BookPage() {
                         bookDescri={bookData.bookDescri}
                         bookAnalysis={bookData.reviews}
                         bookRatings={bookData.ratings}
-                        authorKey={extractAuthorKey(bookData.authors[0].url)}
+                        authorKey={bookData.authors[0].key}
                     />
 
                     <GenreRow bookGenres={bookData.subjects}/>
@@ -55,10 +55,10 @@ export default function BookPage() {
                     bookIsbn={bookData.identifiers.isbn_13 ? bookData.identifiers.isbn_13[0] : bookData.identifiers.isbn_10[0]}
                     bookLanguage={bookData.language}
                     bookPublishDate={bookData.publish_date}
-                    bookPublisher={bookData.publishers[0].name}
+                    bookPublisher={bookData.publishers[0]}
                     />
 
-                    {bookData.authors[0].url ? <AboutAuthor authorKey={extractAuthorKey(bookData.authors[0].url)}/> : <></>}
+                 <AboutAuthor authorKey={bookData.authors[0].key}/>
                     
                 </div>
             </div>
