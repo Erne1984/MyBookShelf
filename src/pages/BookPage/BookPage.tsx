@@ -22,13 +22,20 @@ export default function BookPage() {
 
     useEffect(() => {
         setBookData(data);
-        console.log(bookData);
-        console.log()
     }, [data, error]);
 
     if (loading) return <p>Carregando...</p>;
     if (!bookData) return <p>Erro em buscar dados do livro</p>;
 
+    const regex = /\/authors\/(OL[0-9]+A)\//;
+    const url = bookData.authors[0].url;
+    const match = url.match(regex);
+
+    let authorKey = "";
+
+    if (match) {
+        authorKey = match[1];
+    }
 
     return (
         <>
@@ -45,21 +52,21 @@ export default function BookPage() {
                         bookDescri={bookData.bookDescri}
                         bookAnalysis={bookData.reviews}
                         bookRatings={bookData.ratings}
-                        authorKey={bookData.authors[0].key}
+                        authorKey={authorKey}
                     />
 
-                    <GenreRow bookGenres={bookData.subjects}/>
+                    <GenreRow bookGenres={bookData.subjects} />
 
-                    <EditionDetails 
-                    bookFormat={bookData.format} 
-                    bookIsbn={bookData.identifiers.isbn_13 ? bookData.identifiers.isbn_13[0] : bookData.identifiers.isbn_10[0]}
-                    bookLanguage={bookData.language}
-                    bookPublishDate={bookData.publish_date}
-                    bookPublisher={bookData.publishers[0]}
+                    <EditionDetails
+                        bookFormat={bookData.format}
+                        bookIsbn={bookData.identifiers.isbn_13 ? bookData.identifiers.isbn_13[0] : bookData.identifiers.isbn_10[0]}
+                        bookLanguage={bookData.language}
+                        bookPublishDate={bookData.publish_date}
+                        bookPublisher={bookData.publishers}
                     />
 
-                 <AboutAuthor authorKey={bookData.authors[0].key}/>
-                    
+                    <AboutAuthor authorKey={authorKey} />
+
                 </div>
             </div>
         </>

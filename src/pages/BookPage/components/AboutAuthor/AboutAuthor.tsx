@@ -23,7 +23,7 @@ export default function AboutAuthor(props: AboutAuthorProps) {
     }, [data, error]);
 
     if (loading) return <p>Carregando...</p>;
-    if (!authorData) return <p>Erro em buscar dados do livro</p>;
+    if (!authorData) return <p>Erro em buscar dados do autor</p>;
 
     return (
         <section className={style.container}>

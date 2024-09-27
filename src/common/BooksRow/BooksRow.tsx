@@ -11,9 +11,7 @@ export default function BooksRow() {
     const [booksData, setBookData] = useState(data);
 
     useEffect(() => {
-
-        setBookData(data)
-
+        setBookData(data);
     }, [data, error]);
 
     if (loading) return <p>Carregando...</p>;
@@ -30,20 +28,24 @@ export default function BooksRow() {
 
     return (
         <section className='books-row'>
-            {booksData && booksToShow.map(book => (
-                <Link
-                    to={book.identifiers.isbn_13 ? `/book/:${book.identifiers.isbn_13}` : `/book/:${book.identifiers.isbn_10}`}
-                    key={book.identifiers.isbn_10 ? book.identifiers.isbn_10 : book.identifiers.isbn_13}>
-                    <BookCard
-                        key={book.identifiers.isbn_10[0]}
-                        BookImg={book.cover?.medium}
-                        BookTitle={book.title}
-                        BookAuthor={transliterate(book.authors[0].name)}
-                        BookRanting={book.score}
-                        BookScore={book.score}
-                    />
-                </Link>
-            ))}
+            {booksData && booksToShow.map(book => {
+                const isbnForLink = book.identifiers.isbn_13[0] && book.identifiers.isbn_13[0] !== ""
+                    ? book.identifiers.isbn_13[0]
+                    : book.identifiers.isbn_10[0];
+                return (
+                    <Link
+                        to={`/book/:${isbnForLink}`}
+                        key={isbnForLink}>
+                        <BookCard
+                            BookImg={book.cover?.medium}
+                            BookTitle={book.title}
+                            BookAuthor={transliterate(book.authors[0].name)}
+                            BookRanting={book.score}
+                            BookScore={book.score}
+                        />
+                    </Link>
+                );
+            })}
             {hasMoreBooks && (
                 <button onClick={handleLoadMore} className='load-more'>
                     Ver Mais

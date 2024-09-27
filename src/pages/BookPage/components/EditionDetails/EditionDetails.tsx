@@ -1,11 +1,13 @@
 import style from "./EditionDetails.module.css";
 
+import { Publishers } from "../../../../interfaces/Book";
+
 interface EditionDetailsProps {
     bookFormat: string | undefined,
     bookIsbn: string,
     bookLanguage: string | undefined,
     bookPublishDate: string,
-    bookPublisher: string,
+    bookPublisher: Publishers[],
 }
 
 
@@ -30,7 +32,7 @@ export default function EditionDetails(props: EditionDetailsProps) {
 
                 <div className={style["data-row"]}>
                     <dt className={style[""]}>Editora:</dt>
-                    <dd className={style[""]}>{props.bookPublisher}</dd>
+                    <dd className={style[""]}>{props.bookPublisher[0].name}</dd>
                 </div>
 
                 <div className={style["data-row"]}>

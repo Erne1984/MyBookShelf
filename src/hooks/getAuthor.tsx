@@ -9,6 +9,7 @@ export default function getAuthor(authorKey: string | undefined) {
     useEffect(() => {
         async function fetchAuthorData() {
             try {
+                console.log(authorKey)
                 const response = await fetch(`http://localhost:8080/getAuthor?authorKey=${authorKey}`);
 
                 if (!response.ok) {

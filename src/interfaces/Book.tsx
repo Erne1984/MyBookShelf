@@ -31,8 +31,13 @@ export interface Edition {
 }
 
 export interface Subject {
+    _id: string,
     name: string;
     url: string;
+}
+
+export interface Publishers {
+    name: string
 }
 
 export default interface Book {
@@ -43,8 +48,8 @@ export default interface Book {
     title: string;
     authors: Author[];
     identifiers: Identifiers;
-    publishers: string[];
-    subjects: string[];
+    publishers: Publishers[];
+    subjects: Subject[];
     publish_date: string;
     cover?: Cover;
     number_of_pages?: number;
