@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 92px;
+}
+
+.result-count { 
+    color: #605656;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.view-toggle .icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-toggle .icons .icon {
+    cursor: pointer;
+}
+
+.view-toggle .icons .icon:hover {
+    color: blue;
+}

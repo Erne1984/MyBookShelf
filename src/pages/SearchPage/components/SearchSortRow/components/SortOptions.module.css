@@ -1,0 +1,20 @@
+.sortContainer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.sortLabel {
+    color: #605656;
+}
+
+.sortType {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.sortType .icon {
+    height: 14px;
+    width: 14px;
+}

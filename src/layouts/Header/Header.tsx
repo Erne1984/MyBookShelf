@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -7,8 +6,10 @@ import './Header.css'
 
 import { AuthContext } from '../../context/AuthContextUser';
 import DropdownMenu from './components/DropdownMenu/DropdownMenu';
+import SearchInput from '../../common/SearchInput/SearchInput';
 
 import Logo from '/assets/mybookshelf-logo.png?url';
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
 
@@ -23,13 +24,8 @@ export default function Header() {
                     <img src={Logo}></img>
                 </Link>
 
-                <div className='search-box'>
+                <SearchInput />
 
-                    <FontAwesomeIcon className='search-icon' icon={faMagnifyingGlass} />
-
-                    <input type='text' placeholder='Buscar Livros' className='search-input'></input>
-
-                </div>
             </div>
 
             <div className='header-right'>
