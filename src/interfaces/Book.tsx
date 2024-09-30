@@ -41,6 +41,7 @@ export interface Publishers {
 }
 
 export default interface Book {
+    _id: string, 
     bookDescri: string;
     reviews: [],
     ratings: [],

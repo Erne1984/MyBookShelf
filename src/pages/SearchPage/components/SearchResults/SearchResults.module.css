@@ -1,0 +1,12 @@
+.container {
+    display: block;
+}
+
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 35px;
+    padding: 2rem 0 4rem 0;
+}

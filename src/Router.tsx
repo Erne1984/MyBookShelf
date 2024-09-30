@@ -35,7 +35,7 @@ const appRoutes = createBrowserRouter([
         element: <AuthorPage/>
     },
     {
-        path: "/search",
+        path: "/search/:query",
         element: <SearchPage/> 
     }
 ]);

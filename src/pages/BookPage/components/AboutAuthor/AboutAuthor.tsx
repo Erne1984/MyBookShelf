@@ -9,10 +9,13 @@ import { Author } from "../../../../interfaces/Book";
 import formatName from "../../../../utils/formatName";
 
 interface AboutAuthorProps {
-    authorKey: string;
+    authorKey: string | null;
 }
 
 export default function AboutAuthor(props: AboutAuthorProps) {
+
+    if(!props.authorKey) return <img></img>
+
     const { data, loading, error } = getAuthor(props.authorKey);
 
     const [authorData, setAuthorData] = useState<Author>();
