@@ -28,13 +28,19 @@ export default function BookPage() {
     if (!bookData) return <p>Erro em buscar dados do livro</p>;
 
     function extractAuthorKey(url: string) {
+        if (!url) return null;
+
+        console.log(url + " url")
+        
+        const cleanUrl = url.trim();
         const regex = /\/authors\/(OL\d+A)(?:\/.*)?/;
-        const match = url.match(regex);
-        console.log(match)
+        const match = cleanUrl.match(regex);
+        
+        console.log(match);
         return match ? match[1] : null;
     }
 
-    const authorKey = bookData?.authors?.[0]?.key ? extractAuthorKey(bookData.authors[0].url) : null;
+    const authorKey = bookData?.authors?.[0]?.key ? bookData.authors[0].key : extractAuthorKey(bookData.authors[0].url);
 
     return (
         <>

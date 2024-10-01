@@ -1,12 +1,12 @@
-import styles from './DropdownMenu.module.css';
+import style from './DropdownMenuLoggedIn.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faUsers, faMessage, faQuoteLeft, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faUsers, faMessage, faQuoteLeft, faRightFromBracket, faSun } from '@fortawesome/free-solid-svg-icons';
 import { useContext, useState } from 'react';
 
 import { AuthContext } from '../../../../context/AuthContextUser';
 
-export default function DropdownMenu() {
+export default function DropdownMenuLoggedIn() {
 
     const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
 
@@ -17,26 +17,30 @@ export default function DropdownMenu() {
     const logout = useContext(AuthContext)?.logout;
 
     return (
-        <div className={styles.dropdown}>
-            <FontAwesomeIcon className={styles.icon} icon={faUser} onClick={handleClick} />
-            <ul className={`${styles['dropdown-menu']} ${dropdownMenu ? styles.active : styles.none}`}>
-                <div className={styles['menu-item']}>
+        <div className={style.dropdown}>
+            <FontAwesomeIcon className={style.icon} icon={faUser} onClick={handleClick} />
+            <ul className={`${style['dropdown-menu']} ${dropdownMenu ? style.active : style.none}`}>
+                <div className={style['menu-item']}>
                     <FontAwesomeIcon className={""} icon={faUser} />
                     <li>Perfil</li>
                 </div>
-                <div className={styles['menu-item']}>
+                <div className={style['menu-item']}>
                     <FontAwesomeIcon icon={faUsers} />
                     <li>Amigos</li>
                 </div>
-                <div className={styles['menu-item']}>
+                <div className={style['menu-item']}>
                     <FontAwesomeIcon icon={faMessage} />
                     <li>Minhas Reviews</li>
                 </div>
-                <div className={styles['menu-item']}>
+                <div className={style['menu-item']}>
                     <FontAwesomeIcon icon={faQuoteLeft} />
                     <li>Frases</li>
                 </div>
-                <div className={styles['menu-item']} onClick={logout}>
+                <div className={style['menu-item']}>
+                    <FontAwesomeIcon icon={faSun} />
+                    <li>Tema</li>
+                </div>
+                <div className={style['menu-item']} onClick={logout}>
                     <FontAwesomeIcon icon={faRightFromBracket} />
                     <li>Deslogar</li>
                 </div>

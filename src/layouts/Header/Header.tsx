@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import './Header.css'
 
 import { AuthContext } from '../../context/AuthContextUser';
-import DropdownMenu from './components/DropdownMenu/DropdownMenu';
+import DropdownMenuLoggedIn from './components/DropdownMenuLoggedIn/DropdownMenuLoggedIn';
+import DropdownMenuLoggedOut from './components/DropdownMenuLoggedOut/DropdownMenuLoggedOut';
 import SearchInput from '../../common/SearchInput/SearchInput';
 
 import Logo from '/assets/mybookshelf-logo.png?url';
@@ -39,11 +40,9 @@ export default function Header() {
 
                 {
                     isAuthenticated ?
-                        <DropdownMenu />
+                        <DropdownMenuLoggedIn />
                         :
-                        <Link to={"/login"}>
-                            <FontAwesomeIcon className='login-icon' icon={faRightToBracket} />
-                        </Link>
+                        <DropdownMenuLoggedOut />
                 }
 
             </div>
