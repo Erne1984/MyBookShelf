@@ -1,1 +1,30 @@
 /* TO IMPLEMETING YET */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    cursor: pointer;
+    background-color: #25262C;
+    color: #fff;
+    padding: 10px;
+}
+
+.indexes {
+    display: flex;
+    gap: 10px;
+    margin: 0 20px;
+}
+
+.indexes span:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
