@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './BooksRow.css';
-import BookCard from '../BookCard/BookCard';
+import BookCard from '../BookCardGrid/BookCardGrid';
 import GetBooks from '../../hooks/getBooks';
 import { transliterate } from 'transliteration';
 import { Link } from 'react-router-dom';

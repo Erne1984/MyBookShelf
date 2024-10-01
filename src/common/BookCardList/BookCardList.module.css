@@ -1,0 +1,26 @@
+.book-card-list {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.book-card-list:hover {
+    transform: translateY(-5px);
+}
+
+.book-info {
+    margin-left: 20px;
+}
+
+.book-info h3 {
+    max-width: 100%;
+    font-size: 1.2rem;
+}
+
+.book-info small {
+    font-size: 1rem;
+}

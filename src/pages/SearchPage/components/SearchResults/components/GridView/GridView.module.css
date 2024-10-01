@@ -1,8 +1,4 @@
-.container {
-    display: block;
-}
-
-.books-grid {
+.container-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
@@ -10,7 +6,7 @@
     padding: 2rem 0 4rem 0;
 }
 
-.books-grid a {
+.container-grid a {
     text-decoration: none;
     color: inherit;
 }

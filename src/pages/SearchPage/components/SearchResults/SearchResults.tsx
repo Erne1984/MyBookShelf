@@ -1,34 +1,29 @@
 import style from "./SearchResults.module.css";
-import BookCard from "../../../../common/BookCard/BookCard";
 import Book from "../../../../interfaces/Book";
-import { transliterate } from "transliteration";
+import SearchResultRow from "../SearchResultsRow/SearchResultRow";
+import { useState } from "react";
+
+import GridView from "./components/GridView/GridView";
+import ListView from "./components/ListView/ListView";
 
 interface SearchResultsProps {
     books: Book[]
 }
 
 export default function SearchResults(props: SearchResultsProps) {
+    const [viewMode, setViewMode] = useState<string>("grid");
 
     return (
-        <div className={style["container"]}>
+        <>
+            <SearchResultRow numberResults={props.books.length} viewMode={viewMode} setViewMode={setViewMode} />
 
-            <div className={style["book-grid"]}>
+            <div className={style["container"]}>
+                
                 {
-                    props.books && props.books.map((book) => {
-                        return (
-                            <BookCard
-                                key={book._id}
-                                BookImg={book.cover?.medium}
-                                BookTitle={book.title}
-                                BookAuthor={transliterate(book.authors[0].name)}
-                                BookRanting={book.score}
-                                BookScore={book.score}
-                            />
-                        )
-                    })
+                    viewMode == "grid" ? <GridView books={props.books}/> : <ListView books={props.books}/>
                 }
-            </div>
 
-        </div>
+            </div>
+        </>
     )
 }
