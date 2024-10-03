@@ -1,10 +1,10 @@
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
-
+import React, { createContext, useState, ReactNode, useEffect } from 'react';
 import isTokenValid from '../utils/isTokenValid';
 
 interface AuthContextType {
     token: string | null;
     isAuthenticated: boolean;
+    userId: string | null;
     login: (token: string) => void;
     logout: () => void;
 }
@@ -13,10 +13,35 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
+    const [userId, setUserId] = useState<string | null>(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (token && !isTokenValid(token)) {
-            logout(); 
+        const fetchUserId = async () => {
+            if (token && isTokenValid(token)) {
+                try {
+                    const response = await fetch('http://localhost:8080/user/id', {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        setUserId(data.userId);
+                    }
+                } catch (error) {
+                    console.error("Erro ao buscar o ID do usuário:", error);
+                } finally {
+                    setLoading(false);
+                }
+            } else {
+                logout();
+            }
+        };
+
+        if (token) {
+            fetchUserId();
         }
     }, [token]);
 
@@ -28,10 +53,11 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const logout = () => {
         localStorage.removeItem('token');
         setToken(null);
+        setUserId(null);
     };
 
     return (
-        <AuthContext.Provider value={{ token, isAuthenticated: !!token, login, logout }}>
+        <AuthContext.Provider value={{ token, isAuthenticated: !!token, userId, login, logout }}>
             {children}
         </AuthContext.Provider>
     );

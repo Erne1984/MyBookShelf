@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +9,6 @@ import DropdownMenuLoggedOut from './components/DropdownMenuLoggedOut/DropdownMe
 import SearchInput from '../../common/SearchInput/SearchInput';
 
 import Logo from '/assets/mybookshelf-logo.png?url';
-import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
 

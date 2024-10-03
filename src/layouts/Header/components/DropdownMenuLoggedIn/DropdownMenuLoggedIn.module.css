@@ -17,12 +17,17 @@
     right: 5px;
 }
 
+.dropdown-menu a {
+    text-decoration: none;
+}
+
 .menu-item {
     display: flex;
     align-items: center;
     gap: 15px;
     padding: 10px;
     transition: background-color 250ms;
+    color: #000;
 }
 
 .menu-item:hover {

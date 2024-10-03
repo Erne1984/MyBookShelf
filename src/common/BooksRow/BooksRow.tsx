@@ -39,7 +39,7 @@ export default function BooksRow() {
                         <BookCard
                             BookImg={book.cover?.medium}
                             BookTitle={book.title}
-                            BookAuthor={transliterate(book.authors[0].name)}
+                            BookAuthor={transliterate(book.authors[0] ? book.authors[0].name : "Autor Desconhecido")}
                             BookRanting={book.score}
                             BookScore={book.score}
                         />

@@ -40,6 +40,16 @@ export interface Publishers {
     name: string
 }
 
+export interface User {
+    _id: string,
+    username: string,
+    email: string,
+    imgUserUrl: string,
+    lists: [],
+    reviews: [],
+    ratingsReference: [],
+}
+
 export default interface Book {
     _id: string, 
     bookDescri: string;

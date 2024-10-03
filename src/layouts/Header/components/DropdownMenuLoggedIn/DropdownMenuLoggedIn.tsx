@@ -5,25 +5,30 @@ import { faUser, faUsers, faMessage, faQuoteLeft, faRightFromBracket, faSun } fr
 import { useContext, useState } from 'react';
 
 import { AuthContext } from '../../../../context/AuthContextUser';
+import { Link } from 'react-router-dom';
 
 export default function DropdownMenuLoggedIn() {
 
     const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
-
+    
     function handleClick() {
         setDropdownMenu(prevState => !prevState);
     }
 
     const logout = useContext(AuthContext)?.logout;
+    const userId = useContext(AuthContext)?.userId;
 
     return (
         <div className={style.dropdown}>
             <FontAwesomeIcon className={style.icon} icon={faUser} onClick={handleClick} />
             <ul className={`${style['dropdown-menu']} ${dropdownMenu ? style.active : style.none}`}>
-                <div className={style['menu-item']}>
-                    <FontAwesomeIcon className={""} icon={faUser} />
-                    <li>Perfil</li>
-                </div>
+                <Link to={`/user/:${userId}`}>
+                    <div className={style['menu-item']}>
+                        <FontAwesomeIcon className={""} icon={faUser} />
+                        <li>Perfil</li>
+                    </div>
+                </Link>
+
                 <div className={style['menu-item']}>
                     <FontAwesomeIcon icon={faUsers} />
                     <li>Amigos</li>
