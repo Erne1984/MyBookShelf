@@ -48,6 +48,12 @@ export interface User {
     lists: [],
     reviews: [],
     ratingsReference: [],
+    creationDate: string,
+    dateBirth: string | undefined,
+    country: string | undefined,
+    city: string | undefined,
+    gender: string | undefined,
+    aboutMe: string | undefined,
 }
 
 export default interface Book {

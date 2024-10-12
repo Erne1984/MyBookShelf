@@ -1,0 +1,21 @@
+.info-content {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    row-gap: 10px;
+    padding-top: 20px;
+}
+
+.info-row {
+    display: contents;
+}
+
+.info-row dt {
+    font-weight: bold;
+    text-align: left; 
+    padding-right: 15px;
+}
+
+.info-row dd {
+    margin: 0;
+    text-align: right;
+}

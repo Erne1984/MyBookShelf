@@ -1,0 +1,11 @@
+.user-img-box {
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
