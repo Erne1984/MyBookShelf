@@ -1,0 +1,11 @@
+.userBio-container h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.userBio-container p {
+    text-align: justify;
+    max-width: 800px;
+}

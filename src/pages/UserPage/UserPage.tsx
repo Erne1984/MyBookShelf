@@ -9,6 +9,8 @@ import UserImg from "./components/UserImg/UserImg";
 import UserInfo from "./components/UserInfo/UserInfo";
 import UserReviewRating from "./components/UserReviewRatings/UserReviewRatings";
 import UserFriends from "./components/UserFriends/UserFriends";
+import UserBio from "./components/UserBio/UserBio";
+import UserStatsRow from "./components/UserStatsRow/UserStatsRow";
 import style from "./UserPage.module.css";
 
 export default function UserPage() {
@@ -44,8 +46,9 @@ export default function UserPage() {
                     <UserReviewRating userRatings={profileData.reviews.length} userReviews={profileData.ratingsReference.length}/>
                     <UserFriends/>
                 </div>
-                <main>
-                    
+                <main className={style["right-col-user"]}>
+                    <UserBio userName={profileData.username} userBio={profileData.aboutMe}/>
+                    <UserStatsRow userReaded={profileData.readedList.length} userReading={profileData.readingList.length} userToRead={profileData.toReadList.length}/>
                 </main>
             </div>
         </>

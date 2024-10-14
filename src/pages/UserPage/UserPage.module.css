@@ -1,9 +1,14 @@
 .UserPage-container {
     display: flex;
+    gap: 6rem;
     height: 90vh;
     padding-top: 2rem;
 }
 
 .left-col-user {
-    max-width: 210px;   
+    min-width: 210px;   
+}
+
+.right-col-user {
+    width: 100%;
 }
