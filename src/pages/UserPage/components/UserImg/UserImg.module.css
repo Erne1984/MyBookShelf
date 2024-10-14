@@ -2,6 +2,7 @@
     height: 120px;
     width: 120px;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .avatar {

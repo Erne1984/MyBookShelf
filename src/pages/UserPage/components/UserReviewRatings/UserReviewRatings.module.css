@@ -1,0 +1,18 @@
+.container-review-ratings-aside {
+    padding-top: 20px;
+}
+
+.title-row {
+    padding-bottom: 15px;
+    text-decoration: underline;
+}
+
+.link-section {
+    display: flex;
+    flex-direction: column;   
+}
+
+.link-section span {
+    display: inline;
+    color: #4BC1D2;
+}

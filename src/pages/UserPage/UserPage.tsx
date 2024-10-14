@@ -7,6 +7,8 @@ import { User } from "../../interfaces/Book";
 import Header from "../../layouts/Header/Header";
 import UserImg from "./components/UserImg/UserImg";
 import UserInfo from "./components/UserInfo/UserInfo";
+import UserReviewRating from "./components/UserReviewRatings/UserReviewRatings";
+import UserFriends from "./components/UserFriends/UserFriends";
 import style from "./UserPage.module.css";
 
 export default function UserPage() {
@@ -39,7 +41,12 @@ export default function UserPage() {
                 <div className={style["left-col-user"]}>
                     <UserImg userAvatar={profileData.imgUserUrl} />
                     <UserInfo createdAt={profileData.creationDate} country={profileData.country} dateBirth={profileData.dateBirth} gender={profileData.gender} />
+                    <UserReviewRating userRatings={profileData.reviews.length} userReviews={profileData.ratingsReference.length}/>
+                    <UserFriends/>
                 </div>
+                <main>
+                    
+                </main>
             </div>
         </>
     );

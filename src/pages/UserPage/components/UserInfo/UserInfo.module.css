@@ -1,17 +1,28 @@
 .info-content {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    row-gap: 10px;
     padding-top: 20px;
 }
 
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.title-row dt {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 .info-row {
-    display: contents;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .info-row dt {
     font-weight: bold;
-    text-align: left; 
+    text-align: left;
     padding-right: 15px;
 }
 

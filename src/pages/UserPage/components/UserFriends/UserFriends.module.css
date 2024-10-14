@@ -1,0 +1,29 @@
+.container {
+    padding-top: 30px;
+}
+
+.title-row {
+    padding-bottom: 15px;
+    text-decoration: underline;
+}
+
+.friends-list {
+    display: block;
+}
+
+.friends-list .friend-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.friends-list .friend-row:hover {
+    text-decoration: underline;
+}
+
+.friends-list .friend-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}

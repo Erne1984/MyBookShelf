@@ -48,6 +48,7 @@ export interface User {
     lists: [],
     reviews: [],
     ratingsReference: [],
+    friendsReference: [],
     creationDate: string,
     dateBirth: string | undefined,
     country: string | undefined,

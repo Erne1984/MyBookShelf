@@ -16,8 +16,8 @@ export default function UserInfo(props: UserInfoProps) {
     return (
         <div className={style["info-content"]}>
 
-            <div className={` ${style["info-row"]} ${style["title-row"]} `}>
-                <dt>Info:</dt>
+            <div className={`${style["title-row"]} `}>
+                <h4>Info</h4>
                 <FontAwesomeIcon icon={faPen} />
             </div>
 
