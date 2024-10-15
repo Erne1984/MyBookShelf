@@ -1,0 +1,13 @@
+.user-shelve-container {
+    padding-top: 2rem;
+}
+
+.user-shelve-container h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    padding-bottom: 1rem;
+}
+
+.shelve-container {
+    margin-bottom: 10px;
+}

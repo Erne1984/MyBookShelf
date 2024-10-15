@@ -11,7 +11,9 @@ import UserReviewRating from "./components/UserReviewRatings/UserReviewRatings";
 import UserFriends from "./components/UserFriends/UserFriends";
 import UserBio from "./components/UserBio/UserBio";
 import UserStatsRow from "./components/UserStatsRow/UserStatsRow";
+import UserShelves from "./components/UserShelves/UserShelves";
 import style from "./UserPage.module.css";
+import UserCurrentlyReading from "./components/UserCurrentlyReading/UserCurrentlyReading";
 
 export default function UserPage() {
 
@@ -49,6 +51,8 @@ export default function UserPage() {
                 <main className={style["right-col-user"]}>
                     <UserBio userName={profileData.username} userBio={profileData.aboutMe}/>
                     <UserStatsRow userReaded={profileData.readedList.length} userReading={profileData.readingList.length} userToRead={profileData.toReadList.length}/>
+                    <UserCurrentlyReading toReadList={profileData.toReadList}/>
+                    <UserShelves readingList={profileData.readedList} readedList={profileData.readingList}/>
                 </main>
             </div>
         </>

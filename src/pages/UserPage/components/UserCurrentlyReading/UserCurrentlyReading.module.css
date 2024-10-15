@@ -1,0 +1,9 @@
+.currently-reading-container {
+    padding-top: 2rem;
+}
+
+.currently-reading-container h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    padding-bottom: 1rem;
+}

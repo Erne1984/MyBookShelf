@@ -1,7 +1,7 @@
 .UserPage-container {
     display: flex;
     gap: 6rem;
-    height: 90vh;
+    min-height: 90vh;
     padding-top: 2rem;
 }
 
