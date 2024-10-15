@@ -42,6 +42,7 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
         if (token) {
             fetchUserId();
+            console.log(token)
         }
     }, [token]);
 

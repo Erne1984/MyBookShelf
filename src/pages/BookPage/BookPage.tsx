@@ -6,11 +6,12 @@ import RightColBook from "./components/RightColBook/RightColBook";
 
 import EditionDetails from "./components/EditionDetails/EditionDetails";
 import GenreRow from "./components/GenreRow/GenreRow";
+import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
+import RatingReviewSection from "./components/RatingReviewSection/RatingReviewSection";
 
 import getBookData from "../../hooks/getBookData";
 import styles from "./BookPage.module.css";
 import { useParams } from "react-router-dom";
-import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
 
 export default function BookPage() {
     const { bookISBN } = useParams();
@@ -72,6 +73,7 @@ export default function BookPage() {
 
                     <AboutAuthor authorKey={authorKey && authorKey} />
 
+                    <RatingReviewSection bookRatings={bookData.ratings} bookReviews={bookData.reviews}/>
                 </div>
             </div>
         </>

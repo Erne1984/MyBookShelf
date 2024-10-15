@@ -1,0 +1,26 @@
+.book-stats-container {
+    padding-top: 80px;
+}
+
+.rating-average-box {
+    display: flex;
+    align-items: center;
+}
+
+.rating-average-box .rating-average {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 12px;
+}
+
+.rating-review-numbers {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.rating-review-numbers small {
+    color: #605656;
+    font-size: 1rem;
+    font-weight: 500;
+}
