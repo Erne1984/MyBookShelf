@@ -1,0 +1,54 @@
+.comment-box {
+    display: flex;
+    gap: 100px;
+}
+
+.user-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-box .user-avatar {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+}
+
+.rating-date-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.likes-responses {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #605656;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.options-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.options-row .icon-box {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+}
+
+.options-row .icon-box:hover {
+    text-decoration: underline;
+}
+
+.other-options {
+    cursor: pointer;
+}
