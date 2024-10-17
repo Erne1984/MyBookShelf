@@ -4,21 +4,34 @@ import { transliterate } from 'transliteration';
 
 import RantingStars from "../../../../common/RantingStars/RatingStars";
 import RowAnalysisRating from "./components/RowAnalysisRating/RowAnalysisRating";
+import ModalBookDescription from "../../../../common/ModalBookDescription/ModalBookDescription";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../../context/AuthContextUser";
 
 interface RightColBookProps {
+    bookId: string,
     bookTitle: string,
     bookAuthor: string,
     bookScore: number,
     bookAnalysis: [],
     bookRatings: [],
     bookDescri: string,
-    authorKey: string | null 
+    authorKey: string | null
 }
 
 export default function RightColBook(props: RightColBookProps) {
+
+    const isAuthenticated = useContext(AuthContext)?.isAuthenticated
+    const isModerator = useContext(AuthContext)?.isModerator
+
+    const [showModal, setShowModal] = useState<boolean>(false);
+
+    function toggleModal() {
+        setShowModal(!showModal)
+    }
 
     return (
         <section className={styles["container-right-col"]}>
@@ -42,9 +55,16 @@ export default function RightColBook(props: RightColBookProps) {
 
                 <h2 className={styles.title}>Descrição</h2>
 
-                <FontAwesomeIcon icon={faPen} />
-
+                {isAuthenticated ? (
+                    <>
+                        {isModerator && <FontAwesomeIcon onClick={toggleModal} className={styles["icon"]} icon={faPen} />}
+                    </>
+                ):
+                    <>
+                    </>}
             </div>
+
+            <ModalBookDescription bookId={props.bookId} bookTitle={props.bookTitle} modalShow={showModal} onClose={toggleModal} />
 
             <div className={styles["descri"]} dangerouslySetInnerHTML={{ __html: props.bookDescri }} />
 

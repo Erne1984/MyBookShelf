@@ -53,6 +53,7 @@ export default function BookPage() {
 
                 <div className={styles["right-col-container"]}>
                     <RightColBook
+                        bookId={bookData._id}
                         bookTitle={bookData.title}
                         bookAuthor={bookData.authors[0].name}
                         bookScore={bookData.score}

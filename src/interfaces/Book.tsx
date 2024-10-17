@@ -58,6 +58,7 @@ export interface User {
     city: string | undefined,
     gender: string | undefined,
     aboutMe: string | undefined,
+    isModerator: boolean| undefined,
 }
 
 export default interface Book {

@@ -34,6 +34,10 @@
     gap: 10px;
 }
 
+.box-title .icon {
+    cursor: pointer;
+}
+
 .descri p{
     margin-bottom: 10px;
     text-align: justify;

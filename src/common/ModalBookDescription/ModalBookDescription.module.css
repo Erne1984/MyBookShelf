@@ -1,0 +1,38 @@
+.modal-container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    width: 800px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.modal-container::backdrop {
+    background-color: rgba(18, 18, 18, 0.8);
+}
+
+.modal-container .box {
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.modal-container h2 {
+    margin-bottom: 2rem;
+}
+
+.modal-container textarea{
+    width: 100%;
+    margin: 0 auto;
+    resize: vertical;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 2rem;
+}

@@ -5,6 +5,7 @@ interface AuthContextType {
     token: string | null;
     isAuthenticated: boolean;
     userId: string | null;
+    isModerator: boolean| null;
     login: (token: string) => void;
     logout: () => void;
 }
@@ -14,6 +15,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [token, setToken] = useState<string | null>(localStorage.getItem('token'));
     const [userId, setUserId] = useState<string | null>(null);
+    const [isModerator, setIsModerator] = useState<boolean>(false);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -29,6 +31,7 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
                     if (response.ok) {
                         const data = await response.json();
                         setUserId(data.userId);
+                        setIsModerator(data.isModerator);
                     }
                 } catch (error) {
                     console.error("Erro ao buscar o ID do usuário:", error);
@@ -55,10 +58,11 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         localStorage.removeItem('token');
         setToken(null);
         setUserId(null);
+        setIsModerator(false);
     };
 
     return (
-        <AuthContext.Provider value={{ token, isAuthenticated: !!token, userId, login, logout }}>
+        <AuthContext.Provider value={{ token, isAuthenticated: !!token, userId, isModerator, login, logout }}>
             {children}
         </AuthContext.Provider>
     );
