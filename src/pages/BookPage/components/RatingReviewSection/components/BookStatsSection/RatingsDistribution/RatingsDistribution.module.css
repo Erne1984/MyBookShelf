@@ -9,6 +9,14 @@
     max-width: 500px;
 }
 
+.ratings-distribution:hover {
+    cursor: pointer;
+}
+
+.ratings-distribution:hover .progress-bar {
+    background-color: #726565;
+}
+
 .star-label {
     width: 20px;
     font-weight: bold;
@@ -23,6 +31,7 @@
     border-radius: 5px;
     margin: 0 10px;
     position: relative;
+    transition: background-color 250ms;
 }
 
 .filled-bar {
@@ -31,8 +40,9 @@
     border-radius: 5px;
 }
 
-.rating-percentage {
-    width: 60px;
-    font-size: 0.9rem;
-    text-align: right;
+.rating-percentage-box {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 1rem;
 }

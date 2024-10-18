@@ -37,7 +37,7 @@ export default function BookStatsSection(props: BookStatsSectionProps) {
                 <small>{props.bookReviews.length} Reviews</small>
             </div>
 
-            <RatingsDistribution bookRatings={props.bookRatings} />
+            <RatingsDistribution bookId={props.bookId} />
 
         </section>
     );
