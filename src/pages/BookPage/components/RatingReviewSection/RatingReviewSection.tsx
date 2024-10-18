@@ -18,7 +18,7 @@ export default function RatingReviewSection(props: RatingReviewSectionProps) {
 
             <UserReview bookId={props.bookId}/>
 
-            <BookStatsSection bookRatings={props.bookRatings} bookReviews={props.bookReviews}/>
+            <BookStatsSection bookId={props.bookId} bookRatings={props.bookRatings} bookReviews={props.bookReviews}/>
 
         </section>
     )

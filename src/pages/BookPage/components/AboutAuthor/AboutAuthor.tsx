@@ -4,7 +4,7 @@ import PrimaryButton from "../../../../common/PrimaryButton/PrimaryButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-import getAuthor from "../../../../hooks/getAuthor";
+import getAuthor from "../../../../hooks/author/getAuthor";
 import { Author } from "../../../../interfaces/Book";
 import formatName from "../../../../utils/formatName";
 

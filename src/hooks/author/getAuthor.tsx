@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Author } from "../interfaces/Book";
+import { Author } from "../../interfaces/Book";
 
 export default function getAuthor(authorKey: string | undefined) {
     const [data, setData] = useState<Author>();

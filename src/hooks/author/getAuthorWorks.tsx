@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Book from "../interfaces/Book";
+import Book from "../../interfaces/Book";
 
 export default function getAuthorWorks() {
     const [data, setData] = useState<Book>();

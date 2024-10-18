@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
-import { AuthContext } from '../context/AuthContextUser';
-import { User } from '../interfaces/Book';
+import { AuthContext } from '../../context/AuthContextUser';
+import { User } from '../../interfaces/Book';
 
 
 export default function getUserProfile() {

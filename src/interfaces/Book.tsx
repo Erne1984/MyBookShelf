@@ -61,6 +61,10 @@ export interface User {
     isModerator: boolean| undefined,
 }
 
+export interface AverageRating {
+    averageRating: number
+}
+
 export default interface Book {
     _id: string, 
     bookDescri: string;

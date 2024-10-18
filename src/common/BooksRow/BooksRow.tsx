@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './BooksRow.css';
 import BookCard from '../BookCardGrid/BookCardGrid';
-import GetBooks from '../../hooks/getBooks';
+import GetBooks from '../../hooks/book/getBooks';
 import { transliterate } from 'transliteration';
 import { Link } from 'react-router-dom';
 

@@ -1,20 +1,22 @@
-import { useState, useEffect } from "react";
-import Book from "../interfaces/Book";
+import { useEffect, useState } from "react";
+import Book from "../../interfaces/Book";
 
-export default function GetBooks() {
-    const [data, setData] = useState<Book[] | null>(null); 
+export default function getBookData(isbn: string) {
+    const [data, setData] = useState<Book | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        const fetchBooks = async () => {
+        async function fetchBookData() {
             try {
-                const response = await fetch('http://localhost:8080/getBooks');
+                const response = await fetch(`http://localhost:8080/getBookIsbn?isbn=${isbn}`);
+
                 if (!response.ok) {
                     throw new Error('Erro na resposta do servidor');
                 }
+
                 const result = await response.json();
-                console.log('Dados retornados:', result);
+
                 setData(result);
             } catch (err) {
                 if (err instanceof Error) {
@@ -25,10 +27,13 @@ export default function GetBooks() {
             } finally {
                 setLoading(false);
             }
-        };
+        }
 
-        fetchBooks();
-    }, []);
+        if (isbn) {
+            fetchBookData();
+        }
+    }, [isbn]);
+
 
     return { data, loading, error };
 }

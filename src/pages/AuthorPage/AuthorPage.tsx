@@ -5,7 +5,7 @@ import LeftColAuthor from "./components/LeftColAuthor/LeftColAuthor";
 import AuthorDetails from "./components/AuthorDetails/AuthorDetails";
 import AuthorWorks from "./components/AuthorWorks/AuthorWorks";
 
-import getAuthor from "../../hooks/getAuthor";
+import getAuthor from "../../hooks/author/getAuthor";
 import reduceAuthorName from "../../utils/reduceAuthorName";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";

@@ -1,7 +1,7 @@
 import style from './SignUpForm.module.css';
 import FormLogo from '../../../../common/FormLogo/FormLogo';
 import ButtonForm from '../../../../common/ButtonForm/ButtonForm';
-import CreateUser from '../../../../hooks/createUser';
+import CreateUser from '../../../../hooks/user/createUser';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 

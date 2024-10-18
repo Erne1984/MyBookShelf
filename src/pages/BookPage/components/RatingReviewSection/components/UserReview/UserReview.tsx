@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
-import getUserProfile from "../../../../../../hooks/getUserProfile";
+import getUserProfile from "../../../../../../hooks/user/getUserProfile";
 import { AuthContext } from "../../../../../../context/AuthContextUser";
 import { User } from "../../../../../../interfaces/Book";
 

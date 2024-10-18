@@ -3,7 +3,7 @@ import './LoginForm.css';
 import ButtonForm from '../../../../common/ButtonForm/ButtonForm';
 import FormLogo from '../../../../common/FormLogo/FormLogo';
 
-import loginUser from '../../../../hooks/loginUser';
+import loginUser from '../../../../hooks/user/loginUser';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 

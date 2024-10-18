@@ -9,7 +9,7 @@ import GenreRow from "./components/GenreRow/GenreRow";
 import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
 import RatingReviewSection from "./components/RatingReviewSection/RatingReviewSection";
 
-import getBookData from "../../hooks/getBookData";
+import getBookData from "../../hooks/book/getBookData";
 import styles from "./BookPage.module.css";
 import { useParams } from "react-router-dom";
 import ReviewSection from "./components/ReviewsSection/ReviewsSection";
