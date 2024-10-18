@@ -1,16 +1,19 @@
-import { useEffect, useRef } from "react";
-import style from "./ModalBookDescription.module.css";
+import { useEffect, useRef, useState } from "react";
+import style from "./ModalReview.module.css";
 
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
+import RantingStars from "../RantingStars/RatingStars";
 
-interface ModalBookDescriptionProps {
+interface ModalReviewProps {
+    userId: string,
     bookId: string,
-    bookTitle: string,
+    bookTitle: string;
     modalShow: boolean;
     onClose: () => void;
 }
 
-export default function ModalBookDescription(props: ModalBookDescriptionProps) {
+export default function ModalReview(props: ModalReviewProps) {
+    const [userScore, setUserScore] = useState<number>(0);
     const dialogRef = useRef<HTMLDialogElement>(null);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -25,16 +28,20 @@ export default function ModalBookDescription(props: ModalBookDescriptionProps) {
         }
     }, [props.modalShow]);
 
-    async function handleUpdate() {
-        try {
-            const bookDescri = textareaRef.current?.value;
+    const handleScoreChange = (newScore: number) => {
+        setUserScore(newScore);
+    };
 
-            const response = await fetch("http://localhost:8080/editBookDescri", {
+    async function handleClick() {
+        try {
+            const userReview = textareaRef.current?.value;
+
+            const response = await fetch("http://localhost:8080/createReviews", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ bookId: props.bookId, bookDescri }) 
+                body: JSON.stringify({ userId: props.userId, bookId: props.bookId, content: userReview, score: userScore }) 
             });
 
             if (!response.ok) {
@@ -51,14 +58,22 @@ export default function ModalBookDescription(props: ModalBookDescriptionProps) {
 
     return (
         <dialog className={style["modal-container"]} ref={dialogRef}>
-
             <div className={style["box"]}>
-                <h2>{props.bookTitle}: Descrição</h2>
+                <h2>{props.bookTitle}</h2>
+
+                <div className={style["user-rating"]}>
+                    <p>Minha nota:</p>
+                    <RantingStars
+                        editable={true}
+                        score={userScore}
+                        onChange={handleScoreChange}
+                    />
+                </div>
 
                 <textarea rows={12} ref={textareaRef}></textarea>
 
                 <div className={style["btn-box"]}>
-                    <div onClick={handleUpdate}>
+                    <div onClick={handleClick}>
                         <PrimaryButton btnContent="Salvar" />
                     </div>
                     <div onClick={props.onClose}>
@@ -66,7 +81,6 @@ export default function ModalBookDescription(props: ModalBookDescriptionProps) {
                     </div>
                 </div>
             </div>
-
         </dialog>
     );
 }

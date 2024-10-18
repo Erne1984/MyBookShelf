@@ -8,12 +8,19 @@ import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import getUserProfile from "../../../../../../hooks/getUserProfile";
 import { AuthContext } from "../../../../../../context/AuthContextUser";
 import { User } from "../../../../../../interfaces/Book";
+
 import PrimaryButton from "../../../../../../common/PrimaryButton/PrimaryButton";
 import RantingStars from "../../../../../../common/RantingStars/RatingStars";
+import ModalReview from "../../../../../../common/ModalReview/ModalReview";
 
-export default function UserReview() {
+interface UserReviewProps {
+    bookId: string,
+}
+
+export default function UserReview(props: UserReviewProps) {
     const { user, loading, error } = getUserProfile();
     const [profileData, setProfileData] = useState<User | undefined>();
+    const [showModal, setShowModal] = useState<boolean>(false);
     const isAuthenticated = useContext(AuthContext)?.isAuthenticated;
 
     useEffect(() => {
@@ -21,6 +28,10 @@ export default function UserReview() {
             setProfileData(user);
         }
     }, [user]);
+
+    function toggleModal() {
+        setShowModal(!showModal)
+    }
 
     return (
         <article className={style["user-review-container"]}>
@@ -37,8 +48,12 @@ export default function UserReview() {
             <div className={style["rating-review-container"]}>
                 <RantingStars editable={true} score={0} />
 
-                <PrimaryButton btnContent="Fazer Review"/>
+                <div onClick={toggleModal}>
+                    <PrimaryButton btnContent="Fazer Review" />
+                </div>
             </div>
+
+            <ModalReview userId={profileData?._id} bookId={props.bookId} onClose={toggleModal} modalShow={showModal} bookTitle="O alienista" />
 
 
         </article>
