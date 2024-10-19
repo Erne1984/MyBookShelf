@@ -5,7 +5,7 @@ import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import RantingStars from "../RantingStars/RatingStars";
 
 interface ModalReviewProps {
-    userId: string,
+    userId: string | undefined,
     bookId: string,
     bookTitle: string;
     modalShow: boolean;

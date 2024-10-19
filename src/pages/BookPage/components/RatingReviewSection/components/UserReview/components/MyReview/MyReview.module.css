@@ -1,0 +1,41 @@
+.my-review-container {
+    width: 100%;
+    padding-top: 10px;
+}
+
+.rating-date-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-content {
+    text-align: justify;
+    padding: 0 4px;
+}
+
+.btn-my-review {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.box-others-reviews {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: 2px;
+    cursor: pointer;
+}
+
+.box-others-reviews:hover span{
+    text-decoration: underline;
+}
+
+.box-others-reviews span {
+    font-weight: bold;
+}
+
+.box-others-reviews .icon {
+    position: relative;
+    top: 1px;
+}

@@ -20,12 +20,12 @@ export default function ReviewSection(props: ReviewSectionProps) {
             {props.bookReviews && props.bookReviews.map((review) => {
                 return (
                     <Comment
-                    key={review._id} // ID da review como chave única
-                    username={review.username} // Nome do usuário
-                    userImg={review.imgUserUrl} // URL da imagem do usuário
-                    score={review.score} // Pontuação da avaliação
-                    content={review.content} // Conteúdo da review
-                    createdAt={review.createdAt} // Data da criação
+                    key={review.reviewId}
+                    username={review.username}
+                    userImg={review.imgUserUrl}
+                    score={review.score}
+                    content={review.content}
+                    createdAt={review.createdAt} 
                 />
                 )
             })}
