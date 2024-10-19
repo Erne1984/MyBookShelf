@@ -1,19 +1,36 @@
 .comment-box {
     display: flex;
-    gap: 100px;
+    gap: 40px;
+    margin-bottom: 15px;
 }
 
 .user-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.user-box:hover .username {
+    text-decoration: underline;
 }
 
 .user-box .user-avatar {
     height: 56px;
     width: 56px;
     border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.user-box .username {
+    text-align: left;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.review-box {
+    flex: 1;
 }
 
 .rating-date-box {

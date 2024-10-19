@@ -6,7 +6,7 @@ import FilterRow from "./components/FilterRow/FilterRow";
 import SearchResults from "./components/SearchResults/SearchResults";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import useSearchResult from "../../hooks/useSearchResult";
+import useSearchResult from "../../hooks/book/useSearchResult";
 import Book from "../../interfaces/Book";
 
 export default function SearchPage() {

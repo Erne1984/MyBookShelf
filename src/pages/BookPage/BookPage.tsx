@@ -12,7 +12,6 @@ import RatingReviewSection from "./components/RatingReviewSection/RatingReviewSe
 import getBookData from "../../hooks/book/getBookData";
 import styles from "./BookPage.module.css";
 import { useParams } from "react-router-dom";
-import ReviewSection from "./components/ReviewsSection/ReviewsSection";
 
 export default function BookPage() {
     const { bookISBN } = useParams();
@@ -77,7 +76,7 @@ export default function BookPage() {
 
                     <RatingReviewSection bookId={bookData._id} bookRatings={bookData.ratings} bookReviews={bookData.reviews}/>
 
-                    <ReviewSection/>
+
                 </div>
             </div>
         </>

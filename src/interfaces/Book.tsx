@@ -67,6 +67,28 @@ export interface Rating {
     bookId: string,
     reviewId: string | undefined,
     score: number,
+    createdAt: string
+}
+
+export interface Review {
+    _id: string, 
+    userId: string,
+    bookId: string,
+    ratingId: string,
+    content: string, 
+    createdAt: string,
+}
+
+export interface FormattedReview {
+    _id: string, 
+    reviewId: string;
+    userId: string | null;
+    username: string;
+    imgUserUrl: string | null;
+    ratingId: string | null;
+    score: number;
+    content: string;
+    createdAt: string;
 }
 
 export default interface Book {

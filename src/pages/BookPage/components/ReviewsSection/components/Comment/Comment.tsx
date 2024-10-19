@@ -1,30 +1,41 @@
 import style from "./Comment.module.css";
 import RantingStars from "../../../../../../common/RantingStars/RatingStars";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faEllipsis, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faEllipsis, faThumbsUp, faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
-export default function Comment() {
+interface CommentProps {
+    username: string;
+    userImg: string | null;
+    score: number;
+    content: string;
+    createdAt: string;
+}
+
+export default function Comment({ username, userImg, score, content, createdAt }: CommentProps) {
     return (
         <article className={style["comment-box"]}>
-
             <div className={style["user-box"]}>
-                <img
-                    src="https://www.hollywoodreporter.com/wp-content/uploads/2011/06/drive_primary.jpg?w=1440&h=810&crop=1"
-                    className={style["user-avatar"]}
-                    alt="User avatar"
-                />
-                <small className="username">UserName</small>
+                {userImg ?
+                    <img
+                        src={userImg}
+                        className={style["user-avatar"]}
+                        alt={`${username}'s avatar`}
+                    />
+                    :
+                    <FontAwesomeIcon className={style["user-avatar"]} icon={faCircleUser} />
+                }
+
+                <small className={style["username"]}>{username}</small>
             </div>
 
             <section className={style["review-box"]}>
-
                 <div className={style["rating-date-box"]}>
-                    <RantingStars score={3} editable={false} />
-                    <time dateTime="2020-08-28">August 28, 2020</time>
+                    <RantingStars score={score} editable={false} />
+                    <time dateTime={createdAt}>{new Date(createdAt).toLocaleDateString()}</time>
                 </div>
 
                 <p className={style["review-content"]}>
-                    Popular Culture: An Alphabetical Contempt. a) Let’s not mince words. All populist entertainment is repulsive, useless, dangerous and witheringly anti-intellectual. b) Except maybe Doctor Who. But that’s hardly Beckett, is it? c) I first became an intellectual snob in my late teens. I witnessed first hand the slow declension of burgeoning intellects through a routine of television, video games and a fear of reading books.
+                    {content}
                 </p>
 
                 <div className={style["likes-responses"]}>
@@ -53,7 +64,6 @@ export default function Comment() {
                     </div>
                 </div>
             </section>
-
         </article>
     );
 }

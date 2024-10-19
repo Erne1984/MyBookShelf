@@ -8,8 +8,9 @@ import ModalBookDescription from "../../../../common/ModalBookDescription/ModalB
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../context/AuthContextUser";
+import getBookAverage from "../../../../hooks/book/getBookAverage";
 
 interface RightColBookProps {
     bookId: string,
@@ -23,7 +24,8 @@ interface RightColBookProps {
 }
 
 export default function RightColBook(props: RightColBookProps) {
-
+    const { bookAverage, loading, error } = getBookAverage(props.bookId);
+    const [rating, setRating] = useState<number>(0);
     const isAuthenticated = useContext(AuthContext)?.isAuthenticated
     const isModerator = useContext(AuthContext)?.isModerator
 
@@ -32,6 +34,12 @@ export default function RightColBook(props: RightColBookProps) {
     function toggleModal() {
         setShowModal(!showModal)
     }
+
+    useEffect(() => {
+        if (bookAverage && !error) {
+            setRating(bookAverage);
+        }
+    }, [bookAverage, error]);
 
     return (
         <section className={styles["container-right-col"]}>
@@ -45,9 +53,9 @@ export default function RightColBook(props: RightColBookProps) {
 
             <div className={styles["rating-statistics-row"]}>
 
-                <RantingStars score={props.bookScore} editable={false} />
+                <RantingStars score={bookAverage} editable={false} />
 
-                <RowAnalysisRating bookAnalysis={props.bookAnalysis} bookRatings={props.bookRatings} bookScore={props.bookScore} />
+                <RowAnalysisRating bookAnalysis={props.bookAnalysis} bookRatings={props.bookRatings} bookScore={bookAverage} />
 
             </div>
 
@@ -59,7 +67,7 @@ export default function RightColBook(props: RightColBookProps) {
                     <>
                         {isModerator && <FontAwesomeIcon onClick={toggleModal} className={styles["icon"]} icon={faPen} />}
                     </>
-                ):
+                ) :
                     <>
                     </>}
             </div>

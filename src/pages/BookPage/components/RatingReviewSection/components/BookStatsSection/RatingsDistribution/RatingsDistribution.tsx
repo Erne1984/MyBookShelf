@@ -14,8 +14,6 @@ export default function RatingsDistribution({ bookId }: RatingsDistributionProps
 
     useEffect(() => {
         setRatings(data)
-        console.log(ratings)
-
     }, [data]);
 
 
