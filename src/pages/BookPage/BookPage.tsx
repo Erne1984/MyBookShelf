@@ -74,7 +74,7 @@ export default function BookPage() {
 
                     <AboutAuthor authorKey={authorKey && authorKey} />
 
-                    <RatingReviewSection bookId={bookData._id} bookRatings={bookData.ratings} bookReviews={bookData.reviews}/>
+                    <RatingReviewSection bookId={bookData._id} bookTitle={bookData.title} bookRatings={bookData.ratings} bookReviews={bookData.reviews}/>
 
 
                 </div>

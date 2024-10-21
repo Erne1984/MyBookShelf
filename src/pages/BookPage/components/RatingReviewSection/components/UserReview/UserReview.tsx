@@ -8,6 +8,7 @@ import useGetUserReview from "../../../../../../hooks/review/useGetUserReview";
 
 interface UserReviewProps {
     bookId: string,
+    bookTitle: string,
 }
 
 export default function UserReview(props: UserReviewProps) {
@@ -27,7 +28,7 @@ export default function UserReview(props: UserReviewProps) {
 
             {
                 userReviewData ?
-                    <MyReview content={userReviewData.content} createdAt={userReviewData.createdAt} />
+                    <MyReview bookId={props.bookId} bookTitle={props.bookTitle} content={userReviewData.content} createdAt={userReviewData.createdAt} />
                     :
                     <WriteReview _id={profileData?._id} bookId={props.bookId} imgUserUrl={profileData?.imgUserUrl} />
             }

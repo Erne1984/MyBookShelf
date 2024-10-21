@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 interface RatingReviewSectionProps {
     bookId: string,
+    bookTitle: string,
     bookReviews: [],
     bookRatings: [],
 }
@@ -31,7 +32,7 @@ export default function RatingReviewSection(props: RatingReviewSectionProps) {
 
             <h2 className={style["section-title"]}>Resenhas e Avaliações</h2>
 
-            <UserReview bookId={props.bookId} />
+            <UserReview  bookId={props.bookId} bookTitle={props.bookTitle} />
 
             <BookStatsSection bookId={props.bookId} bookRatings={props.bookRatings} bookReviews={props.bookReviews} />
 
