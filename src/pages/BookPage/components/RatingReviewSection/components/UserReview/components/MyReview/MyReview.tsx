@@ -4,10 +4,12 @@ import style from "./MyReview.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import ModalEditReview from "../../../../../../../../common/ModalEditReview/ModalEditReview";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useGetUsertRating from "../../../../../../../../hooks/rating/useGetUsertRating";
 
 interface MyReviewProps {
-    bookId: string
+    bookId: string;
+    userId: string | undefined;
     bookTitle: string,
     createdAt: string;
     content: string,
@@ -15,6 +17,15 @@ interface MyReviewProps {
 
 export default function MyReview(props: MyReviewProps) {
     const [modalShow, setModalShow] = useState<boolean>(false);
+    const { data, error } = useGetUsertRating(props.userId, props.bookId);
+    const [score, setScore] = useState<number | undefined>();
+
+    useEffect(() => {
+        if (data && !error) {
+            setScore(data.score)
+        }
+    }, [data])
+
 
     function onClose() {
         setModalShow(!modalShow);
@@ -25,7 +36,7 @@ export default function MyReview(props: MyReviewProps) {
             <h3>Minha review</h3>
             <section className={style["review-box"]}>
                 <div className={style["rating-date-box"]}>
-                    <RantingStars score={2} editable={false} />
+                    <RantingStars score={score} editable={false} />
                     <time dateTime={props.createdAt}>{new Date(props.createdAt).toLocaleDateString()}</time>
                 </div>
 
@@ -43,7 +54,13 @@ export default function MyReview(props: MyReviewProps) {
                 </div>
             </section>
 
-            <ModalEditReview bookId={props.bookId} content={props.content} onClose={onClose} modalShow={modalShow} bookTitle={props.bookTitle} />
+            <ModalEditReview userId={props.userId}
+                bookId={props.bookId}
+                content={props.content}
+                onClose={onClose}
+                modalShow={modalShow}
+                bookTitle={props.bookTitle}
+                score={score} />
         </div>
     )
 }

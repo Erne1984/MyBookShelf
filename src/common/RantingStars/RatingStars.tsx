@@ -2,7 +2,7 @@ import './RatingStars.css';
 import ReactStars from 'react-stars';
 
 interface RantingStarsProps {
-    score: number;
+    score: number | undefined;
     editable?: boolean;
     onChange?: (newScore: number) => void | undefined;
 }

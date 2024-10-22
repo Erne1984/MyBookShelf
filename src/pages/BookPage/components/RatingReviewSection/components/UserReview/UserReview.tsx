@@ -12,10 +12,10 @@ interface UserReviewProps {
 }
 
 export default function UserReview(props: UserReviewProps) {
-    const { user, loading, error } = getUserProfile();
+    const { user, error } = getUserProfile();
     const [profileData, setProfileData] = useState<User | undefined>();
 
-    const { data: userReviewData, loading: reviewLoading, error: reviewError } = useGetUserReview(props.bookId, profileData?._id || "");
+    const { data: userReviewData } = useGetUserReview(props.bookId, profileData?._id || "");
 
     useEffect(() => {
         if (user && !error) {
@@ -28,7 +28,7 @@ export default function UserReview(props: UserReviewProps) {
 
             {
                 userReviewData ?
-                    <MyReview bookId={props.bookId} bookTitle={props.bookTitle} content={userReviewData.content} createdAt={userReviewData.createdAt} />
+                    <MyReview userId={profileData?._id} bookId={props.bookId} bookTitle={props.bookTitle} content={userReviewData.content} createdAt={userReviewData.createdAt} />
                     :
                     <WriteReview _id={profileData?._id} bookId={props.bookId} imgUserUrl={profileData?.imgUserUrl} />
             }
