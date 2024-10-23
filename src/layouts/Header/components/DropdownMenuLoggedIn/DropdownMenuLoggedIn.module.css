@@ -6,6 +6,13 @@
     cursor: pointer;
 }
 
+.dropdown .avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 .dropdown-menu {
     position: absolute;
     background-color: #f1f1f1;

@@ -2,15 +2,25 @@ import style from './DropdownMenuLoggedIn.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faUsers, faMessage, faQuoteLeft, faRightFromBracket, faSun } from '@fortawesome/free-solid-svg-icons';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { AuthContext } from '../../../../context/AuthContextUser';
 import { Link } from 'react-router-dom';
+import getUserProfile from '../../../../hooks/user/getUserProfile';
+import { User } from '../../../../interfaces/Book';
 
 export default function DropdownMenuLoggedIn() {
 
     const [dropdownMenu, setDropdownMenu] = useState<boolean>(false);
-    
+    const { user } = getUserProfile();
+    const [profileData, setProfileData] = useState<User | undefined>();
+
+    useEffect(() => {
+        if(user){
+            setProfileData(user)
+        }
+    }, [user])
+
     function handleClick() {
         setDropdownMenu(prevState => !prevState);
     }
@@ -20,7 +30,13 @@ export default function DropdownMenuLoggedIn() {
 
     return (
         <div className={style.dropdown}>
-            <FontAwesomeIcon className={style.icon} icon={faUser} onClick={handleClick} />
+            {
+                profileData?.imgUserUrl ?
+                    <img src={profileData.imgUserUrl} className={style.avatar} onClick={handleClick}></img>
+                    :
+                    <FontAwesomeIcon className={style.icon} icon={faUser} onClick={handleClick} />
+            }
+
             <ul className={`${style['dropdown-menu']} ${dropdownMenu ? style.active : style.none}`}>
                 <Link to={`/user/:${userId}`}>
                     <div className={style['menu-item']}>
