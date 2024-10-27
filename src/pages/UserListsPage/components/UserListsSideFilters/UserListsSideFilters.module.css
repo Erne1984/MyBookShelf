@@ -1,0 +1,35 @@
+.title-section {
+    margin: 5px 0;
+}
+
+.title-section:last-of-type {
+    margin-top: 15px;
+}
+
+.user-lists {
+    list-style: none;
+}
+
+.user-lists li {
+    color: #4BC1D2;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.user-lists li:hover {
+    text-decoration: underline;
+}
+
+.button-add-list {
+    font-weight: bold;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #000000;
+    cursor: pointer;
+    transition: all 300ms;
+    margin: 3px 0 3px 1px;
+}
+
+.button-add-list:hover {
+    background-color: #000000;
+    color: white;
+}

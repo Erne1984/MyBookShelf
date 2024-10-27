@@ -1,6 +1,6 @@
 import style from "./UserCurrentlyReading.module.css";
 
-import ListView from "../../../SearchPage/components/SearchResults/components/ListView/ListView";
+import ListView from "../../../../common/ListView/ListView";
 
 interface UserCurrentlyReadingProps {
     toReadList: [],

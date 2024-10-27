@@ -3,10 +3,10 @@ import Book from "../../../../interfaces/Book";
 import { useState } from "react";
 
 import SearchResultRow from "../SearchResultsRow/SearchResultRow";
-import GridView from "./components/GridView/GridView";
-import ListView from "./components/ListView/ListView";
+import GridView from "../../../../common/GridView/GridView";
+import ListView from "../../../../common/ListView/ListView";
 
-import Pagination from "./components/Pagination/Pagination";
+import Pagination from "../../../../common/Pagination/Pagination";
 
 interface SearchResultsProps {
     books: Book[]

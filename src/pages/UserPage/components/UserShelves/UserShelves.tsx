@@ -1,6 +1,6 @@
 import style from "./UserShelves.module.css";
 
-import GridView from "../../../SearchPage/components/SearchResults/components/GridView/GridView";
+import GridView from "../../../../common/GridView/GridView";
 
 interface UserShelvesProps {
     readingList: [],

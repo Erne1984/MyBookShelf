@@ -1,18 +1,20 @@
+import style from "./GridView.module.css";
+
+import BookCard from "../BookCardGrid/BookCardGrid";
+import Book from "../../interfaces/Book";
 import { Link } from "react-router-dom";
-import style from "./ListView.module.css";
-import Book from "../../../../../../interfaces/Book";
-import BookCardList from "../../../../../../common/BookCardList/BookCardList";
 import { transliterate } from "transliteration";
 
-interface ListViewProps {
+
+interface GridViewProps {
     books: Book[]
 }
 
 
-export default function ListView(props: ListViewProps) {
-    return (
-        <div className={style["container"]}>
+export default function GridView(props: GridViewProps) {
 
+    return (
+        <div className={style["container-grid"]}>
             {
                 props.books && props.books.map((book) => {
                     const isbnForLink = book.identifiers.isbn_13[0] && book.identifiers.isbn_13[0] !== ""
@@ -22,7 +24,7 @@ export default function ListView(props: ListViewProps) {
                         <Link
                             to={`/book/:${isbnForLink}`}
                             key={isbnForLink}>
-                            <BookCardList
+                            <BookCard
                                 key={book._id}
                                 BookImg={book.cover?.medium}
                                 BookTitle={book.title}
@@ -34,7 +36,6 @@ export default function ListView(props: ListViewProps) {
                     )
                 })
             }
-
         </div>
     )
 }
