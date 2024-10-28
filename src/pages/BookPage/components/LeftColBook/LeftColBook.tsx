@@ -37,7 +37,7 @@ export default function LeftColBook(props: LeftColBookProps) {
             <div className={styles["btn-group"]}>
 
                 {
-                    status
+                    status && status != "Not found"
                         ?
                         <div onClick={toogleModal}>
                             <button className={styles["active-button"]}> <FontAwesomeIcon className={styles["icon"]} icon={faPen} />{status}</button>
@@ -52,7 +52,7 @@ export default function LeftColBook(props: LeftColBookProps) {
 
             </div>
 
-            <ModalAddList bookId={props.bookId} status={status} modalShow={modal} onClose={toogleModal} />
+            <ModalAddList userId={props.userId} bookId={props.bookId} status={status} modalShow={modal} onClose={toogleModal} />
 
         </aside>
     )
