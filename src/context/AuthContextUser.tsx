@@ -5,7 +5,8 @@ interface AuthContextType {
     token: string | null;
     isAuthenticated: boolean;
     userId: string | null;
-    isModerator: boolean| null;
+    isModerator: boolean | null;
+    loading: boolean;
     login: (token: string) => void;
     logout: () => void;
 }
@@ -39,13 +40,16 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
                     setLoading(false);
                 }
             } else {
+                setLoading(false);
                 logout();
             }
         };
 
         if (token) {
             fetchUserId();
-            console.log(token)
+            console.log(token);
+        } else {
+            setLoading(false);
         }
     }, [token]);
 
@@ -62,8 +66,8 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ token, isAuthenticated: !!token, userId, isModerator, login, logout }}>
-            {children}
+        <AuthContext.Provider value={{ token, isAuthenticated: !!token, userId, isModerator, loading, login, logout }}>
+            {loading ? <p>Carregando...</p> : children}
         </AuthContext.Provider>
     );
 };

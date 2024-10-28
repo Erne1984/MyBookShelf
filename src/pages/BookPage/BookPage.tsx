@@ -1,37 +1,40 @@
-import { useEffect, useState } from "react";
-
+import { useContext, useEffect, useState } from "react";
 import Header from "../../layouts/Header/Header";
 import LeftColBook from "./components/LeftColBook/LeftColBook";
 import RightColBook from "./components/RightColBook/RightColBook";
-
 import EditionDetails from "./components/EditionDetails/EditionDetails";
 import GenreRow from "./components/GenreRow/GenreRow";
 import AboutAuthor from "./components/AboutAuthor/AboutAuthor";
 import RatingReviewSection from "./components/RatingReviewSection/RatingReviewSection";
-
 import getBookData from "../../hooks/book/getBookData";
 import styles from "./BookPage.module.css";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContextUser";
 
 export default function BookPage() {
     const { bookISBN } = useParams();
+    const authContext = useContext(AuthContext);
 
-    if (!bookISBN) return (<p>isbn não recebido</p>)
+    if (!authContext) return <p>Erro: Contexto de autenticação não encontrado.</p>;
 
-    const { data, loading, error } = getBookData(bookISBN.slice(1));
+    const { userId, loading: authLoading } = authContext;
+
+    if (authLoading) return <p>Carregando...</p>;
+    if (!bookISBN) return <p>ISBN não recebido</p>;
+
+    const { data, loading: bookLoading, error } = getBookData(bookISBN.slice(1));
     const [bookData, setBookData] = useState(data);
 
     useEffect(() => {
         setBookData(data);
     }, [data, error]);
 
-    if (loading) return <p>Carregando...</p>;
+    if (bookLoading) return <p>Carregando...</p>;
     if (!bookData) return <p>Erro em buscar dados do livro</p>;
 
     function extractAuthorKey(url: string) {
         if (!url) return null;
-
-        console.log(url + " url")
+        console.log(url + " url");
         
         const cleanUrl = url.trim();
         const regex = /\/authors\/(OL\d+A)(?:\/.*)?/;
@@ -41,14 +44,13 @@ export default function BookPage() {
         return match ? match[1] : null;
     }
 
-    const authorKey = bookData?.authors?.[0]?.key ? bookData.authors[0].key : extractAuthorKey(bookData.authors[0].url);
+    const authorKey = bookData?.authors?.[0]?.key || extractAuthorKey(bookData.authors[0].url);
 
     return (
         <>
             <Header />
             <div className={styles["container-page-book"]}>
-
-                <LeftColBook bookCover={bookData.cover?.large}></LeftColBook>
+                <LeftColBook bookId={bookData._id} bookCover={bookData.cover?.large} userId={userId}></LeftColBook>
 
                 <div className={styles["right-col-container"]}>
                     <RightColBook
@@ -72,11 +74,9 @@ export default function BookPage() {
                         bookPublisher={bookData.publishers}
                     />
 
-                    <AboutAuthor authorKey={authorKey && authorKey} />
+                    <AboutAuthor authorKey={authorKey} />
 
                     <RatingReviewSection bookId={bookData._id} bookTitle={bookData.title} bookRatings={bookData.ratings} bookReviews={bookData.reviews}/>
-
-
                 </div>
             </div>
         </>
