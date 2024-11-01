@@ -2,7 +2,7 @@ import './Footer.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';
-
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
 
@@ -13,7 +13,9 @@ export default function Footer() {
 
                 <ul>
                     <li>Plataforma</li>
-                    <li className='footer-clickbel'>Sobre Nós</li>
+                    <li className='footer-clickbel'>
+                        <Link to="/aboutUs">Sobre Nós</Link>
+                    </li>
                     <li className='footer-clickbel'>Contato</li>
                     <li className='footer-clickbel'>Termos</li>
                 </ul>

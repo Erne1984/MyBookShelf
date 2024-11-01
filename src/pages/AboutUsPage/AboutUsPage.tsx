@@ -1,4 +1,4 @@
-import styles from './components/AboutUsPage.module.css';
+import styles from './AboutUsPage.module.css';
 
 export default function AboutUsPage() {
     return (
