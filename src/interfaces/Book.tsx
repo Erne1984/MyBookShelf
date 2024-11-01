@@ -118,7 +118,7 @@ export interface List {
     _id: string;
     userId: string;
     name: string;
-    bookId: string[];
+    books: string[];
     public: boolean;
     createdAt: string;
 }

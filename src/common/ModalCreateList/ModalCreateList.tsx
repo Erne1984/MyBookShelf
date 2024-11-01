@@ -4,6 +4,7 @@ import useGetUserLists from "../../hooks/List/useGetUserLists";
 import useCreateList from "../../hooks/List/useCreateList";
 import { List } from "../../interfaces/Book";
 import useAddBookList from "../../hooks/List/useAddBookToList";
+import RemoveBookOfList from "../../hooks/List/RemoveBookOfList";
 
 interface ModalCreateListProps {
     bookId: string;
@@ -54,8 +55,16 @@ export default function ModalCreateList(props: ModalCreateListProps) {
         }
     }
 
+    async function handleRemoveBookOfList(listId: string) {
+        if (props.userId && props.bookId) {
+            await RemoveBookOfList(props.userId, props.bookId, listId)
+        } else {
+            alert("Falha ao remover livro");
+        }
+    }
+
     function isBookInList(list: List): boolean {
-        return list.bookId.some(book => book === props.bookId);
+        return list.books.some(book => book === props.bookId);
     }
 
     return (
@@ -75,7 +84,7 @@ export default function ModalCreateList(props: ModalCreateListProps) {
                         <div
                             key={list._id}
                             className={`${style["list-item"]} ${isBookInList(list) ? style["list-item-actived"] : ""}`}
-                            onClick={() => handleAddBookToList(list._id)}
+                            onClick={!isBookInList(list) ? () => handleAddBookToList(list._id) : () => handleRemoveBookOfList(list._id)}
                         >
                             {list.name}
                         </div>
