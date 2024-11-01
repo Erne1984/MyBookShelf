@@ -54,7 +54,9 @@
 }
 
 .user-shelfs {
-    margin-top: 5px;
+    display: flex;
+    gap: 3px;
+    margin-top: 10px;
     min-height: 100px;
     width: 100%;
 }
@@ -62,10 +64,13 @@
 .user-shelfs .list-item {
     align-self: flex-start;
     cursor: pointer;
+    padding: 5px;
 }
 
 .user-shelfs .list-item-actived {
-    
+    padding: 5px;
+    color: #fff;
+    background-color: #000;
 }
 
 .btns-container {

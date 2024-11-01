@@ -3,6 +3,7 @@ import style from "./ModalCreateList.module.css";
 import useGetUserLists from "../../hooks/List/useGetUserLists";
 import useCreateList from "../../hooks/List/useCreateList";
 import { List } from "../../interfaces/Book";
+import useAddBookList from "../../hooks/List/useAddBookToList";
 
 interface ModalCreateListProps {
     bookId: string;
@@ -38,11 +39,23 @@ export default function ModalCreateList(props: ModalCreateListProps) {
     async function handleAddList() {
         const listname = listnameRef.current?.value;
 
-        if(listname && props.userId && props.bookId) {
+        if (listname && props.userId && props.bookId) {
             await useCreateList(props.userId, props.bookId, listname, false);
-        } else{
-            alert("insira o nome para estante");
+        } else {
+            alert("Insira o nome para estante");
         }
+    }
+
+    async function handleAddBookToList(listId: string) {
+        if (props.userId && props.bookId) {
+            await useAddBookList(props.userId, props.bookId, listId);
+        } else {
+            alert("Falha ao adicionar livro");
+        }
+    }
+
+    function isBookInList(list: List): boolean {
+        return list.bookId.some(book => book === props.bookId);
     }
 
     return (
@@ -59,7 +72,13 @@ export default function ModalCreateList(props: ModalCreateListProps) {
 
                 <div className={style["user-shelfs"]}>
                     {lists && lists.map((list) => (
-                        <div key={list._id} className={style["list-item"]}>{list.name}</div>
+                        <div
+                            key={list._id}
+                            className={`${style["list-item"]} ${isBookInList(list) ? style["list-item-actived"] : ""}`}
+                            onClick={() => handleAddBookToList(list._id)}
+                        >
+                            {list.name}
+                        </div>
                     ))}
                 </div>
 
