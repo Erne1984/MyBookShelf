@@ -8,7 +8,7 @@ import UserPage from "./pages/UserPage/UserPage";
 import AuthorPage from "./pages/AuthorPage/AuthorPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import UserListsPage from "./pages/UserListsPage/UserListsPage";
-
+import AboutUsPage from "./pages/AboutUsPage/AboutUsPage";
 
 const appRoutes = createBrowserRouter([
     {
@@ -42,6 +42,10 @@ const appRoutes = createBrowserRouter([
     {
         path: "/search/:query",
         element: <SearchPage/> 
+    },
+    {
+        path: "/aboutUs",
+        element: <AboutUsPage/> 
     }
 ]);
 
