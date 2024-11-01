@@ -11,6 +11,7 @@ interface ModalAddListProps {
     modalShow: boolean;
     status: string;
     onClose: () => void;
+    onOpenCreateList: () => void;
 }
 
 export default function ModalAddList(props: ModalAddListProps) {
@@ -72,6 +73,8 @@ export default function ModalAddList(props: ModalAddListProps) {
                     <FontAwesomeIcon icon={faTrash} />
                     <p>Remover de minha estante</p>
                 </div>
+
+                <button onClick={props.onOpenCreateList} className={style["btn-create-list"]}>Estantes</button>
             </div>
         </dialog>
     );

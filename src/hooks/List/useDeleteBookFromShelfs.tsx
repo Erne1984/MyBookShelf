@@ -19,6 +19,6 @@ export default async function useDeleteBookFromShelfs(userId: string, bookId: st
 
     } catch (error: any) {
         console.error('Erro:', error);
-        alert(`Falha ao cadastrar usuário: ${error.message || 'Verifique suas credenciais e tente novamente.'}`);
+        alert(`Falha ao deletar listas: ${error.message || 'Verifique sua conexão e tente novamente.'}`);
     }
 }

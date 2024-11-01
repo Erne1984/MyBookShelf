@@ -18,13 +18,18 @@ footer {
     font-weight: bold;
 }
 
-.footer-col-1 ul .footer-clickbel{
+.footer-col-1 ul .footer-clickbel {
     cursor: pointer;
 }
 
-.footer-col-1 ul .footer-clickbel:hover{
+.footer-col-1 ul .footer-clickbel:hover {
     font-weight: bold;
     color: #191F2D;
+}
+
+.footer-col-1 ul .footer-clickbel a {
+    color: black;
+    text-decoration: none;
 }
 
 .footer-box-icons {
