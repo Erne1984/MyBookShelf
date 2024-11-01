@@ -113,3 +113,12 @@ export default interface Book {
     authorImg: string;
     authorBio: string;
 }
+
+export interface List {
+    _id: string;
+    userId: string;
+    name: string;
+    bookId: string[];
+    public: boolean;
+    createdAt: string;
+}

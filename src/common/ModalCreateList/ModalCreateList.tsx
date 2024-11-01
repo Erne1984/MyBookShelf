@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import style from "./ModalCreateList.module.css";
 import useGetUserLists from "../../hooks/List/useGetUserLists";
+import useCreateList from "../../hooks/List/useCreateList";
+import { List } from "../../interfaces/Book";
 
 interface ModalCreateListProps {
     bookId: string;
@@ -12,8 +14,9 @@ interface ModalCreateListProps {
 
 export default function ModalCreateList(props: ModalCreateListProps) {
     const dialogRef = useRef<HTMLDialogElement>(null);
+    const listnameRef = useRef<HTMLInputElement>(null);
     const { userLists } = useGetUserLists(props.userId);
-    const [lists, setLists] = useState<[]>([]);
+    const [lists, setLists] = useState<List[]>([]);
 
     useEffect(() => {
         const dialog = dialogRef.current;
@@ -32,26 +35,38 @@ export default function ModalCreateList(props: ModalCreateListProps) {
         }
     }, [userLists]);
 
+    async function handleAddList() {
+        const listname = listnameRef.current?.value;
+
+        if(listname && props.userId && props.bookId) {
+            await useCreateList(props.userId, props.bookId, listname, false);
+        } else{
+            alert("insira o nome para estante");
+        }
+    }
+
     return (
         <dialog className={style["modal-container"]} ref={dialogRef}>
             <div className={style["box"]}>
                 <div className={style["title-box"]}>
-                    <h2>Adicionar Estantes Personalizadas</h2>
+                    <h3>Adicionar Estantes Personalizadas</h3>
                 </div>
 
                 <div className={style["add-new-shelf-container"]}>
-                    <input type="text" placeholder="Nova estante" />
-                    <button>Adicionar</button>
+                    <input type="text" placeholder="Nova estante" ref={listnameRef} />
+                    <button onClick={handleAddList}>Adicionar</button>
                 </div>
 
                 <div className={style["user-shelfs"]}>
-                    {lists && lists.map((list, index) => (
-                        <div key={index}>{list}</div>
+                    {lists && lists.map((list) => (
+                        <div key={list._id} className={style["list-item"]}>{list.name}</div>
                     ))}
                 </div>
 
-                <button onClick={props.onOpenPreviousModal}>Voltar</button>
-                <button onClick={props.onClose} className={style["btn-create-list"]}>Feito!</button>
+                <div className={style["btns-container"]}>
+                    <button onClick={props.onOpenPreviousModal}>Voltar</button>
+                    <button onClick={props.onClose} className={style["btn-create-list"]}>Feito!</button>
+                </div>
             </div>
         </dialog>
     );

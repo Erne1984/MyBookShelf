@@ -12,3 +12,76 @@
 .modal-container::backdrop {
     background-color: rgba(18, 18, 18, 0.8);
 }
+
+.modal-container .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.add-new-shelf-container {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.add-new-shelf-container input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: solid 1px #000;
+    padding: 5px;
+    flex: 1.5;
+}
+
+.add-new-shelf-container input:focus {
+    outline: none;
+}
+
+.add-new-shelf-container button {
+    font-weight: bold;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #000000;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.add-new-shelf-container button:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.user-shelfs {
+    margin-top: 5px;
+    min-height: 100px;
+    width: 100%;
+}
+
+.user-shelfs .list-item {
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.user-shelfs .list-item-actived {
+    
+}
+
+.btns-container {
+    display: flex;
+    gap: 10px;
+}
+
+.btns-container button {
+    font-weight: bold;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #000000;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.btns-container button:hover {
+    background-color: #000000;
+    color: white;
+}

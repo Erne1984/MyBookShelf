@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { List } from "../../interfaces/Book";
 
 export default function useGetUserLists(userId: string) {
-    const [userLists, setUserLists] = useState<[]>([]);
+    const [userLists, setUserLists] = useState<List[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
