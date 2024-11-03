@@ -3,6 +3,7 @@ import style from "./ModalEditReview.module.css";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
 import useUpdateReview from "../../hooks/review/useUpdateReview";
 import RantingStars from "../RantingStars/RatingStars";
+import useDeleteReview from "../../hooks/review/useDeleteReview";
 
 interface ModalEditReviewProps {
     userId: string | undefined;
@@ -26,6 +27,13 @@ export default function ModalEditReview(props: ModalEditReviewProps) {
             location.reload()
         }
     };
+
+    const handleDelete = async () => {
+        if (props.userId) {
+            await useDeleteReview(props.bookId, props.userId);
+            location.reload()
+        }
+    }
 
     useEffect(() => {
         const dialog = dialogRef.current;
@@ -65,6 +73,9 @@ export default function ModalEditReview(props: ModalEditReviewProps) {
                     value={content}
                     onChange={handleContentChange}
                 ></textarea>
+
+
+                <small className={style["delete-review"]} onClick={handleDelete}>deletar review</small>
 
                 <div className={style["btn-box"]}>
                     <div onClick={handleSave}>

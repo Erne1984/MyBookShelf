@@ -1,0 +1,37 @@
+.dropdown-box {
+    position: relative;
+}
+
+.dropdown-box .icon {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-item:hover {
+    background-color: #d4d2d2;
+    font-weight: bold;
+}
+
+.active {
+    display: block;
+}
+
+.none {
+    display: none;
+}

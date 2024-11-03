@@ -1,7 +1,8 @@
 import style from "./Comment.module.css";
 import RantingStars from "../../../../../../common/RantingStars/RatingStars";
+import DropdownMenuCommentUser from "./components/DropdownMenuCommentUser/DropdownMenuCommentUser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faEllipsis, faThumbsUp, faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faThumbsUp, faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 interface CommentProps {
     username: string;
@@ -59,9 +60,7 @@ export default function Comment({ username, userImg, score, content, createdAt }
                         <span>Comentar</span>
                     </div>
 
-                    <div className={style["other-options"]} aria-label="More options">
-                        <FontAwesomeIcon icon={faEllipsis} />
-                    </div>
+                    <DropdownMenuCommentUser/>
                 </div>
             </section>
         </article>

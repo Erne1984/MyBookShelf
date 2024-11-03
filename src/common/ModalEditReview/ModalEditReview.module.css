@@ -36,3 +36,11 @@
     gap: 15px;
     margin-top: 2rem;
 }
+
+.delete-review {
+    cursor: pointer;
+}
+
+.delete-review:hover {
+    text-decoration: underline;
+}
