@@ -8,33 +8,27 @@ interface ListViewProps {
     books: Book[]
 }
 
-
 export default function ListView(props: ListViewProps) {
     return (
         <div className={style["container"]}>
-
             {
                 props.books && props.books.map((book) => {
-                    const isbnForLink = book.identifiers.isbn_13[0] && book.identifiers.isbn_13[0] !== ""
-                        ? book.identifiers.isbn_13[0]
-                        : book.identifiers.isbn_10[0];
                     return (
                         <Link
-                            to={`/book/:${isbnForLink}`}
-                            key={isbnForLink}>
+                            to={`/book/${book._id}`}
+                            key={book._id}>
                             <BookCardList
                                 key={book._id}
                                 BookImg={book.cover?.medium}
                                 BookTitle={book.title}
-                                BookAuthor={transliterate(book.authors[0] ? book.authors[0].name : "Autor Desconhecido")}
+                                BookAuthor={transliterate(book.authors[0]?.name || "Autor Desconhecido")}
                                 BookRanting={book.score}
                                 BookScore={book.score}
                             />
                         </Link>
-                    )
+                    );
                 })
             }
-
         </div>
-    )
+    );
 }
