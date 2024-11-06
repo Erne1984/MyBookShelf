@@ -12,7 +12,6 @@
 
 .user-lists li {
     color: #4BC1D2;
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -32,4 +31,9 @@
 .button-add-list:hover {
     background-color: #000000;
     color: white;
+}
+
+.actived {
+    text-decoration: underline;
+    font-weight: bold;
 }

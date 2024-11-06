@@ -1,4 +1,3 @@
-import React from 'react';
 import style from "./UserCurrentlyReading.module.css";
 import ListView from "../../../../common/ListView/ListView";
 import useGetBooksByIds from '../../../../hooks/book/useGetBooksByIds';
