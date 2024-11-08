@@ -6,8 +6,13 @@
     text-decoration: underline;
     text-decoration-thickness: 2px;
     padding-bottom: 1rem;
+    color: #000;
 }
 
 .shelve-container {
     margin-bottom: 10px;
+}
+
+.no-books {
+    padding: 2rem 0 4rem 0;
 }

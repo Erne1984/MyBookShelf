@@ -16,7 +16,7 @@ export default function GridView(props: GridViewProps) {
 
                 return (
                     <Link
-                        to={`/book/${isbnForLink}`}
+                        to={`/book/:${book.identifiers.isbn_10}`}
                         key={isbnForLink}
                     >
                         <BookCard

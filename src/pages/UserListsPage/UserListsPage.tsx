@@ -45,7 +45,7 @@ export default function UserListsPage() {
                     break;
                 default:
                     const selectedList = userCustomLists?.find(list => list.name === filter);
-                    const selectedListBooks = selectedList?.books as Book[];
+                    const selectedListBooks = selectedList?.books as unknown as Book[];
                     
                     if (selectedListBooks) {
                         setBooks(selectedListBooks);

@@ -31,6 +31,7 @@ export default function UserPage() {
     useEffect(() => {
         if (user) {
             setProfileData(user);
+            console.log(profileData)
         }
     }, [user]);
 
@@ -52,7 +53,7 @@ export default function UserPage() {
                     <UserBio userName={profileData.username} userBio={profileData.aboutMe}/>
                     <UserStatsRow userReaded={profileData.readedList.length} userReading={profileData.readingList.length} userToRead={profileData.toReadList.length}/>
                     <UserCurrentlyReading toReadList={profileData.toReadList}/>
-                    <UserShelves readingList={profileData.readedList} readedList={profileData.readingList}/>
+                    <UserShelves userId={profileData._id} readingList={profileData.readingList} readedList={profileData.readedList} toReadList={profileData.toReadList}/>
                 </main>
             </div>
         </>

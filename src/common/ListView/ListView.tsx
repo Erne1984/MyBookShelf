@@ -15,7 +15,7 @@ export default function ListView(props: ListViewProps) {
                 props.books && props.books.map((book) => {
                     return (
                         <Link
-                            to={`/book/${book._id}`}
+                            to={`/book/:${book.identifiers.isbn_10}`}
                             key={book._id}>
                             <BookCardList
                                 key={book._id}
