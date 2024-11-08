@@ -1,0 +1,21 @@
+
+.form-config h4 {
+    margin: 10px 0;
+}
+
+.form-config .input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-config .input-box input {
+    padding: 15px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    font-size: 1rem;
+}
+
+.form-config textarea {
+    resize: vertical;
+    margin-bottom: 25px;
+}
