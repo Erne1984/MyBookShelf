@@ -42,6 +42,7 @@ export interface Publishers {
 
 export interface User {
     _id: string,
+    realname: string,
     username: string,
     email: string,
     imgUserUrl: string,
