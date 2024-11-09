@@ -1,0 +1,17 @@
+.user-img-box {
+    margin-top: 10px;
+}
+
+.user-img {
+    width: 111px;
+    height: 80px;
+}
+
+.user-img-box p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.delete {
+    color: red;
+}

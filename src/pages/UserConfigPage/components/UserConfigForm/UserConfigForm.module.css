@@ -1,3 +1,6 @@
+.form-config {
+    width: 600px;
+}
 
 .form-config h4 {
     margin: 10px 0;
@@ -16,6 +19,7 @@
 }
 
 .form-config textarea {
+    padding: 15px;
     resize: vertical;
     margin-bottom: 25px;
 }

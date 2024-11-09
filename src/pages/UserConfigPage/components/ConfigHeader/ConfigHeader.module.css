@@ -1,4 +1,14 @@
 .config-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.config-header p {
+    cursor: pointer;
+    color: #4BC1D2;
+}
+
+.config-header p:hover {
+    text-decoration: underline;
 }

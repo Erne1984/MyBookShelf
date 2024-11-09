@@ -45,7 +45,7 @@ export default function UserPage() {
             <div className={style["UserPage-container"]}>
                 <div className={style["left-col-user"]}>
                     <UserImg userAvatar={profileData.imgUserUrl} />
-                    <UserInfo createdAt={profileData.creationDate} country={profileData.country} dateBirth={profileData.dateBirth} gender={profileData.gender} />
+                    <UserInfo userId={profileData._id} createdAt={profileData.creationDate} country={profileData.country} dateBirth={profileData.dateBirth} gender={profileData.gender} />
                     <UserReviewRating userRatings={profileData.reviews.length} userReviews={profileData.ratingsReference.length}/>
                     <UserFriends/>
                 </div>
