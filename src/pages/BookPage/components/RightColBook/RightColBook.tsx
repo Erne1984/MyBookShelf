@@ -46,7 +46,7 @@ export default function RightColBook(props: RightColBookProps) {
 
             <div className={styles["box-title-book"]}>
                 <h1> {props.bookTitle} </h1>
-                <Link to={`/author/:${props.authorKey}`}>
+                <Link to={`/author/${props.authorKey}`}>
                     <h3> {transliterate(props.bookAuthor)} </h3>
                 </Link>
             </div>

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContextUser";
 
-export default function useGetUserReadingStatus(bookId: string, userId: string) {
+export default function useGetUserReadingStatus(bookId: string, userId: string | null) {
     const token = useContext(AuthContext)?.token;
     const [data, setData] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);

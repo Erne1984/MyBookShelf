@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Author } from "../../interfaces/Book";
 
-export default function getAuthor(authorKey: string | undefined) {
+export default function getAuthor(authorName: string | undefined) {
     const [data, setData] = useState<Author>();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -9,8 +9,8 @@ export default function getAuthor(authorKey: string | undefined) {
     useEffect(() => {
         async function fetchAuthorData() {
             try {
-                console.log(authorKey)
-                const response = await fetch(`http://localhost:8080/getAuthor?authorKey=${authorKey}`);
+                console.log(authorName)
+                const response = await fetch(`http://localhost:8080/getAuthor?name=${authorName}`);
 
                 if (!response.ok) {
                     throw new Error('Erro na resposta do servidor: ' + response.statusText);
@@ -30,10 +30,10 @@ export default function getAuthor(authorKey: string | undefined) {
             }
         }
 
-        if (authorKey) {
+        if (authorName) {
             fetchAuthorData();
         }
-    }, [authorKey])
+    }, [authorName])
 
     return { data, loading, error }
 }

@@ -21,7 +21,7 @@ export default function ListView(props: ListViewProps) {
                                 key={book._id}
                                 BookImg={book.cover?.medium}
                                 BookTitle={book.title}
-                                BookAuthor={transliterate(book.authors[0]?.name || "Autor Desconhecido")}
+                                BookAuthor={transliterate(book.authors[1]?.name || "Autor Desconhecido")}
                                 BookRanting={book.score}
                                 BookScore={book.score}
                             />

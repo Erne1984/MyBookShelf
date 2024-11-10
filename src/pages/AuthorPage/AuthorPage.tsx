@@ -5,20 +5,23 @@ import LeftColAuthor from "./components/LeftColAuthor/LeftColAuthor";
 import AuthorDetails from "./components/AuthorDetails/AuthorDetails";
 import AuthorWorks from "./components/AuthorWorks/AuthorWorks";
 
-import getAuthor from "../../hooks/author/getAuthor";
 import reduceAuthorName from "../../utils/reduceAuthorName";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Author } from "../../interfaces/Book";
+import useGetAuthorById from "../../hooks/author/getAuthorById";
 
 export default function AuthorPage() {
     const { authorKey } = useParams()
-    const { data, loading, error } = getAuthor(authorKey?.slice(1));
+    if(!authorKey) return <></>
+    const { author, loading, error } = useGetAuthorById(authorKey);
     const [authorData, setAuthorData] = useState<Author>();
 
     useEffect(() => {
-        setAuthorData(data);
-    }, [data, error])
+        if(author) {
+            setAuthorData(author);
+        }
+    }, [author, error])
 
     if (loading) return (<div>Carregando</div>)
 
@@ -29,12 +32,11 @@ export default function AuthorPage() {
             <Header />
             <div className={style["container"]}>
 
-
                 <LeftColAuthor authorPhoto={authorData?.photo} />
 
                 <section className={style["right-section"]}>
 
-                    <h1>{reduceAuthorName(authorData?.personal_name)}</h1>
+                    <h1>{reduceAuthorName(authorData?.name)}</h1>
 
                     <AuthorDetails authorBirth={authorData?.birth_date} authorDeathDate={authorData?.death_date} />
 
@@ -45,8 +47,6 @@ export default function AuthorPage() {
                     </div>
 
                     <AuthorWorks />
-
-
 
                 </section>
 

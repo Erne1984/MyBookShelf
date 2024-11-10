@@ -10,7 +10,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 
 interface LeftColBookProps {
     bookId: string;
-    userId: string;
+    userId: string | null;
     bookCover: string | undefined;
 }
 
@@ -64,22 +64,28 @@ export default function LeftColBook(props: LeftColBookProps) {
                 <PrimaryButton btnContent="Avaliar" />
             </div>
 
-            <ModalAddList
-                userId={props.userId}
-                bookId={props.bookId}
-                status={status}
-                modalShow={modalAddList}
-                onClose={toggleModalAddList}
-                onOpenCreateList={openCreateListModal}
-            />
+            {
+                props.userId &&
+                <ModalAddList
+                    userId={props.userId}
+                    bookId={props.bookId}
+                    status={status}
+                    modalShow={modalAddList}
+                    onClose={toggleModalAddList}
+                    onOpenCreateList={openCreateListModal}
+                />
+            }
 
-            <ModalCreateList
-                bookId={props.bookId}
-                userId={props.userId}
-                modalShow={modalCreateList}
-                onClose={closeCreateListModal}
-                onOpenPreviousModal={openAddListModal} 
-            />
+            {
+                props.userId &&
+                <ModalCreateList
+                    bookId={props.bookId}
+                    userId={props.userId}
+                    modalShow={modalCreateList}
+                    onClose={closeCreateListModal}
+                    onOpenPreviousModal={openAddListModal}
+                />
+            }
         </aside>
     );
 }

@@ -56,12 +56,12 @@ export default function BookPage() {
                     <RightColBook
                         bookId={bookData._id}
                         bookTitle={bookData.title}
-                        bookAuthor={bookData.authors[0].name}
+                        bookAuthor={bookData.authors[1].name}
                         bookScore={bookData.score}
                         bookDescri={bookData.bookDescri}
                         bookAnalysis={bookData.reviews}
                         bookRatings={bookData.ratings}
-                        authorKey={authorKey}
+                        authorKey={bookData.authors[1].key}
                     />
 
                     <GenreRow bookGenres={bookData.subjects} />
