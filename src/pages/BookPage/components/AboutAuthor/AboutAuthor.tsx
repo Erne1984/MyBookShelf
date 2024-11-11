@@ -34,9 +34,9 @@ export default function AboutAuthor(props: AboutAuthorProps) {
             <div className={style["author-profile"]}>
                 <div className={style["box-name-photo"]}>
                     <div className={style["box-img"]}>
-                        <img src={authorData.photo} alt="" />
+                        <img src={authorData.imageUrl} alt="" />
                     </div>
-                    <h4 className={style["author-name"]}>{formatName(authorData.personal_name)}</h4>
+                    <h4 className={style["author-name"]}>{formatName(authorData.name)}</h4>
                 </div>
                 <PrimaryButton btnContent="Favoritar" />
             </div>
