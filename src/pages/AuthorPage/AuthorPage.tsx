@@ -67,7 +67,7 @@ export default function AuthorPage() {
                         </p>
                     </div>
 
-                    <AuthorWorks />
+                    <AuthorWorks authorId={authorData?._id} />
 
                 </section>
 
