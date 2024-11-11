@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import './BooksRow.css';
 import BookCard from '../BookCardGrid/BookCardGrid';
-import GetBooks from '../../hooks/book/getBooks';
 import { transliterate } from 'transliteration';
 import { Link } from 'react-router-dom';
+import getBestRatedBooks from '../../hooks/book/getBestRatedBooks';
 
 export default function BooksRow() {
     const [visibleRows, setVisibleRows] = useState(1);
-    const { data, loading, error } = GetBooks();
+    const { data, loading, error } = getBestRatedBooks();
     const [booksData, setBookData] = useState(data);
 
     useEffect(() => {
@@ -37,11 +37,10 @@ export default function BooksRow() {
                         to={`/book/:${isbnForLink}`}
                         key={isbnForLink}>
                         <BookCard
+                            BookId={book._id}
                             BookImg={book.cover?.medium}
                             BookTitle={book.title}
                             BookAuthor={transliterate(book.authors[1] ? book.authors[1].name : "Autor Desconhecido")}
-                            BookRanting={book.score}
-                            BookScore={book.score}
                         />
                     </Link>
                 );
