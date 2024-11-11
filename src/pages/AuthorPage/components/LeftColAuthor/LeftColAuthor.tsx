@@ -1,5 +1,6 @@
 import style from "./LeftColAuthor.module.css";
 import PrimaryButton from "../../../../common/PrimaryButton/PrimaryButton";
+import WriteIcon from "/assets/writer.png"
 
 interface LeftColAuthorProps {
     authorPhoto: string | undefined,
@@ -7,13 +8,17 @@ interface LeftColAuthorProps {
 
 export default function LeftColAuthor(props: LeftColAuthorProps) {
 
-    if (!props.authorPhoto) return (<p>Imagem não encontrado</p>)
-
     return (
         <aside className={style["left-section"]}>
 
             <div className={style["portrait-box"]}>
-                <img src={props.authorPhoto} alt="Foto do autor " />
+
+                {
+                    props.authorPhoto ?
+                    <img src={props.authorPhoto} alt="Foto do autor " />
+                    :
+                    <img src={WriteIcon} alt="Foto do autor " />
+                }
             </div>
 
             <div className={style["btn-box"]}>

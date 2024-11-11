@@ -6,6 +6,16 @@
     padding-bottom: 4rem;
 }
 
+.box-title { 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.box-title .icon {
+    cursor: pointer;
+}
+
 .bio-box {
     max-width: 713px;
 }

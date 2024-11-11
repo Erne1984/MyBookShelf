@@ -14,6 +14,7 @@ interface Cover {
 }
 
 export interface Author {
+    _id: string;
     key: string;
     url: string;
     bio: string;
@@ -21,7 +22,7 @@ export interface Author {
     personal_name: string;
     birth_date: string;
     death_date: string;
-    photo: string;
+    imageUrl: string;
     followers: string[];
 }
 
