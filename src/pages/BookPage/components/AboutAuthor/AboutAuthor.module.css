@@ -13,6 +13,18 @@
     justify-content: space-between;
 }
 
+.author-profile a {
+    text-decoration: none;
+}
+
+.author-profile h4 {
+    color: #000;
+}
+
+.author-profile h4:hover {
+    text-decoration: underline;
+}
+
 .box-name-photo {
     display: flex;
     align-items: center;

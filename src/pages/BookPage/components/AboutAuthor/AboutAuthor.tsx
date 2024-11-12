@@ -7,6 +7,7 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import getAuthor from "../../../../hooks/author/getAuthor";
 import { Author } from "../../../../interfaces/Book";
 import formatName from "../../../../utils/formatName";
+import { Link } from "react-router-dom";
 
 interface AboutAuthorProps {
     authorKey: string | null;
@@ -14,7 +15,7 @@ interface AboutAuthorProps {
 
 export default function AboutAuthor(props: AboutAuthorProps) {
 
-    if(!props.authorKey) return <img></img>
+    if (!props.authorKey) return <img></img>
 
     const { data, loading, error } = getAuthor(props.authorKey);
 
@@ -36,7 +37,9 @@ export default function AboutAuthor(props: AboutAuthorProps) {
                     <div className={style["box-img"]}>
                         <img src={authorData.imageUrl} alt="" />
                     </div>
-                    <h4 className={style["author-name"]}>{formatName(authorData.name)}</h4>
+                    <Link to={`/author/${authorData._id}`}>
+                        <h4 className={style["author-name"]}>{formatName(authorData.name)}</h4>
+                    </Link>
                 </div>
                 <PrimaryButton btnContent="Favoritar" />
             </div>

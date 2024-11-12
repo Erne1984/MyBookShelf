@@ -24,6 +24,11 @@ header {
     gap: 15px;
 }
 
+.header-right .menu-links a {
+    color: #000;
+    text-decoration: none;
+}
+
 .header-right .menu-links li:hover {
     font-weight: bold;
     border-bottom: 1px solid #000;

@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 interface WriteReviewProps {
     _id: string | undefined,
     bookId: string,
+    bookTitle: string;
     imgUserUrl: string | undefined,
 }
 
@@ -53,7 +54,7 @@ export default function WriteReview(props: WriteReviewProps) {
                     </div>
             }
 
-            <ModalReview userId={props?._id} bookId={props.bookId} onClose={toggleModal} modalShow={showModal} bookTitle="O alienista" />
+            <ModalReview userId={props?._id} bookId={props.bookId} onClose={toggleModal} modalShow={showModal} bookTitle={props.bookTitle} />
 
 
         </article>

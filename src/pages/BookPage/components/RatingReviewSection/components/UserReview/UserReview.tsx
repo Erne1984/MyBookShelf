@@ -30,7 +30,7 @@ export default function UserReview(props: UserReviewProps) {
                 userReviewData ?
                     <MyReview userId={profileData?._id} bookId={props.bookId} bookTitle={props.bookTitle} content={userReviewData.content} createdAt={userReviewData.createdAt} />
                     :
-                    <WriteReview _id={profileData?._id} bookId={props.bookId} imgUserUrl={profileData?.imgUserUrl} />
+                    <WriteReview _id={profileData?._id} bookId={props.bookId} imgUserUrl={profileData?.imgUserUrl} bookTitle={props.bookTitle} />
             }
         </article>
     )

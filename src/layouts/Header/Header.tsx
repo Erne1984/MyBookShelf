@@ -1,51 +1,46 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import './Header.css'
-
 import { AuthContext } from '../../context/AuthContextUser';
 import DropdownMenuLoggedIn from './components/DropdownMenuLoggedIn/DropdownMenuLoggedIn';
 import DropdownMenuLoggedOut from './components/DropdownMenuLoggedOut/DropdownMenuLoggedOut';
 import SearchInput from '../../common/SearchInput/SearchInput';
-
+import { useLocation } from 'react-router-dom';
 import Logo from '/assets/mybookshelf-logo.png?url';
 
 export default function Header() {
-
+    const [currentPage, setCurrentPage] = useState<string>("");
     const isAuthenticated = useContext(AuthContext)?.isAuthenticated;
+    const location = useLocation();
+
+    useEffect(() => {
+        setCurrentPage(location.pathname);  // Atualiza o estado com o caminho atual
+    }, [location.pathname]);  // Reage às mudanças na URL
 
     return (
         <header>
-
             <div className='header-left'>
-
                 <Link to={"/"}>
-                    <img src={Logo}></img>
+                    <img src={Logo} alt="MyBookShelf Logo" />
                 </Link>
-
                 <SearchInput />
-
             </div>
 
             <div className='header-right'>
-
                 <ul className='menu-links'>
-                    <li className='selected'>Home</li>
-                    <li>Meus Livros</li>
-                    <li>Lista de Desejos</li>
-                    <li>Sobre Nós</li>
+                    <li className={currentPage === "/" ? "selected" : ""}>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className={currentPage === "/aboutUs" ? "selected" : ""}>
+                        <Link to="/aboutUs">Sobre Nós</Link>
+                    </li>
+                    <li className={currentPage === "/recommendations" ? "selected" : ""}>
+                        <Link to="/recommendations">Recomendações</Link>
+                    </li>
                 </ul>
 
-                {
-                    isAuthenticated ?
-                        <DropdownMenuLoggedIn />
-                        :
-                        <DropdownMenuLoggedOut />
-                }
-
+                {isAuthenticated ? <DropdownMenuLoggedIn /> : <DropdownMenuLoggedOut />}
             </div>
-
-
         </header>
-    )
+    );
 }

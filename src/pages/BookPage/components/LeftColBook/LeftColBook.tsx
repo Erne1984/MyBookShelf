@@ -46,7 +46,10 @@ export default function LeftColBook(props: LeftColBookProps) {
 
     return (
         <aside>
-            <img src={props.bookCover} alt="Book Cover" />
+
+            <div className={styles["cover-box"]}>
+                <img src={props.bookCover} alt="Book Cover" />
+            </div>
 
             <div className={styles["btn-group"]}>
                 {status && status !== "Not found" ? (
