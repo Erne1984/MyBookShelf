@@ -15,7 +15,6 @@ export default function getBestRatedBooks() {
                     throw new Error('Erro na resposta do servidor');
                 }
                 const result = await response.json();
-                console.log('Dados retornados:', result);
                 setData(result);
             } catch (err) {
                 if (err instanceof Error) {

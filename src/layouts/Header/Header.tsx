@@ -14,8 +14,8 @@ export default function Header() {
     const location = useLocation();
 
     useEffect(() => {
-        setCurrentPage(location.pathname);  // Atualiza o estado com o caminho atual
-    }, [location.pathname]);  // Reage às mudanças na URL
+        setCurrentPage(location.pathname); 
+    }, [location.pathname]);
 
     return (
         <header>

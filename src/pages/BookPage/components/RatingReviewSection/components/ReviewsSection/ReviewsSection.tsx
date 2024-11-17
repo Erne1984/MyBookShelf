@@ -3,7 +3,6 @@ import style from "./ReviewsSection.module.css";
 import FiltersComment from "../../../ReviewsSection/components/FilterComment/FiltersComment";
 import Comment from "../../../ReviewsSection/components/Comment/Comment";
 import { FormattedReview } from "../../../../../../interfaces/Book";
-import { useEffect } from "react";
 
 interface ReviewSectionProps {
     bookReviews: FormattedReview[] | undefined;
@@ -21,6 +20,7 @@ export default function ReviewSection(props: ReviewSectionProps) {
                 return (
                     <Comment
                     key={review.reviewId}
+                    reviewId={review.reviewId}
                     username={review.username}
                     userImg={review.imgUserUrl}
                     score={review.score}
