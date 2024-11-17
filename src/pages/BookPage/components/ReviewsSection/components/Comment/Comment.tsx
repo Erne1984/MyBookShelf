@@ -19,7 +19,7 @@ interface CommentProps {
 export default function Comment({ username, reviewId, userImg, score, content, createdAt }: CommentProps) {
     const userId = useContext(AuthContext)?.userId;
     const { toggleLike, loading, error } = useGiveReviewALike();
-    const [likes, setLikes] = useState(0); // Valor inicial fictício, ajuste conforme necessário
+    const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
 
     const handleLikeClick = async () => {
@@ -30,8 +30,8 @@ export default function Comment({ username, reviewId, userImg, score, content, c
 
         try {
             const data = await toggleLike(userId, reviewId);
-            setLiked(data.liked); // Considerando que a API retorna se o usuário curtiu ou não
-            setLikes(data.totalLikes); // Atualiza o total de likes
+            setLiked(data.liked);
+            setLikes(data.totalLikes);
         } catch (err) {
             console.error("Erro ao curtir a review:", err);
         }
