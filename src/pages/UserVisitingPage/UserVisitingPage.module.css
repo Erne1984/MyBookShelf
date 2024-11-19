@@ -1,0 +1,6 @@
+.UserPage-visiting-container {
+    display: flex;
+    gap: 6rem;
+    min-height: 90vh;
+    padding-top: 2rem;
+}

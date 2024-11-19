@@ -6,8 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faThumbsUp, faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { AuthContext } from "../../../../../../context/AuthContextUser";
 import useGiveReviewALike from "../../../../../../hooks/review/useGiveReviewALike";
+import { Link } from "react-router-dom";
 
 interface CommentProps {
+    userIdComment: string | null,
     username: string;
     reviewId: string;
     userImg: string | null;
@@ -16,7 +18,7 @@ interface CommentProps {
     createdAt: string;
 }
 
-export default function Comment({ username, reviewId, userImg, score, content, createdAt }: CommentProps) {
+export default function Comment({ userIdComment, username, reviewId, userImg, score, content, createdAt }: CommentProps) {
     const userId = useContext(AuthContext)?.userId;
     const { toggleLike, loading, error } = useGiveReviewALike();
     const [likes, setLikes] = useState(0);
@@ -49,7 +51,9 @@ export default function Comment({ username, reviewId, userImg, score, content, c
                 ) : (
                     <FontAwesomeIcon className={style["user-avatar"]} icon={faCircleUser} />
                 )}
-                <small className={style["username"]}>{username}</small>
+                <Link to={`/userVisiting/${userIdComment}`}>
+                    <small className={style["username"]}>{username}</small>
+                </Link>
             </div>
 
             <section className={style["review-box"]}>

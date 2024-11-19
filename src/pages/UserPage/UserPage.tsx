@@ -50,7 +50,7 @@ export default function UserPage() {
                     <UserFriends/>
                 </div>
                 <main className={style["right-col-user"]}>
-                    <UserBio userName={profileData.username} userBio={profileData.aboutMe}/>
+                    <UserBio userId={profileData._id} userName={profileData.username} userBio={profileData.aboutMe}/>
                     <UserStatsRow userReaded={profileData.readedList.length} userReading={profileData.readingList.length} userToRead={profileData.toReadList.length}/>
                     <UserCurrentlyReading toReadList={profileData.toReadList}/>
                     <UserShelves userId={profileData._id} readingList={profileData.readingList} readedList={profileData.readedList} toReadList={profileData.toReadList}/>

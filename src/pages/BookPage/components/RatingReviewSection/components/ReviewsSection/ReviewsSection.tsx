@@ -20,6 +20,7 @@ export default function ReviewSection(props: ReviewSectionProps) {
                 return (
                     <Comment
                     key={review.reviewId}
+                    userIdComment={review.userId}
                     reviewId={review.reviewId}
                     username={review.username}
                     userImg={review.imgUserUrl}

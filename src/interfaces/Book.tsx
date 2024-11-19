@@ -54,6 +54,8 @@ export interface User {
     reviews: [],
     ratingsReference: [],
     friendsReference: [],
+    followingUsersReference: [],
+    followingAuthorsReference: [],
     creationDate: string,
     dateBirth: string | undefined,
     country: string | undefined,

@@ -10,6 +10,7 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import UserListsPage from "./pages/UserListsPage/UserListsPage";
 import AboutUsPage from "./pages/AboutUsPage/AboutUsPage";
 import UserConfigPage from "./pages/UserConfigPage/UserConfigPage";
+import UserVisitingPage from "./pages/UserVisitingPage/UserVisitingPage";
 
 const appRoutes = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const appRoutes = createBrowserRouter([
     {
         path: "/user/:userId/config", 
         element: <UserConfigPage /> 
+    },
+    {
+        path: "/userVisiting/:userId", 
+        element: <UserVisitingPage /> 
     },
     {
         path: "/book/:bookISBN", 

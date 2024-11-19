@@ -38,7 +38,7 @@ export default function DropdownMenuLoggedIn() {
             }
 
             <ul className={`${style['dropdown-menu']} ${dropdownMenu ? style.active : style.none}`}>
-                <Link to={`/user/:${userId}`}>
+                <Link to={`/user/${userId}`}>
                     <div className={style['menu-item']}>
                         <FontAwesomeIcon className={""} icon={faUser} />
                         <li>Perfil</li>

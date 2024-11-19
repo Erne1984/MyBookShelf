@@ -1,0 +1,17 @@
+.actions-row-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 1rem;
+}
+
+.more-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.more-dropdown .icon {
+    font-size: 0.7rem;
+}
