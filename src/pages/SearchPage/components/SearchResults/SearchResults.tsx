@@ -1,44 +1,19 @@
-import style from "./SearchResults.module.css";
-import Book from "../../../../interfaces/Book";
-import { useState } from "react";
+import AuthorResults from "./components/AuthorResults/AuthorResults";
 
-import SearchResultRow from "../SearchResultsRow/SearchResultRow";
-import GridView from "../../../../common/GridView/GridView";
-import ListView from "../../../../common/ListView/ListView";
-
-import Pagination from "../../../../common/Pagination/Pagination";
+import BooksResults from "./components/BooksResults/BooksResults";
 
 interface SearchResultsProps {
-    books: Book[]
+    currentSearchType: string,
+    results: any[];
 }
 
 export default function SearchResults(props: SearchResultsProps) {
-    const [viewMode, setViewMode] = useState<string>("grid");
-    const [currentPage, setCurrentPage] = useState<number>(1); 
-    const booksPerPage = 5;
-
-    const startIndex = (currentPage - 1) * booksPerPage;
-    const endIndex = startIndex + booksPerPage;
-    const currentBooks = props.books.slice(startIndex, endIndex); 
 
     return (
         <>
-            <SearchResultRow numberResults={props.books.length} viewMode={viewMode} setViewMode={setViewMode} />
+        { props.currentSearchType == "Books" && (<BooksResults books={props.results} />)}
 
-            <div className={style["container"]}>
-                {
-                    viewMode == "grid"
-                        ? <GridView books={currentBooks} /> 
-                        : <ListView books={currentBooks} />
-                }
-            </div>
-
-            <Pagination
-                totalBooks={props.books.length}
-                booksPerPage={booksPerPage}
-                currentPage={currentPage}
-                onPageChange={setCurrentPage}
-            />
+        { props.currentSearchType == "Authors" && (<AuthorResults authors={props.results} />)}
         </>
     )
 }

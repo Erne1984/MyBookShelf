@@ -16,9 +16,15 @@ export default function SearchInput() {
         }
     }, [query]);
 
+    const performSearch = () => {
+        if (searchQuery.trim()) {
+            navigate(`/search/${searchQuery}`);
+        }
+    };
+
     const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter' && searchQuery.trim()) {
-            navigate(`/search/:${searchQuery}`);
+        if (e.key === 'Enter') {
+            performSearch();
         }
     };
 
@@ -32,7 +38,11 @@ export default function SearchInput() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleSearch}
             />
-            <FontAwesomeIcon className={style['search-icon']} icon={faMagnifyingGlass} />
+            <FontAwesomeIcon 
+                className={style['search-icon']} 
+                icon={faMagnifyingGlass} 
+                onClick={performSearch}
+            />
         </div>
     );
 }

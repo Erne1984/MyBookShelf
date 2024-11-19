@@ -23,6 +23,7 @@ export interface Author {
     birth_date: string;
     death_date: string;
     imageUrl: string;
+    works: string[];
     followers: string[];
 }
 

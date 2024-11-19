@@ -1,0 +1,16 @@
+.search-tabs {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    list-style: none;
+    padding-top: 2rem;
+}
+
+.search-tabs li {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.active {
+    text-decoration: underline;
+}

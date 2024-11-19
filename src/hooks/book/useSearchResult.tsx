@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useSearchResult(searchQuery: string | undefined) {
+export default function useSearchResult(searchQuery: string | undefined, searchType: string) {
     const [data, setData] = useState<any | null>(null);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
@@ -9,7 +9,7 @@ export default function useSearchResult(searchQuery: string | undefined) {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await fetch(`http://localhost:8080/queryBook?query=${searchQuery}`);
+                const response = await fetch(`http://localhost:8080/query${searchType}?query=${searchQuery}`);
 
                 if (!response.ok) {
                     throw new Error("Erro na requisição ao servidor");
@@ -18,6 +18,7 @@ export default function useSearchResult(searchQuery: string | undefined) {
                 const result = await response.json();
 
                 console.log(result)
+
                 setData(result);
             } catch (err) {
                 if (err instanceof Error) {
@@ -28,11 +29,10 @@ export default function useSearchResult(searchQuery: string | undefined) {
             } finally {
                 setLoading(false);
             }
-        }
-
+        };
 
         fetchData();
-    }, [searchQuery]);
+    }, [searchQuery, searchType]);
 
     return { data, loading, error };
 }
