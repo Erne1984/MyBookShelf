@@ -1,0 +1,16 @@
+.sectionContainer {
+    margin-bottom: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sectionContent {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+  }
+  
