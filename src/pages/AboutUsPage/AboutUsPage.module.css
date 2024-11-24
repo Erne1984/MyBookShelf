@@ -9,12 +9,14 @@
     border-radius: 10px;
   }
   
+ 
   .aboutUsContainer h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #333;
   }
   
+
   .aboutUsContainer ul {
     text-align: left;
     margin: 1rem 0;
@@ -31,5 +33,41 @@
     margin-top: 2rem;
     font-size: 1.2rem;
     color: #444;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .aboutUsContainer {
+      padding: 15px;
+      margin: 1rem auto;
+    }
+  
+    .aboutUsContainer h1 {
+      font-size: 2rem;
+    }
+  
+    .aboutUsContainer p,
+    .aboutUsContainer li {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .aboutUsContainer {
+      padding: 10px;
+    }
+  
+    .aboutUsContainer h1 {
+      font-size: 1.8rem;
+    }
+  
+    .aboutUsContainer p,
+    .aboutUsContainer li {
+      font-size: 0.95rem;
+    }
+  
+    .thankYou {
+      font-size: 1rem;
+    }
   }
   
