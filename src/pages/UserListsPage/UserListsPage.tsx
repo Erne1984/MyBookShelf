@@ -68,7 +68,14 @@ export default function UserListsPage() {
                 <UserListsHeader />
 
                 <div className={style["main-content"]}>
-                    <UserListsSideFilters customLists={customLists} currentFilter={filter} setFilter={setFilter} />
+                    <UserListsSideFilters 
+                    userId={userId} 
+                    customLists={customLists} 
+                    currentFilter={filter} 
+                    setFilter={setFilter}
+                    readedNumber={user?.readedList.length}
+                    readingNumber={user?.readingList.length} 
+                    toReadingNumber={user?.toReadList.length}/>
                     <UserListsBooksDisplay books={books} />
                 </div>
             </main>

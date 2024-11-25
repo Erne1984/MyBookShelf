@@ -37,3 +37,29 @@
     text-decoration: underline;
     font-weight: bold;
 }
+
+.input-create-List {
+    display: flex;
+    align-items: center;
+}
+
+.custom-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-list .icon {
+    cursor: pointer;
+    font-size: 0.8rem;  
+    display: none; 
+}
+
+.custom-list .icon:hover {
+    text-decoration: underline;
+}
+
+.custom-list:hover .icon {
+    display: block; 
+    text-decoration: underline;
+}

@@ -1,7 +1,7 @@
 import style from './DropdownMenuLoggedIn.module.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faUsers, faMessage, faQuoteLeft, faRightFromBracket, faSun, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faUsers, faMessage, faQuoteLeft, faRightFromBracket, faSun, faGear, faBook } from '@fortawesome/free-solid-svg-icons';
 import { useContext, useEffect, useState } from 'react';
 
 import { AuthContext } from '../../../../context/AuthContextUser';
@@ -57,6 +57,13 @@ export default function DropdownMenuLoggedIn() {
                     <FontAwesomeIcon icon={faQuoteLeft} />
                     <li>Frases</li>
                 </div>
+                <Link to={`/user/${userId}/lists`}>
+                    <div className={style['menu-item']}>
+                        <FontAwesomeIcon icon={faBook} />
+                        <li>Minhas Listas</li>
+
+                    </div>
+                </Link>
                 <div className={style['menu-item']}>
                     <FontAwesomeIcon icon={faSun} />
                     <li>Tema</li>
