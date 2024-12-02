@@ -69,3 +69,8 @@
 .other-options {
     cursor: pointer;
 }
+
+.user-box .link-comment {
+    color: black;
+    text-decoration: none;
+}

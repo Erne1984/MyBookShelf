@@ -51,7 +51,7 @@ export default function Comment({ userIdComment, username, reviewId, userImg, sc
                 ) : (
                     <FontAwesomeIcon className={style["user-avatar"]} icon={faCircleUser} />
                 )}
-                <Link to={`/userVisiting/${userIdComment}`}>
+                <Link to={`/userVisiting/${userIdComment}`} className={style["link-comment"]}>
                     <small className={style["username"]}>{username}</small>
                 </Link>
             </div>
