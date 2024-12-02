@@ -7,6 +7,7 @@ import useGetUserReadingStatus from '../../../../hooks/user/useGetUserReadingSta
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 interface LeftColBookProps {
     bookId: string;
@@ -19,9 +20,14 @@ export default function LeftColBook(props: LeftColBookProps) {
     const [modalCreateList, setModalCreateList] = useState<boolean>(false);
     const { data } = useGetUserReadingStatus(props.bookId, props.userId);
     const [status, setStatus] = useState<string>("");
+    const navigate = useNavigate();
 
     function toggleModalAddList() {
-        setModalAddList(!modalAddList);
+        if (!props.userId) {
+            navigate('/login');
+        } else {
+            setModalAddList(!modalAddList);
+        }
     }
 
     function openCreateListModal() {

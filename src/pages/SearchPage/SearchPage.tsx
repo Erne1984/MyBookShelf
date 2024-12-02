@@ -34,7 +34,7 @@ export default function SearchPage() {
                 <SearchingForTabs currentType={searchType} onTypeChange={setSearchType} />
 
                 {error ? (
-                    <p>Erro ao buscar dados. Tente novamente mais tarde.</p>
+                    <p className={style["search-result"]}>Pesquisa não pode ser realizada devido a algum erro interno. Tente novamente mais tarde</p>
                 ) : (
                     <SearchResults results={results} currentSearchType={searchType} />
                 )}

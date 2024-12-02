@@ -27,19 +27,23 @@ export default function BooksResults(props: BooksREsultsProps) {
             <SearchResultRow numberResults={props.books.length} viewMode={viewMode} setViewMode={setViewMode} />
 
             <div className={style["container"]}>
-                {
-                    viewMode == "grid"
-                        ? <GridView books={currentBooks} />
+                {currentBooks.length === 0 ? (
+                    <p>Nenhum resultado encontrado</p>
+                ) : (
+                    viewMode === "grid" 
+                        ? <GridView books={currentBooks} /> 
                         : <ListView books={currentBooks} />
-                }
+                )}
             </div>
 
-            <Pagination
-                totalBooks={props.books.length}
-                booksPerPage={booksPerPage}
-                currentPage={currentPage}
-                onPageChange={setCurrentPage}
-            />
+            {currentBooks.length > 0 && (
+                <Pagination
+                    totalBooks={props.books.length}
+                    booksPerPage={booksPerPage}
+                    currentPage={currentPage}
+                    onPageChange={setCurrentPage}
+                />
+            )}
         </>
     )
 }

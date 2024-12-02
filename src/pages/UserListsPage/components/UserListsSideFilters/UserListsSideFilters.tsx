@@ -65,7 +65,7 @@ export default function UserListsSideFilters({ userId, currentFilter, setFilter,
                     className={`${style["list-item"]} ${currentFilter === "quero ler" ? style["actived"] : ""}`}
                     onClick={() => setFilter("quero ler")}
                 >
-                    Quero Ler {readingNumber ? `(${readingNumber})` : "(0)"}
+                    Quero Ler {readingNumber ? `(${toReadingNumber})` : "(0)"}
                 </li>
                 {customLists && customLists.map(list => (
                     <div className={style["custom-list"]} key={list._id}>

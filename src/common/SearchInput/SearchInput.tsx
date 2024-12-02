@@ -19,6 +19,8 @@ export default function SearchInput() {
     const performSearch = () => {
         if (searchQuery.trim()) {
             navigate(`/search/${searchQuery}`);
+        } else {
+            alert("Preencha o campo");  // Exibe o alerta caso o campo esteja vazio
         }
     };
 
@@ -37,6 +39,7 @@ export default function SearchInput() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={handleSearch}
+                required
             />
             <FontAwesomeIcon 
                 className={style['search-icon']} 

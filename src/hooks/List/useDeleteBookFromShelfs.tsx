@@ -2,6 +2,7 @@
 
 export default async function useDeleteBookFromShelfs(userId: string, bookId: string) {
     try {
+        console.log(userId + " " + bookId)
         const response = await fetch("http://localhost:8080/deleteBookFromShelfs", {
             method: "DELETE",
             headers: {
