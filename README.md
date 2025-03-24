@@ -1,7 +1,7 @@
 # MyBookShelf
 
 ![Logo do MyBookShelf](./public/assets/mybookshelf-logo.png)  
-*Plataforma de catalogação social para entusiastas da literatura.*
+*Plataforma de catalogação social para leitores.*
 
 ---
 
