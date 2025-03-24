@@ -30,3 +30,8 @@
     margin: 0;
     text-align: right;
 }
+.no-color-link {
+    color: inherit;
+    text-decoration: none;  
+  }
+  

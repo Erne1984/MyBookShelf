@@ -9,9 +9,6 @@ interface UserStatsRowProps {
 
 export default function UserStatsRow(props: UserStatsRowProps) {
     useEffect(() => {
-        console.log("Livros para ler:", props.userToRead);
-        console.log("Lendo:", props.userReading);
-        console.log("Livros lidos:", props.userReaded);
     }, [props.userToRead, props.userReading, props.userReaded]);
 
     return (

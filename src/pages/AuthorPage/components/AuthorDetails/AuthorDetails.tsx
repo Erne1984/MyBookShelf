@@ -9,7 +9,7 @@ export default function AuthorDetails(props: AuthorDetailsProps) {
 
     return (
         <div className={style["container"]}>
-
+            {/*}
             <div className={style["info-row"]}>
                 <dt className={style[""]}>Nascimento:</dt>
                 <dd className={style[""]}>{ props.authorBirth }</dd>
@@ -19,6 +19,8 @@ export default function AuthorDetails(props: AuthorDetailsProps) {
                 <dt className={style[""]}>Falecimento:</dt>
                 <dd className={style[""]}>{ props.authorDeathDate }</dd>
             </div>
+
+            {*/}
 
         </div>
     )

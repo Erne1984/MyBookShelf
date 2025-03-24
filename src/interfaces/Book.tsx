@@ -127,3 +127,14 @@ export interface List {
     public: boolean;
     createdAt: string;
 }
+
+export interface ReplyInteface {
+    _id: string;
+    respondingToReference: string;
+    replyId: string;
+    userId: string | null;
+    username: string;
+    imgUserUrl: string | null;
+    content: string;
+    createdAt: string;
+}

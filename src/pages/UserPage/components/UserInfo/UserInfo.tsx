@@ -24,7 +24,7 @@ export default function UserInfo(props: UserInfoProps) {
             <div className={`${style["title-row"]} `}>
                 <h4>Info</h4>
                 {
-                    props.userId == userIdLogged && <Link to={`/user/${props.userId}/config`}><FontAwesomeIcon icon={faPen} /></Link>
+                    props.userId == userIdLogged && <Link className={style["no-color-link"]} to={`/user/${props.userId}/config`}><FontAwesomeIcon icon={faPen} /></Link>
                 }
             </div>
 

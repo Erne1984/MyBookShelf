@@ -34,9 +34,11 @@ export default function Header() {
                     <li className={currentPage === "/aboutUs" ? "selected" : ""}>
                         <Link to="/aboutUs">Sobre Nós</Link>
                     </li>
+                    {/*}
                     <li className={currentPage === "/recommendations" ? "selected" : ""}>
                         <Link to="/recommendations">Recomendações</Link>
                     </li>
+                    {*/}
                 </ul>
 
                 {isAuthenticated ? <DropdownMenuLoggedIn /> : <DropdownMenuLoggedOut />}

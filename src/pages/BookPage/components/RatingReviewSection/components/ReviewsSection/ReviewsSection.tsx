@@ -16,16 +16,20 @@ export default function ReviewSection({ bookReviews, activeFilter, onFilterChang
 
             {bookReviews && bookReviews.map((review) => {
                 return (
-                    <Comment
-                        key={review.reviewId}
-                        userIdComment={review.userId}
-                        reviewId={review.reviewId}
-                        username={review.username}
-                        userImg={review.imgUserUrl}
-                        score={review.score}
-                        content={review.content}
-                        createdAt={review.createdAt}
-                    />
+                    <>
+                        <Comment
+                            key={review.reviewId}
+                            userIdComment={review.userId}
+                            reviewId={review.reviewId}
+                            username={review.username}
+                            userImg={review.imgUserUrl}
+                            score={review.score}
+                            content={review.content}
+                            createdAt={review.createdAt}
+                        />
+
+                        
+                    </>
                 );
             })}
         </section>

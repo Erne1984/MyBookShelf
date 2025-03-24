@@ -22,7 +22,7 @@ export default function UserShelves(props: UserShelvesProps) {
 
     return (
         <section className={style["user-shelve-container"]}>
-            <Link to={`/user/${props.userId}/lists`}><h2>Minhas Estantes</h2></Link>
+            <Link className={style["no-color-link"]} to={`/user/${props.userId}/lists`}><h2>Minhas Estantes</h2></Link>
 
             <h3>Lidos ({filteredReadedBooks.length})</h3>
             <div className={style["readed-container"]}>

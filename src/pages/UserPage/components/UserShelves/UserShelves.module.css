@@ -16,3 +16,8 @@
 .no-books {
     padding: 2rem 0 4rem 0;
 }
+
+.no-color-link {
+    color: inherit;
+    text-decoration: none;  
+  }
